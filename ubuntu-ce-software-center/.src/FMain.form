@@ -2,16 +2,19 @@
 
 { Form Form
   MoveScaled(0,0,108,36)
-  { TerminalView TerminalView
-    MoveScaled(1,37,106,24)
+  Resizable = False
+  { BlockPanel Panel
+    MoveScaled(1,2,106,27)
+    Visible = False
   }
   { DNSMinderFrame Frame
     MoveScaled(2,3,29,24)
     Text = ("DNS Minder")
     { DNSMinderTextArea TextArea
-      MoveScaled(1,3,18,6)
+      MoveScaled(1,13,27,3)
       Background = Color.Background
       Text = ("Web Content Filtering")
+      ReadOnly = True
       Wrap = True
       Border = False
     }
@@ -32,24 +35,23 @@
       Text = ("Uninstall")
     }
     { DNSMinderSpinner Spinner
-      MoveScaled(20,2,8,8)
+      MoveScaled(21,3,6.25,6.25)
+      Type = Spinner.Dot
     }
-  }
-  { HideDetailsButton Button
-    MoveScaled(1,31,16,4)
-    Text = ("Hide Details")
-  }
-  { ShowDetailsButton Button
-    MoveScaled(1,31,16,4)
-    Text = ("Show Details")
+    { DNSMinderPictureBox PictureBox
+      MoveScaled(2,3,6.25,6.25)
+      Picture = Picture["dnsminder.png"]
+      Stretch = True
+    }
   }
   { HostMinderFrame Frame
     MoveScaled(33,3,29,24)
     Text = ("Host Minder")
     { HostMinderTextArea TextArea
-      MoveScaled(1,3,17,6)
+      MoveScaled(1,13,27,3)
       Background = Color.Background
       Text = ("Block unwanted websites")
+      ReadOnly = True
       Wrap = True
       Border = False
     }
@@ -70,11 +72,24 @@
       Text = ("Uninstall")
     }
     { HostMinderSpinner Spinner
-      MoveScaled(20,2,8,8)
+      MoveScaled(21,3,6.25,6.25)
+      Type = Spinner.Dot
+    }
+    { HostMinderPictureBox PictureBox
+      MoveScaled(2,3,6.25,6.25)
+      Picture = Picture["hostminder.png"]
+      Stretch = True
     }
   }
-  { BlockPanel Panel
-    MoveScaled(1,2,106,27)
-    Visible = False
+  { HideDetailsButton Button
+    MoveScaled(1,31,16,4)
+    Text = ("Hide Details")
+  }
+  { ShowDetailsButton Button
+    MoveScaled(1,31,16,4)
+    Text = ("Show Details")
+  }
+  { TerminalView TerminalView
+    MoveScaled(1,37,106,24)
   }
 }
