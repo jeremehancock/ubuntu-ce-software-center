@@ -46,20 +46,48 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
   If Message.Question("Are you sure?") = 1 Then 
     InstallProcess = TerminalView.Shell("pkexec apt install " & appName & " -y")
     
+    TerminalView.Clear
     installSpinner.Start
-    launchButton.Hide
-    installButton.Show
-    uninstallButton.Hide
+    installButton.Enabled = False
     Do
       Try Wait 0.5    
     Loop Until InstallProcess.State = 0
   
     launchButton.Show
-    installButton.Hide
+    launchButton.Enabled = True
     uninstallButton.Show
+    uninstallButton.Enabled = True
+    installButton.Hide
     installSpinner.Stop
     
     InstallProcess = Null
+      
+  Endif
+  
+End
+
+Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button)
+
+  Dim UninstallProcess As Process
+  
+  If Message.Question("Are you sure?") = 1 Then 
+    UninstallProcess = TerminalView.Shell("pkexec apt purge " & appName & " -y")
+    
+    TerminalView.Clear
+    installSpinner.Start
+    uninstallButton.Enabled = False
+    launchButton.Enabled = False
+    Do
+      Try Wait 0.5    
+    Loop Until UninstallProcess.State = 0
+  
+    launchButton.Hide
+    installButton.Show
+    installButton.Enabled = True
+    uninstallButton.Hide
+    installSpinner.Stop
+    
+    UninstallProcess = Null
       
   Endif
   
@@ -86,5 +114,27 @@ End
 Public Sub InstallDNSMinderButton_Click()
 
   install_app("dnsminder", DNSMinderSpinner, LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
+
+End
+
+Public Sub UninstallDNSMinderButton_Click()
+
+  uninstall_app("dnsminder", DNSMinderSpinner, LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
+
+End
+
+Public Sub ShowDetailsButton_Click()
+
+  FMain.H = 500
+  ShowDetailsButton.Hide
+  HideDetailsButton.Show
+
+End
+
+Public Sub HideDetailsButton_Click()
+
+  FMain.H = 288
+  HideDetailsButton.Hide
+  ShowDetailsButton.Show
 
 End
