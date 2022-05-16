@@ -9,7 +9,7 @@
     MoveScaled(2,3,29,24)
     Text = ("DNS Minder")
     { DNSMinderTextArea TextArea
-      MoveScaled(1,3,13,6)
+      MoveScaled(1,3,18,6)
       Background = Color.Background
       Text = ("Web Content Filtering")
       Wrap = True
@@ -42,5 +42,35 @@
   { ShowDetailsButton Button
     MoveScaled(1,31,16,4)
     Text = ("Show Details")
+  }
+  { HostMinderFrame Frame
+    MoveScaled(33,3,29,24)
+    Text = ("Host Minder")
+    { HostMinderTextArea TextArea
+      MoveScaled(1,3,17,6)
+      Background = Color.Background
+      Text = ("Block unwanted websites")
+      Wrap = True
+      Border = False
+    }
+    { InstallHostMinderButton Button
+      MoveScaled(16,19,12,4)
+      Background = &H41C017&
+      Foreground = Color.White
+      Text = ("Install")
+    }
+    { LaunchHostMinderButton Button
+      MoveScaled(16,19,12,4)
+      Text = ("Launch")
+    }
+    { UninstallHostMinderButton Button
+      MoveScaled(1,19,11,4)
+      Background = Color.Red
+      Foreground = Color.White
+      Text = ("Uninstall")
+    }
+    { HostMinderSpinner Spinner
+      MoveScaled(20,2,8,8)
+    }
   }
 }

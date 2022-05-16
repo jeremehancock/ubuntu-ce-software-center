@@ -5,6 +5,7 @@ Public Sub Form_Open()
 
   repo_check()
   app_check("dnsminder", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
+  app_check("hostminder", LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
 
 End
 
@@ -120,6 +121,24 @@ End
 Public Sub UninstallDNSMinderButton_Click()
 
   uninstall_app("dnsminder", DNSMinderSpinner, LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
+
+End
+
+Public Sub LaunchHostMinderButton_Click()
+
+  launch_app("hostminder")
+
+End
+
+Public Sub InstallHostMinderButton_Click()
+
+  install_app("hostminder", HostMinderSpinner, LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
+
+End
+
+Public Sub UninstallHostMinderButton_Click()
+
+  uninstall_app("hostminder", HostMinderSpinner, LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
 
 End
 
