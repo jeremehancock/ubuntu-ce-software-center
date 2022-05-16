@@ -5,7 +5,6 @@ Public Sub Form_Open()
 
   repo_check()
   app_check("dnsminder", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
-  DNSMinderSpinner.Show
 
 End
 
@@ -23,15 +22,11 @@ End
 
 Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button)
   
-  Dim CheckProcess As Process
+  Dim Result As String
   
-  CheckProcess = Shell ("apt-cache policy " & appName & " | grep 'none' | awk '{print $2}'") 
-  
-  Do
-    Try Wait 0.5    
-  Loop Until CheckProcess.State = 0
-  
-  If InStr(Str(CheckProcess.Value), "(none)\n") = 0 Then 
+  Shell ("apt-cache policy " & appName & " | grep 'none' | awk '{print $2}'") To Result
+   
+  If InStr(Result, "(none)\n") = 1 Then 
     launchButton.Hide
     installButton.Show
     uninstallButton.Hide
@@ -41,7 +36,6 @@ Sub app_check(appName As String, launchButton As Button, installButton As Button
     uninstallButton.Show
   Endif
   
-  CheckProcess = Null
   
 End
 
@@ -52,7 +46,7 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
   If Message.Question("Are you sure?") = 1 Then 
     InstallProcess = TerminalView.Shell("pkexec apt install " & appName & " -y")
     
-    installSpinner.Show
+    installSpinner.Start
     launchButton.Hide
     installButton.Show
     uninstallButton.Hide
@@ -63,7 +57,7 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
     launchButton.Show
     installButton.Hide
     uninstallButton.Show
-    installSpinner.Hide
+    installSpinner.Stop
     
     InstallProcess = Null
       
