@@ -6,6 +6,7 @@ Public Sub Form_Open()
   repo_check()
   app_check("dnsminder", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
   app_check("hostminder", LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
+  app_check("ubuntu-ce-parental-controls", LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
 
 End
 
@@ -47,7 +48,7 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
   If Message.Question("Are you sure?") = 1 Then 
     InstallProcess = TerminalView.Shell("pkexec apt install " & appName & " -y")
     
-    BlockPanel.Show
+    ' BlockPanel.Show
     TerminalView.Clear
     installSpinner.Start
     installButton.Enabled = False
@@ -61,7 +62,7 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
     uninstallButton.Enabled = True
     installButton.Hide
     installSpinner.Stop
-    BlockPanel.Hide
+    ' BlockPanel.Hide
     
     InstallProcess = Null
       
@@ -74,9 +75,9 @@ Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As 
   Dim UninstallProcess As Process
   
   If Message.Question("Are you sure?") = 1 Then 
-    UninstallProcess = TerminalView.Shell("pkexec apt purge " & appName & " -y")
+    UninstallProcess = TerminalView.Shell("pkexec apt autoremove " & appName & " -y")
     
-    BlockPanel.Show
+    ' BlockPanel.Show
     TerminalView.Clear
     installSpinner.Start
     uninstallButton.Enabled = False
@@ -90,7 +91,7 @@ Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As 
     installButton.Enabled = True
     uninstallButton.Hide
     installSpinner.Stop
-    BlockPanel.Hide
+    ' BlockPanel.Hide
     
     UninstallProcess = Null
       
@@ -146,9 +147,27 @@ Public Sub UninstallHostMinderButton_Click()
 
 End
 
+Public Sub LaunchParentalControlsButton_Click()
+
+  launch_app("malcontent-control")
+
+End
+
+Public Sub InstallParentalControlsButton_Click()
+
+  install_app("ubuntu-ce-parental-controls", ParentalControlsSpinner, LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
+
+End
+
+Public Sub UninstallParentalControlsButton_Click()
+
+  uninstall_app("ubuntu-ce-parental-controls", ParentalControlsSpinner, LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
+
+End
+
 Public Sub ShowDetailsButton_Click()
 
-  FMain.H = 500
+  FMain.H = 554
   ShowDetailsButton.Hide
   HideDetailsButton.Show
 
@@ -156,8 +175,9 @@ End
 
 Public Sub HideDetailsButton_Click()
 
-  FMain.H = 288
+  FMain.H = 344
   HideDetailsButton.Hide
   ShowDetailsButton.Show
 
 End
+

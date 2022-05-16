@@ -1,95 +1,136 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,108,36)
+  MoveScaled(0,0,108,43)
   Resizable = False
-  { BlockPanel Panel
-    MoveScaled(1,2,106,27)
-    Visible = False
-  }
-  { DNSMinderFrame Frame
-    MoveScaled(2,3,29,24)
-    Text = ("DNS Minder")
-    { DNSMinderTextArea TextArea
-      MoveScaled(1,13,27,3)
-      Background = Color.Background
-      Text = ("Web Content Filtering")
-      ReadOnly = True
-      Wrap = True
-      Border = False
-    }
-    { InstallDNSMinderButton Button
-      MoveScaled(16,19,12,4)
-      Background = &H41C017&
-      Foreground = Color.White
-      Text = ("Install")
-    }
-    { LaunchDNSMinderButton Button
-      MoveScaled(16,19,12,4)
-      Text = ("Launch")
-    }
-    { UninstallDNSMinderButton Button
-      MoveScaled(1,19,11,4)
-      Background = Color.Red
-      Foreground = Color.White
-      Text = ("Uninstall")
-    }
-    { DNSMinderSpinner Spinner
-      MoveScaled(21,3,6.25,6.25)
-      Type = Spinner.Dot
-    }
-    { DNSMinderPictureBox PictureBox
-      MoveScaled(2,3,6.25,6.25)
-      Picture = Picture["dnsminder.png"]
-      Stretch = True
-    }
-  }
-  { HostMinderFrame Frame
-    MoveScaled(33,3,29,24)
-    Text = ("Host Minder")
-    { HostMinderTextArea TextArea
-      MoveScaled(1,13,27,3)
-      Background = Color.Background
-      Text = ("Block unwanted websites")
-      ReadOnly = True
-      Wrap = True
-      Border = False
-    }
-    { InstallHostMinderButton Button
-      MoveScaled(16,19,12,4)
-      Background = &H41C017&
-      Foreground = Color.White
-      Text = ("Install")
-    }
-    { LaunchHostMinderButton Button
-      MoveScaled(16,19,12,4)
-      Text = ("Launch")
-    }
-    { UninstallHostMinderButton Button
-      MoveScaled(1,19,11,4)
-      Background = Color.Red
-      Foreground = Color.White
-      Text = ("Uninstall")
-    }
-    { HostMinderSpinner Spinner
-      MoveScaled(21,3,6.25,6.25)
-      Type = Spinner.Dot
-    }
-    { HostMinderPictureBox PictureBox
-      MoveScaled(2,3,6.25,6.25)
-      Picture = Picture["hostminder.png"]
-      Stretch = True
-    }
-  }
   { HideDetailsButton Button
-    MoveScaled(1,31,16,4)
+    MoveScaled(1,38,16,4)
     Text = ("Hide Details")
   }
   { ShowDetailsButton Button
-    MoveScaled(1,31,16,4)
+    MoveScaled(1,38,16,4)
     Text = ("Show Details")
   }
   { TerminalView TerminalView
-    MoveScaled(1,37,106,24)
+    MoveScaled(1,44,106,24)
+  }
+  { Tabs TabStrip
+    MoveScaled(1,2,106,34)
+    Count = 3
+    Index = 0
+    Text = ("Family Settings")
+    { DNSMinderFrame Frame
+      MoveScaled(2,3,29,24)
+      Text = ("DNS Minder")
+      { DNSMinderTextArea TextArea
+        MoveScaled(1,13,27,3)
+        Text = ("Web Content Filtering")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallDNSMinderButton Button
+        MoveScaled(16,19,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchDNSMinderButton Button
+        MoveScaled(16,19,12,4)
+        Text = ("Launch")
+      }
+      { UninstallDNSMinderButton Button
+        MoveScaled(1,19,11,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Text = ("Uninstall")
+      }
+      { DNSMinderSpinner Spinner
+        MoveScaled(21,3,6.25,6.25)
+        Type = Spinner.Dot
+      }
+      { DNSMinderPictureBox PictureBox
+        MoveScaled(2,3,6.25,6.25)
+        Picture = Picture["dnsminder.png"]
+        Stretch = True
+      }
+    }
+    { HostMinderFrame Frame
+      MoveScaled(34,3,29,24)
+      Text = ("Host Minder")
+      { HostMinderTextArea TextArea
+        MoveScaled(1,13,27,3)
+        Text = ("Block unwanted websites")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallHostMinderButton Button
+        MoveScaled(16,19,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchHostMinderButton Button
+        MoveScaled(16,19,12,4)
+        Text = ("Launch")
+      }
+      { UninstallHostMinderButton Button
+        MoveScaled(1,19,11,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Text = ("Uninstall")
+      }
+      { HostMinderSpinner Spinner
+        MoveScaled(21,3,6.25,6.25)
+        Type = Spinner.Dot
+      }
+      { HostMinderPictureBox PictureBox
+        MoveScaled(2,3,6.25,6.25)
+        Picture = Picture["hostminder.png"]
+        Stretch = True
+      }
+    }
+    { ParentalControlsFrame Frame
+      MoveScaled(66,3,29,24)
+      Text = ("Parental Controls")
+      { ParentalControlsTextArea TextArea
+        MoveScaled(1,13,27,3)
+        Text = ("Parental Controls")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallParentalControlsButton Button
+        MoveScaled(16,19,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchParentalControlsButton Button
+        MoveScaled(16,19,12,4)
+        Text = ("Launch")
+      }
+      { UninstallParentalControlsButton Button
+        MoveScaled(1,19,11,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Text = ("Uninstall")
+      }
+      { ParentalControlsSpinner Spinner
+        MoveScaled(21,3,6.25,6.25)
+        Type = Spinner.Dot
+      }
+      { ParentalControlsPictureBox PictureBox
+        MoveScaled(2,3,6.25,6.25)
+        Picture = Picture["parental-controls.png"]
+        Stretch = True
+      }
+    }
+    Index = 1
+    Text = ("Bible Study")
+    Index = 2
+    Text = ("For Churches")
+    Index = 0
   }
 }
