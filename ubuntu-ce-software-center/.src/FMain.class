@@ -5,6 +5,7 @@ Public Sub Form_Open()
 
   repo_check()
   app_check("dnsminder", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
+  DNSMinderSpinner.Show
 
 End
 
@@ -44,6 +45,32 @@ Sub app_check(appName As String, launchButton As Button, installButton As Button
   
 End
 
+Sub install_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button)
+
+  Dim InstallProcess As Process
+  
+  If Message.Question("Are you sure?") = 1 Then 
+    InstallProcess = TerminalView.Shell("pkexec apt install " & appName & " -y")
+    
+    installSpinner.Show
+    launchButton.Hide
+    installButton.Show
+    uninstallButton.Hide
+    Do
+      Try Wait 0.5    
+    Loop Until InstallProcess.State = 0
+  
+    launchButton.Show
+    installButton.Hide
+    uninstallButton.Show
+    installSpinner.Hide
+    
+    InstallProcess = Null
+      
+  Endif
+  
+End
+
 
 Sub launch_app(appName As String, Optional isTerminal As Boolean)
   
@@ -64,6 +91,6 @@ End
 
 Public Sub InstallDNSMinderButton_Click()
 
-  
+  install_app("dnsminder", DNSMinderSpinner, LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
 
 End

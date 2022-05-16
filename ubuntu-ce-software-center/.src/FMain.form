@@ -3,13 +3,10 @@
 { Form Form
   MoveScaled(0,0,108,64)
   { DNSMinderFrame Frame
-    MoveScaled(16,9,29,24)
+    MoveScaled(15,9,29,24)
     Text = ("DNS Minder")
-    { DNSMinderSpinner Spinner
-      MoveScaled(20,2,8,8)
-    }
     { DNSMinderTextArea TextArea
-      MoveScaled(1,3,17,6)
+      MoveScaled(1,3,13,6)
       Background = Color.Background
       Text = ("Web Content Filtering")
       Wrap = True
@@ -30,6 +27,9 @@
       Background = Color.Red
       Foreground = Color.White
       Text = ("Uninstall")
+    }
+    { DNSMinderSpinner Spinner
+      MoveScaled(19,4,8,8)
     }
   }
   { TerminalView TerminalView
