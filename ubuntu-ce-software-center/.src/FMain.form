@@ -1,7 +1,7 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,108,43)
+  MoveScaled(0,0,131,43)
   Resizable = False
   { HideDetailsButton Button
     MoveScaled(1,38,16,4)
@@ -12,10 +12,10 @@
     Text = ("Show Details")
   }
   { TerminalView TerminalView
-    MoveScaled(1,44,106,24)
+    MoveScaled(1,44,129,24)
   }
   { Tabs TabStrip
-    MoveScaled(1,2,106,34)
+    MoveScaled(1,2,129,34)
     Count = 3
     Index = 0
     Text = ("Family Settings")
@@ -124,6 +124,42 @@
       { ParentalControlsPictureBox PictureBox
         MoveScaled(2,3,6.25,6.25)
         Picture = Picture["parental-controls.png"]
+        Stretch = True
+      }
+    }
+    { TimekprFrame Frame
+      MoveScaled(98,3,29,24)
+      Text = ("Timekpr-nExT")
+      { TimekprTextArea TextArea
+        MoveScaled(1,13,27,3)
+        Text = ("Track screen time")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallTimekprButton Button
+        MoveScaled(16,19,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchTimekprButton Button
+        MoveScaled(16,19,12,4)
+        Text = ("Launch")
+      }
+      { UninstallTimekprButton Button
+        MoveScaled(1,19,11,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Text = ("Uninstall")
+      }
+      { TimekprSpinner Spinner
+        MoveScaled(21,3,6.25,6.25)
+        Type = Spinner.Dot
+      }
+      { TimekprPictureBox PictureBox
+        MoveScaled(2,3,6.25,6.25)
+        Picture = Picture["timekpr.png"]
         Stretch = True
       }
     }

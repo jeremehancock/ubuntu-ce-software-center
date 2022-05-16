@@ -7,6 +7,7 @@ Public Sub Form_Open()
   app_check("dnsminder", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
   app_check("hostminder", LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
   app_check("ubuntu-ce-parental-controls", LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
+  app_check("timekpr-next", LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
 
 End
 
@@ -100,12 +101,16 @@ Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As 
 End
 
 
-Sub launch_app(appName As String, Optional isTerminal As Boolean)
+Sub launch_app(appName As String, Optional isTerminal As Boolean, Optional isSudo As Boolean)
   
   If isTerminal Then 
     Exec ["gnome-terminal", "--", "bash", "-c", appName]
   Else 
-    Exec [appName]
+    If isSudo Then 
+      Shell (appName)
+    Else 
+      Exec [appName]
+    Endif
   Endif
   
 End
@@ -162,6 +167,24 @@ End
 Public Sub UninstallParentalControlsButton_Click()
 
   uninstall_app("ubuntu-ce-parental-controls", ParentalControlsSpinner, LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
+
+End
+
+Public Sub LaunchTimekprButton_Click()
+
+  launch_app("pkexec /usr/bin/timekpra", False, True)
+
+End
+
+Public Sub InstallTimekprButton_Click()
+
+  install_app("timekpr-next", TimekprSpinner, LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
+
+End
+
+Public Sub UninstallTimekprButton_Click()
+
+  uninstall_app("timekpr-next", TimekprSpinner, LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
 
 End
 

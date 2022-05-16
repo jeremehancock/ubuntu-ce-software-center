@@ -1,7 +1,7 @@
 # Gambas Project File 3.0
 Title=UbuntuCE Software Center
 Startup=FMain
-Icon=ubuntu-logo.png
+Icon=ubuntuce-software-center-logo.png
 Version=0.0.3
 Component=gb.image
 Component=gb.gui
