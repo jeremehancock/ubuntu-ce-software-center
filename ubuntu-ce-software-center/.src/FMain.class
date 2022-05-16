@@ -7,17 +7,31 @@ Public Sub Form_Open()
 
 End
 
-  Sub repo_check()
+Sub repo_check()
     
-      If Not Exist("/etc/apt/sources.list.d/ubuntuce-jammy.list1") Then
-      If Message.Warning("The UbuntuCE Repo is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
-        Exec ["gnome-terminal", "--", "bash", "-c", "wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output ubuntuce.gpg --dearmor KEY.gpg && sudo mv ubuntuce.gpg /usr/share/keyrings/ && rm KEY.gpg && sudo apt install curl -y && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
-      Else 
-        Quit
-      Endif
+  If Not Exist("/etc/apt/sources.list.d/ubuntuce-jammy.list") Then
+    If Message.Warning("The UbuntuCE Repo is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
+      Exec ["gnome-terminal", "--", "bash", "-c", "wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output ubuntuce.gpg --dearmor KEY.gpg && sudo mv ubuntuce.gpg /usr/share/keyrings/ && rm KEY.gpg && sudo apt install curl -y && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
     Else 
       Quit
     Endif
+  Endif
   
 End
 
+Sub launch_app(appName As String, Optional isTerminal As Boolean)
+  
+  If isTerminal Then 
+    Exec ["gnome-terminal", "--", "bash", "-c", appName]
+  Else 
+    Exec [appName]
+  Endif
+  
+End
+
+
+Public Sub LaunchDNSMinderButton_Click()
+
+  launch_app("dnsminder")
+
+End
