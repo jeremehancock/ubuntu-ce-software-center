@@ -73,4 +73,8 @@
       MoveScaled(20,2,8,8)
     }
   }
+  { BlockPanel Panel
+    MoveScaled(1,2,106,27)
+    Visible = False
+  }
 }

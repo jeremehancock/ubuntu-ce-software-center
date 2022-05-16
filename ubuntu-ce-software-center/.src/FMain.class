@@ -47,6 +47,7 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
   If Message.Question("Are you sure?") = 1 Then 
     InstallProcess = TerminalView.Shell("pkexec apt install " & appName & " -y")
     
+    BlockPanel.Show
     TerminalView.Clear
     installSpinner.Start
     installButton.Enabled = False
@@ -60,6 +61,7 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
     uninstallButton.Enabled = True
     installButton.Hide
     installSpinner.Stop
+    BlockPanel.Hide
     
     InstallProcess = Null
       
@@ -74,6 +76,7 @@ Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As 
   If Message.Question("Are you sure?") = 1 Then 
     UninstallProcess = TerminalView.Shell("pkexec apt purge " & appName & " -y")
     
+    BlockPanel.Show
     TerminalView.Clear
     installSpinner.Start
     uninstallButton.Enabled = False
@@ -87,6 +90,7 @@ Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As 
     installButton.Enabled = True
     uninstallButton.Hide
     installSpinner.Stop
+    BlockPanel.Hide
     
     UninstallProcess = Null
       
