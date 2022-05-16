@@ -4,6 +4,7 @@
 Public Sub Form_Open()
 
   repo_check()
+  app_check("dnsminder", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
 
 End
 
@@ -19,6 +20,31 @@ Sub repo_check()
   
 End
 
+Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button)
+  
+  Dim CheckProcess As Process
+  
+  CheckProcess = Shell ("apt-cache policy " & appName & " | grep 'none' | awk '{print $2}'") 
+  
+  Do
+    Try Wait 0.5    
+  Loop Until CheckProcess.State = 0
+  
+  If InStr(Str(CheckProcess.Value), "(none)\n") = 0 Then 
+    launchButton.Hide
+    installButton.Show
+    uninstallButton.Hide
+  Else 
+    launchButton.Show
+    installButton.Hide
+    uninstallButton.Show
+  Endif
+  
+  CheckProcess = Null
+  
+End
+
+
 Sub launch_app(appName As String, Optional isTerminal As Boolean)
   
   If isTerminal Then 
@@ -33,5 +59,11 @@ End
 Public Sub LaunchDNSMinderButton_Click()
 
   launch_app("dnsminder")
+
+End
+
+Public Sub InstallDNSMinderButton_Click()
+
+  
 
 End

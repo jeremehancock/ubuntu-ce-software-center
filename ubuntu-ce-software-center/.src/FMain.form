@@ -5,7 +5,7 @@
   { DNSMinderFrame Frame
     MoveScaled(16,9,29,24)
     Text = ("DNS Minder")
-    { Spinner1 Spinner
+    { DNSMinderSpinner Spinner
       MoveScaled(20,2,8,8)
     }
     { DNSMinderTextArea TextArea
@@ -31,5 +31,8 @@
       Foreground = Color.White
       Text = ("Uninstall")
     }
+  }
+  { TerminalView TerminalView
+    MoveScaled(1,39,106,24)
   }
 }
