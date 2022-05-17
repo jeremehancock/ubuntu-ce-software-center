@@ -17,7 +17,7 @@
     Index = 0
     Text = ("Family Settings")
     { DNSMinderFrame Frame
-      MoveScaled(1.875,3,32,14)
+      MoveScaled(2,3,32,14)
       { DNSMinderTextArea TextArea
         MoveScaled(9,4,19,3)
         Text = ("Web Content Filtering")
@@ -234,7 +234,7 @@
       }
     }
     { BibleTimeFrame Frame
-      MoveScaled(1.875,3,32,14)
+      MoveScaled(2,3,32,14)
       { BibleTimeTextArea TextArea
         MoveScaled(9,4,15,3)
         Text = ("Bible Study Suite")
@@ -406,7 +406,7 @@
       }
     }
     { DabPlayerFrame Frame
-      MoveScaled(36,19,32,14)
+      MoveScaled(103.75,19,32,14)
       { DabPlayerTextArea TextArea
         MoveScaled(9,4,21,3)
         Text = ("Audio Bible Player")
@@ -449,7 +449,7 @@
       }
     }
     { BibleMTFFrame Frame
-      MoveScaled(69.75,19,32,14)
+      MoveScaled(35.75,19,32,14)
       { BibleMTFTextArea TextArea
         MoveScaled(9,4,21,3)
         Text = ("Multi-Translation Bible")
@@ -492,7 +492,7 @@
       }
     }
     { BibleSOMFrame Frame
-      MoveScaled(103.75,19,32,14)
+      MoveScaled(69.75,19,32,14)
       { BibleSOMTextArea TextArea
         MoveScaled(9,4,21,3)
         Text = ("Bible in Terminal")
@@ -536,6 +536,49 @@
     }
     Index = 2
     Text = ("For Churches")
+    { PresenterFrame Frame
+      MoveScaled(2,3,32,14)
+      { PresenterTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("by WorshipTools")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallPresenterButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchPresenterButton Button
+        MoveScaled(19,9,12,4)
+        Text = ("Launch")
+      }
+      { UninstallPresenterButton Button
+        MoveScaled(1,9,5,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Picture = Picture["trashcan.png"]
+      }
+      { PresenterPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["presenter.png"]
+        Stretch = True
+      }
+      { PresenterProgressBar ProgressBar
+        MoveScaled(3,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { PresenterLabel Label
+        MoveScaled(9,1,22,3)
+        Font = Font["Bold,+1"]
+        Text = ("Presenter")
+      }
+    }
     Index = 0
   }
   { BlockPanel Panel

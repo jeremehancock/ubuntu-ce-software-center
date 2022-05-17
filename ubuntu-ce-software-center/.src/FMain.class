@@ -17,6 +17,7 @@ Public Sub Form_Open()
   app_check("dab-player", LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, True)  
   app_check("bible-multi-the-life", LaunchBibleMTFButton, InstallBibleMTFButton, UninstallBibleMTFButton, True) 
   app_check("bible-multi-the-son-of-man", LaunchBibleSOMButton, InstallBibleSOMButton, UninstallBibleSOMButton, True) 
+  app_check("presenter-by-worship-tools", LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
 
 End
 
@@ -388,6 +389,24 @@ End
 Public Sub UninstallBibleSOMButton_Click()
 
   uninstall_app("bible-multi-the-son-of-man", BibleSOMProgressBar, LaunchBibleSOMButton, InstallBibleSOMButton, UninstallBibleSOMButton, True)
+
+End
+
+Public Sub LaunchPresenterButton_Click()
+
+  launch_app("launch-presenter.sh")
+
+End
+
+Public Sub InstallPresenterButton_Click()
+
+  install_app("presenter-by-worship-tools", PresenterProgressBar, LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
+
+End
+
+Public Sub UninstallPresenterButton_Click()
+
+  uninstall_app("presenter-by-worship-tools", PresenterProgressBar, LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
 
 End
 
