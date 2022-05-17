@@ -1,7 +1,7 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,131,89)
+  MoveScaled(0,0,131,70)
   Resizable = False
   { HideDetailsButton Button
     MoveScaled(1,65,16,4)
@@ -10,9 +10,6 @@
   { ShowDetailsButton Button
     MoveScaled(1,65,16,4)
     Text = ("Show Details")
-  }
-  { TerminalView TerminalView
-    MoveScaled(1,70,129,17)
   }
   { Tabs TabStrip
     MoveScaled(1,2,129,61)
@@ -351,6 +348,10 @@
   }
   { BlockPanel Panel
     MoveScaled(1,2,130,61)
+    Visible = False
+  }
+  { TerminalView TerminalView
+    MoveScaled(1,2,129,61)
     Visible = False
   }
 }
