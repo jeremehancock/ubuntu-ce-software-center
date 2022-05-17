@@ -4,6 +4,7 @@
 Public Sub Form_Open()
 
   repo_check()
+  snap_check()
   app_check("dnsminder", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
   app_check("hostminder", LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
   app_check("ubuntu-ce-parental-controls", LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
@@ -27,6 +28,19 @@ Sub repo_check()
   Endif
   
 End
+
+Sub snap_check()
+  
+  Dim Result As String
+  
+    Shell ("apt-cache policy snapd | grep 'none' | awk '{print $2}'") To Result
+    
+    If InStr(Result, "(none)\n") = 1 Then 
+      Message.Error("Snapd is not installed!")
+    Endif
+    
+End
+
 
 Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
   
