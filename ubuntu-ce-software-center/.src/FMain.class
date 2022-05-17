@@ -93,7 +93,7 @@ Sub app_check(appName As String, launchButton As Button, installButton As Button
   
 End
 
-Sub install_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button, isSnapd As Boolean)
+Sub install_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
 
   Dim InstallProcess As Process
   

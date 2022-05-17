@@ -347,8 +347,9 @@
     Index = 0
   }
   { BlockPanel Panel
-    MoveScaled(1,2,130,61)
+    MoveScaled(1,2,129,61)
     Visible = False
+    Background = &H69E0E0E0&
   }
   { TerminalView TerminalView
     MoveScaled(1,2,129,61)
