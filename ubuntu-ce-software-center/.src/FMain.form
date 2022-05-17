@@ -322,8 +322,8 @@
     { BibleKJVFrame Frame
       MoveScaled(69.75,3,32,14)
       { BibleKJVTextArea TextArea
-        MoveScaled(9,4,13,3)
-        Text = ("The KJV Bible")
+        MoveScaled(9,4,20,3)
+        Text = ("KJV Bible in Terminal")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -359,7 +359,7 @@
       { BibleKJVLabel Label
         MoveScaled(9,1,21,3)
         Font = Font["Bold,+1"]
-        Text = ("Bible KJV (Terminal)")
+        Text = ("Bible KJV")
       }
     }
     { BollsFrame Frame
@@ -489,6 +489,49 @@
         MoveScaled(9,1,20,3)
         Font = Font["Bold,+1"]
         Text = ("Bible Multi The Life")
+      }
+    }
+    { BibleSOMFrame Frame
+      MoveScaled(103.75,19,32,14)
+      { BibleSOMTextArea TextArea
+        MoveScaled(9,4,21,3)
+        Text = ("Bible in Terminal")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallBibleSOMButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchBibleSOMButton Button
+        MoveScaled(19,9,12,4)
+        Text = ("Launch")
+      }
+      { UninstallBibleSOMButton Button
+        MoveScaled(1,9,5,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Picture = Picture["trashcan.png"]
+      }
+      { BibleSOMPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["bible-som.png"]
+        Stretch = True
+      }
+      { BibleSOMProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { BibleSOMLabel Label
+        MoveScaled(9,1,22,3)
+        Font = Font["Bold,+1"]
+        Text = ("Bible Multi Son of Man")
       }
     }
     Index = 2
