@@ -93,7 +93,7 @@ Sub app_check(appName As String, launchButton As Button, installButton As Button
   
 End
 
-Sub install_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
+Sub install_app(appName As String, installProgressBar As ProgressBar, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
 
   Dim InstallProcess As Process
   
@@ -106,18 +106,16 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
     
     BlockPanel.Show
     TerminalView.Clear
-    installSpinner.Start
-    installButton.Enabled = False
+    installProgressBar.Show
+    installButton.Hide
     Do
       Try Wait 0.5    
     Loop Until InstallProcess.State = 0
   
     launchButton.Show
-    launchButton.Enabled = True
     uninstallButton.Show
-    uninstallButton.Enabled = True
     installButton.Hide
-    installSpinner.Stop
+    installProgressBar.Hide
     BlockPanel.Hide
     
     InstallProcess = Null
@@ -126,7 +124,7 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
   
 End
 
-Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
+Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
 
   Dim UninstallProcess As Process
   
@@ -139,18 +137,17 @@ Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As 
     
     BlockPanel.Show
     TerminalView.Clear
-    installSpinner.Start
-    uninstallButton.Enabled = False
-    launchButton.Enabled = False
+    installProgressBar.Show
+    uninstallButton.Hide
+    launchButton.Hide
     Do
       Try Wait 0.5    
     Loop Until UninstallProcess.State = 0
   
     launchButton.Hide
     installButton.Show
-    installButton.Enabled = True
     uninstallButton.Hide
-    installSpinner.Stop
+    installProgressBar.Hide
     BlockPanel.Hide
     
     UninstallProcess = Null
@@ -183,13 +180,13 @@ End
 
 Public Sub InstallDNSMinderButton_Click()
 
-  install_app("dnsminder", DNSMinderSpinner, LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
+  install_app("dnsminder", DNSMinderProgressBar, LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
 
 End
 
 Public Sub UninstallDNSMinderButton_Click()
 
-  uninstall_app("dnsminder", DNSMinderSpinner, LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
+  uninstall_app("dnsminder", DNSMinderProgressBar, LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
 
 End
 
@@ -201,13 +198,13 @@ End
 
 Public Sub InstallHostMinderButton_Click()
 
-  install_app("hostminder", HostMinderSpinner, LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
+  install_app("hostminder", HostMinderProgressBar, LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
 
 End
 
 Public Sub UninstallHostMinderButton_Click()
 
-  uninstall_app("hostminder", HostMinderSpinner, LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
+  uninstall_app("hostminder", HostMinderProgressBar, LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
 
 End
 
@@ -219,13 +216,13 @@ End
 
 Public Sub InstallParentalControlsButton_Click()
 
-  install_app("ubuntu-ce-parental-controls", ParentalControlsSpinner, LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
+  install_app("ubuntu-ce-parental-controls", ParentalControlsProgressBar, LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
 
 End
 
 Public Sub UninstallParentalControlsButton_Click()
 
-  uninstall_app("ubuntu-ce-parental-controls", ParentalControlsSpinner, LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
+  uninstall_app("ubuntu-ce-parental-controls", ParentalControlsProgressBar, LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
 
 End
 
@@ -237,13 +234,13 @@ End
 
 Public Sub InstallTimekprButton_Click()
 
-  install_app("timekpr-next", TimekprSpinner, LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
+  install_app("timekpr-next", TimekprProgressBar, LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
 
 End
 
 Public Sub UninstallTimekprButton_Click()
 
-  uninstall_app("timekpr-next", TimekprSpinner, LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
+  uninstall_app("timekpr-next", TimekprProgressBar, LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
 
 End
 
@@ -255,13 +252,13 @@ End
 
 Public Sub InstallXiphosButton_Click()
 
-  install_app("xiphos sword-text-web sword-text-kjv", XiphosSpinner, LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton)
+  install_app("xiphos sword-text-web sword-text-kjv", XiphosProgressBar, LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton)
 
 End
 
 Public Sub UninstallXiphosButton_Click()
 
-  uninstall_app("xiphos", XiphosSpinner, LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton)
+  uninstall_app("xiphos", XiphosProgressBar, LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton)
 
 End
 
@@ -273,13 +270,13 @@ End
 
 Public Sub InstallBibleTimeButton_Click()
 
-  install_app("bibletime sword-text-web sword-text-kjv", BibleTimeSpinner, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
+  install_app("bibletime sword-text-web sword-text-kjv", BibleditProgressBar, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
 
 End
 
 Public Sub UninstallBibleTimeButton_Click()
 
-  uninstall_app("bibletime", BibleTimeSpinner, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
+  uninstall_app("bibletime", BibleditProgressBar, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
 
 End
 
@@ -291,13 +288,13 @@ End
 
 Public Sub InstallBibleditButton_Click()
 
-  install_app("bibledit", BibleditSpinner, LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
+  install_app("bibledit", BibleditProgressBar, LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
 
 End
 
 Public Sub UninstallBibleditButton_Click()
 
-  uninstall_app("bibledit", BibleditSpinner, LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
+  uninstall_app("bibledit", BibleditProgressBar, LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
 
 End
 
@@ -309,13 +306,13 @@ End
 
 Public Sub InstallBibleKJVButton_Click()
 
-  install_app("bible-kjv", BibleKJVSpinner, LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton)
+  install_app("bible-kjv", BibleKJVProgressBar, LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton)
 
 End
 
 Public Sub UninstallBibleKJVButton_Click()
 
-  uninstall_app("bible-kjv", BibleKJVSpinner, LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton)
+  uninstall_app("bible-kjv", BibleKJVProgressBar, LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton)
 
 End
 
@@ -327,13 +324,13 @@ End
 
 Public Sub InstallBollsBibleButton_Click()
 
-  install_app("bolls", BollsSpinner, LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
+  install_app("bolls", BollsProgressBar, LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
 
 End
 
 Public Sub UninstallBollsButton_Click()
 
-  uninstall_app("bolls", BollsSpinner, LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
+  uninstall_app("bolls", BollsProgressBar, LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
 
 End
 
@@ -352,4 +349,3 @@ Public Sub HideDetailsButton_Click()
   ShowDetailsButton.Show
 
 End
-

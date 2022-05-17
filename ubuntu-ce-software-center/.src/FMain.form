@@ -1,7 +1,7 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,131,70)
+  MoveScaled(0,0,140,70)
   Resizable = False
   { HideDetailsButton Button
     MoveScaled(1,65,16,4)
@@ -12,334 +12,397 @@
     Text = ("Show Details")
   }
   { Tabs TabStrip
-    MoveScaled(1,2,129,61)
+    MoveScaled(1,2,138,61)
     Count = 3
     Index = 0
     Text = ("Family Settings")
     { DNSMinderFrame Frame
-      MoveScaled(2,3,29,24)
-      Text = ("DNS Minder")
+      MoveScaled(1.875,3,32,14)
       { DNSMinderTextArea TextArea
-        MoveScaled(1,13,27,3)
+        MoveScaled(9,4,19,3)
         Text = ("Web Content Filtering")
         ReadOnly = True
         Wrap = True
         Border = False
       }
       { InstallDNSMinderButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Background = &H41C017&
         Foreground = Color.White
         Text = ("Install")
       }
       { LaunchDNSMinderButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Text = ("Launch")
       }
       { UninstallDNSMinderButton Button
-        MoveScaled(1,19,11,4)
+        MoveScaled(1,9,5,4)
         Background = Color.Red
         Foreground = Color.White
-        Text = ("Uninstall")
-      }
-      { DNSMinderSpinner Spinner
-        MoveScaled(21,3,6.25,6.25)
-        Type = Spinner.Dot
+        Picture = Picture["trashcan.png"]
       }
       { DNSMinderPictureBox PictureBox
-        MoveScaled(2,3,6.25,6.25)
+        MoveScaled(1,1,6.25,6.25)
         Picture = Picture["dnsminder.png"]
         Stretch = True
       }
+      { DNSMinderProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { DNSMinderLabel Label
+        MoveScaled(9,1,14,3)
+        Font = Font["Bold,+1"]
+        Text = ("DNS Minder")
+      }
     }
     { HostMinderFrame Frame
-      MoveScaled(34,3,29,24)
-      Text = ("Host Minder")
+      MoveScaled(103.75,3,32,14)
       { HostMinderTextArea TextArea
-        MoveScaled(1,13,27,3)
+        MoveScaled(9,4,22,3)
         Text = ("Block unwanted websites")
         ReadOnly = True
         Wrap = True
         Border = False
       }
       { InstallHostMinderButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Background = &H41C017&
         Foreground = Color.White
         Text = ("Install")
       }
       { LaunchHostMinderButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Text = ("Launch")
       }
       { UninstallHostMinderButton Button
-        MoveScaled(1,19,11,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
-        Text = ("Uninstall")
-      }
-      { HostMinderSpinner Spinner
-        MoveScaled(21,3,6.25,6.25)
-        Type = Spinner.Dot
+        Picture = Picture["trashcan.png"]
       }
       { HostMinderPictureBox PictureBox
-        MoveScaled(2,3,6.25,6.25)
+        MoveScaled(1,1,6.25,6.25)
         Picture = Picture["hostminder.png"]
         Stretch = True
       }
+      { HostMinderProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { HostMinderLabel Label
+        MoveScaled(9,1,14,3)
+        Font = Font["Bold,+1"]
+        Text = ("Host Minder")
+      }
     }
     { ParentalControlsFrame Frame
-      MoveScaled(66,3,29,24)
-      Text = ("Parental Controls")
+      MoveScaled(35.75,3,32,14)
       { ParentalControlsTextArea TextArea
-        MoveScaled(1,13,27,3)
+        MoveScaled(8,4,14,3)
         Text = ("Protect the kids")
         ReadOnly = True
         Wrap = True
         Border = False
       }
       { InstallParentalControlsButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Background = &H41C017&
         Foreground = Color.White
         Text = ("Install")
       }
       { LaunchParentalControlsButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Text = ("Launch")
       }
       { UninstallParentalControlsButton Button
-        MoveScaled(1,19,11,4)
+        MoveScaled(1,9,5,4)
         Background = Color.Red
         Foreground = Color.White
-        Text = ("Uninstall")
-      }
-      { ParentalControlsSpinner Spinner
-        MoveScaled(21,3,6.25,6.25)
-        Type = Spinner.Dot
+        Picture = Picture["trashcan.png"]
       }
       { ParentalControlsPictureBox PictureBox
-        MoveScaled(2,3,6.25,6.25)
+        MoveScaled(1,1,6.25,6.25)
         Picture = Picture["parental-controls.png"]
         Stretch = True
       }
+      { ParentalControlsProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { ParentalControlsLabel Label
+        MoveScaled(8,1,18,3)
+        Font = Font["Bold,+1"]
+        Text = ("Parental Controls")
+      }
     }
     { TimekprFrame Frame
-      MoveScaled(98,3,29,24)
-      Text = ("Timekpr-nExT")
+      MoveScaled(69.75,3,32,14)
       { TimekprTextArea TextArea
-        MoveScaled(1,13,27,3)
+        MoveScaled(9,4,16,3)
         Text = ("Track screen time")
         ReadOnly = True
         Wrap = True
         Border = False
       }
       { InstallTimekprButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Background = &H41C017&
         Foreground = Color.White
         Text = ("Install")
       }
       { LaunchTimekprButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Text = ("Launch")
       }
       { UninstallTimekprButton Button
-        MoveScaled(1,19,11,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
-        Text = ("Uninstall")
-      }
-      { TimekprSpinner Spinner
-        MoveScaled(21,3,6.25,6.25)
-        Type = Spinner.Dot
+        Picture = Picture["trashcan.png"]
       }
       { TimekprPictureBox PictureBox
-        MoveScaled(2,3,6.25,6.25)
+        MoveScaled(1,1,6.25,6.25)
         Picture = Picture["timekpr.png"]
         Stretch = True
+      }
+      { TimekprProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { TimekprLabel Label
+        MoveScaled(9,1,18,3)
+        Font = Font["Bold,+1"]
+        Text = ("Timekpr-nExT")
       }
     }
     Index = 1
     Text = ("Bible Study")
     { XiphosFrame Frame
-      MoveScaled(2,3,29,24)
-      Text = ("Xiphos")
+      MoveScaled(103.75,3,32,14)
       { XiphosTextArea TextArea
-        MoveScaled(1,13,27,3)
+        MoveScaled(9,4,15,3)
         Text = ("Bible Study Suite")
         ReadOnly = True
         Wrap = True
         Border = False
       }
       { InstallXiphosButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Background = &H41C017&
         Foreground = Color.White
         Text = ("Install")
       }
       { LaunchXiphosButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Text = ("Launch")
       }
       { UninstallXiphosButton Button
-        MoveScaled(1,19,11,4)
+        MoveScaled(1,9,5,4)
         Background = Color.Red
         Foreground = Color.White
-        Text = ("Uninstall")
-      }
-      { XiphosSpinner Spinner
-        MoveScaled(21,3,6.25,6.25)
-        Type = Spinner.Dot
+        Picture = Picture["trashcan.png"]
       }
       { XiphosPictureBox PictureBox
-        MoveScaled(2,3,6.25,6.25)
+        MoveScaled(1,1,6.25,6.25)
         Picture = Picture["xiphos.png"]
         Stretch = True
       }
+      { XiphosProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { XiphosLabel Label
+        MoveScaled(9,1,14,3)
+        Font = Font["Bold,+1"]
+        Text = ("Xiphos")
+      }
     }
     { BibleTimeFrame Frame
-      MoveScaled(34,3,29,24)
-      Text = ("BibleTime")
+      MoveScaled(1.875,3,32,14)
       { BibleTimeTextArea TextArea
-        MoveScaled(1,13,27,3)
+        MoveScaled(9,4,15,3)
         Text = ("Bible Study Suite")
         ReadOnly = True
         Wrap = True
         Border = False
       }
       { InstallBibleTimeButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Background = &H41C017&
         Foreground = Color.White
         Text = ("Install")
       }
       { LaunchBibleTimeButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Text = ("Launch")
       }
       { UninstallBibleTimeButton Button
-        MoveScaled(1,19,11,4)
+        MoveScaled(1,9,5,4)
         Background = Color.Red
         Foreground = Color.White
-        Text = ("Uninstall")
-      }
-      { BibleTimeSpinner Spinner
-        MoveScaled(21,3,6.25,6.25)
-        Type = Spinner.Dot
+        Picture = Picture["trashcan.png"]
       }
       { BibleTimePictureBox PictureBox
-        MoveScaled(2,3,6.25,6.25)
+        MoveScaled(1,1,6.25,6.25)
         Picture = Picture["bibletime.png"]
         Stretch = True
       }
+      { BibleTimeProgressBar ProgressBar
+        MoveScaled(3,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { BibleTimeLabel Label
+        MoveScaled(9,1,14,3)
+        Font = Font["Bold,+1"]
+        Text = ("BibleTime")
+      }
     }
     { BibleditFrame Frame
-      MoveScaled(66,3,29,24)
-      Text = ("Bibledit")
+      MoveScaled(35.75,3,32,14)
       { BibleditTextArea TextArea
-        MoveScaled(1,13,27,3)
+        MoveScaled(9,4,22,3)
         Text = ("Bible translation software")
         ReadOnly = True
         Wrap = True
         Border = False
       }
       { InstallBibleditButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Background = &H41C017&
         Foreground = Color.White
         Text = ("Install")
       }
       { LaunchBibleditButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Text = ("Launch")
       }
       { UninstallBibleditButton Button
-        MoveScaled(1,19,11,4)
+        MoveScaled(1,9,5,4)
         Background = Color.Red
         Foreground = Color.White
-        Text = ("Uninstall")
-      }
-      { BibleditSpinner Spinner
-        MoveScaled(21,3,6.25,6.25)
-        Type = Spinner.Dot
+        Picture = Picture["trashcan.png"]
       }
       { BibleditPictureBox PictureBox
-        MoveScaled(2,3,6.25,6.25)
+        MoveScaled(1,1,6.25,6.25)
         Picture = Picture["bibledit.png"]
         Stretch = True
       }
+      { BibleditProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { BibleditLabel Label
+        MoveScaled(9,1,14,3)
+        Font = Font["Bold,+1"]
+        Text = ("Bibledit")
+      }
     }
     { BibleKJVFrame Frame
-      MoveScaled(98,3,29,24)
-      Text = ("Bible KJV (Terminal)")
+      MoveScaled(69.75,3,32,14)
       { BibleKJVTextArea TextArea
-        MoveScaled(1,13,27,3)
-        Text = ("The KJV Bible in the Terminal")
+        MoveScaled(9,5,13,3)
+        Text = ("The KJV Bible")
         ReadOnly = True
         Wrap = True
         Border = False
       }
       { InstallBibleKJVButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Background = &H41C017&
         Foreground = Color.White
         Text = ("Install")
       }
       { LaunchBibleKJVButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Text = ("Launch")
       }
       { UninstallBibleKJVButton Button
-        MoveScaled(1,19,11,4)
+        MoveScaled(1,9,5,4)
         Background = Color.Red
         Foreground = Color.White
-        Text = ("Uninstall")
-      }
-      { BibleKJVSpinner Spinner
-        MoveScaled(21,3,6.25,6.25)
-        Type = Spinner.Dot
+        Picture = Picture["trashcan.png"]
       }
       { BibleKJVPictureBox PictureBox
-        MoveScaled(2,3,6.25,6.25)
+        MoveScaled(1,1,6.25,6.25)
         Picture = Picture["bible-kjv.png"]
         Stretch = True
       }
+      { BibleKJVProgressBar ProgressBar
+        MoveScaled(3,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { BibleKJVLabel Label
+        MoveScaled(9,2,21,3)
+        Font = Font["Bold,+1"]
+        Text = ("Bible KJV (Terminal)")
+      }
     }
     { BollsFrame Frame
-      MoveScaled(2,30,29,24)
-      Text = ("Bolls Bible")
+      MoveScaled(1.875,19,32,14)
       { BollsTextArea TextArea
-        MoveScaled(1,13,27,3)
-        Text = ("Bible app")
+        MoveScaled(9,4,21,3)
+        Text = ("Multi-Translation Bible")
         ReadOnly = True
         Wrap = True
         Border = False
       }
       { InstallBollsBibleButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Background = &H41C017&
         Foreground = Color.White
         Text = ("Install")
       }
       { LaunchBollsButton Button
-        MoveScaled(16,19,12,4)
+        MoveScaled(19,9,12,4)
         Text = ("Launch")
       }
       { UninstallBollsButton Button
-        MoveScaled(1,19,11,4)
+        MoveScaled(1,9,5,4)
         Background = Color.Red
         Foreground = Color.White
-        Text = ("Uninstall")
-      }
-      { BollsSpinner Spinner
-        MoveScaled(21,3,6.25,6.25)
-        Type = Spinner.Dot
+        Picture = Picture["trashcan.png"]
       }
       { BollsPictureBox PictureBox
-        MoveScaled(2,3,6.25,6.25)
+        MoveScaled(2,1,6.25,6.25)
         Picture = Picture["bolls.png"]
         Stretch = True
+      }
+      { BollsProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { BollsLabel Label
+        MoveScaled(9,1,14,3)
+        Font = Font["Bold,+1"]
+        Text = ("Bolls Bible")
       }
     }
     Index = 2
@@ -347,12 +410,12 @@
     Index = 0
   }
   { BlockPanel Panel
-    MoveScaled(1,2,129,61)
+    MoveScaled(-6,-59,138,61)
     Visible = False
     Background = &H69E0E0E0&
   }
   { TerminalView TerminalView
-    MoveScaled(1,2,129,61)
+    MoveScaled(67,64,138,61)
     Visible = False
   }
 }

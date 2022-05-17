@@ -1,3 +1,10 @@
+* Tue May 17 2022 UbuntuCE <support@ubuntuce.com> 0.0.9
+- Updated design layout for testing
+
+* Tue May 17 2022 UbuntuCE <support@ubuntuce.com> 0.0.8
+- Fixed install bug
+- Added opacity to block panel
+
 * Tue May 17 2022 UbuntuCE <support@ubuntuce.com> 0.0.7
 - Added support for snapd
 - Added Bolls Bible
