@@ -96,7 +96,7 @@
       Text = ("Parental Controls")
       { ParentalControlsTextArea TextArea
         MoveScaled(1,13,27,3)
-        Text = ("Parental Controls")
+        Text = ("Protect the kids")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -165,8 +165,156 @@
     }
     Index = 1
     Text = ("Bible Study")
+    { XiphosFrame Frame
+      MoveScaled(2,3,29,24)
+      Text = ("Xiphos")
+      { XiphosTextArea TextArea
+        MoveScaled(1,13,27,3)
+        Text = ("Bible Study Suite")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallXiphosButton Button
+        MoveScaled(16,19,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchXiphosButton Button
+        MoveScaled(16,19,12,4)
+        Text = ("Launch")
+      }
+      { UninstallXiphosButton Button
+        MoveScaled(1,19,11,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Text = ("Uninstall")
+      }
+      { XiphosSpinner Spinner
+        MoveScaled(21,3,6.25,6.25)
+        Type = Spinner.Dot
+      }
+      { XiphosPictureBox PictureBox
+        MoveScaled(2,3,6.25,6.25)
+        Picture = Picture["xiphos.png"]
+        Stretch = True
+      }
+    }
+    { BibleTimeFrame Frame
+      MoveScaled(34,3,29,24)
+      Text = ("BibleTime")
+      { BibleTimeTextArea TextArea
+        MoveScaled(1,13,27,3)
+        Text = ("Bible Study Suite")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallBibleTimeButton Button
+        MoveScaled(16,19,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchBibleTimeButton Button
+        MoveScaled(16,19,12,4)
+        Text = ("Launch")
+      }
+      { UninstallBibleTimeButton Button
+        MoveScaled(1,19,11,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Text = ("Uninstall")
+      }
+      { BibleTimeSpinner Spinner
+        MoveScaled(21,3,6.25,6.25)
+        Type = Spinner.Dot
+      }
+      { BibleTimePictureBox PictureBox
+        MoveScaled(2,3,6.25,6.25)
+        Picture = Picture["bibletime.png"]
+        Stretch = True
+      }
+    }
+    { BibleditFrame Frame
+      MoveScaled(66,3,29,24)
+      Text = ("Bibledit")
+      { BibleditTextArea TextArea
+        MoveScaled(1,13,27,3)
+        Text = ("Bible translation software")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallBibleditButton Button
+        MoveScaled(16,19,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchBibleditButton Button
+        MoveScaled(16,19,12,4)
+        Text = ("Launch")
+      }
+      { UninstallBibleditButton Button
+        MoveScaled(1,19,11,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Text = ("Uninstall")
+      }
+      { BibleditSpinner Spinner
+        MoveScaled(21,3,6.25,6.25)
+        Type = Spinner.Dot
+      }
+      { BibleditPictureBox PictureBox
+        MoveScaled(2,3,6.25,6.25)
+        Picture = Picture["bibledit.png"]
+        Stretch = True
+      }
+    }
+    { BibleKJVFrame Frame
+      MoveScaled(98,3,29,24)
+      Text = ("Bible KJV (Terminal)")
+      { BibleKJVTextArea TextArea
+        MoveScaled(1,13,27,3)
+        Text = ("The KJV Bible in the Terminal")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallBibleKJVButton Button
+        MoveScaled(16,19,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchBibleKJVButton Button
+        MoveScaled(16,19,12,4)
+        Text = ("Launch")
+      }
+      { UninstallBibleKJVButton Button
+        MoveScaled(1,19,11,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Text = ("Uninstall")
+      }
+      { BibleKJVSpinner Spinner
+        MoveScaled(21,3,6.25,6.25)
+        Type = Spinner.Dot
+      }
+      { BibleKJVPictureBox PictureBox
+        MoveScaled(2,3,6.25,6.25)
+        Picture = Picture["bible-kjv.png"]
+        Stretch = True
+      }
+    }
     Index = 2
     Text = ("For Churches")
     Index = 0
+  }
+  { BlockPanel Panel
+    MoveScaled(1,2,129,34)
+    Visible = False
   }
 }

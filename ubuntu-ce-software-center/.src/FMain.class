@@ -8,6 +8,10 @@ Public Sub Form_Open()
   app_check("hostminder", LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
   app_check("ubuntu-ce-parental-controls", LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
   app_check("timekpr-next", LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
+  app_check("xiphos", LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton)
+  app_check("bibletime", LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
+  app_check("bibledit", LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
+  app_check("bible-kjv", LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton) 
 
 End
 
@@ -49,7 +53,7 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
   If Message.Question("Are you sure?") = 1 Then 
     InstallProcess = TerminalView.Shell("pkexec apt install " & appName & " -y")
     
-    ' BlockPanel.Show
+    BlockPanel.Show
     TerminalView.Clear
     installSpinner.Start
     installButton.Enabled = False
@@ -63,7 +67,7 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
     uninstallButton.Enabled = True
     installButton.Hide
     installSpinner.Stop
-    ' BlockPanel.Hide
+    BlockPanel.Hide
     
     InstallProcess = Null
       
@@ -78,7 +82,7 @@ Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As 
   If Message.Question("Are you sure?") = 1 Then 
     UninstallProcess = TerminalView.Shell("pkexec apt autoremove " & appName & " -y")
     
-    ' BlockPanel.Show
+    BlockPanel.Show
     TerminalView.Clear
     installSpinner.Start
     uninstallButton.Enabled = False
@@ -92,7 +96,7 @@ Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As 
     installButton.Enabled = True
     uninstallButton.Hide
     installSpinner.Stop
-    ' BlockPanel.Hide
+    BlockPanel.Hide
     
     UninstallProcess = Null
       
@@ -185,6 +189,78 @@ End
 Public Sub UninstallTimekprButton_Click()
 
   uninstall_app("timekpr-next", TimekprSpinner, LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
+
+End
+
+Public Sub LaunchXiphosButton_Click()
+
+  launch_app("xiphos")
+
+End
+
+Public Sub InstallXiphosButton_Click()
+
+  install_app("xiphos sword-text-web sword-text-kjv", XiphosSpinner, LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton)
+
+End
+
+Public Sub UninstallXiphosButton_Click()
+
+  uninstall_app("xiphos", XiphosSpinner, LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton)
+
+End
+
+Public Sub LaunchBibleTimeButton_Click()
+
+  launch_app("bibletime")
+
+End
+
+Public Sub InstallBibleTimeButton_Click()
+
+  install_app("bibletime sword-text-web sword-text-kjv", BibleTimeSpinner, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
+
+End
+
+Public Sub UninstallBibleTimeButton_Click()
+
+  uninstall_app("bibletime", BibleTimeSpinner, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
+
+End
+
+Public Sub LaunchBibleditButton_Click()
+
+  launch_app("bibledit")
+
+End
+
+Public Sub InstallBibleditButton_Click()
+
+  install_app("bibledit", BibleditSpinner, LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
+
+End
+
+Public Sub UninstallBibleditButton_Click()
+
+  uninstall_app("bibledit", BibleditSpinner, LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
+
+End
+
+Public Sub LaunchBibleKJVButton_Click()
+
+  launch_app("bible", True)
+
+End
+
+Public Sub InstallBibleKJVButton_Click()
+
+  install_app("bible-kjv", BibleKJVSpinner, LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton)
+
+End
+
+Public Sub UninstallBibleKJVButton_Click()
+
+  uninstall_app("bible-kjv", BibleKJVSpinner, LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton)
 
 End
 
