@@ -18,6 +18,8 @@ Public Sub Form_Open()
   app_check("bible-multi-the-life", LaunchBibleMTFButton, InstallBibleMTFButton, UninstallBibleMTFButton, True) 
   app_check("bible-multi-the-son-of-man", LaunchBibleSOMButton, InstallBibleSOMButton, UninstallBibleSOMButton, True) 
   app_check("presenter-by-worship-tools", LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
+  app_check("freeshow", LaunchFreeShowButton, InstallFreeShowButton, UninstallFreeShowButton)
+  app_check("io.gitlab.floodlight.Presenter", LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
 
 End
 
@@ -63,12 +65,24 @@ Sub snap_check()
 End
 
 
-Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
+Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
   
   Dim Result As String
   
   If isSnapd Then 
     Shell ("snap list | grep " & appName & " | awk '{print $1}'") To Result
+    
+    If InStr(Result, appName) = 0 Then 
+      launchButton.Hide
+      installButton.Show
+      uninstallButton.Hide
+    Else 
+      launchButton.Show
+      installButton.Hide
+      uninstallButton.Show
+    Endif
+  Else If isFlatpak Then 
+     Shell ("flatpak list | grep " & appName & " | awk '{print $3}'") To Result
     
     If InStr(Result, appName) = 0 Then 
       launchButton.Hide
@@ -97,13 +111,15 @@ Sub app_check(appName As String, launchButton As Button, installButton As Button
   
 End
 
-Sub install_app(appName As String, installProgressBar As ProgressBar, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
+Sub install_app(appName As String, installProgressBar As ProgressBar, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
 
   Dim InstallProcess As Process
   
   If Message.Question("Are you sure?") = 1 Then 
     If isSnapd Then 
       InstallProcess = TerminalView.Shell("pkexec snap install " & appName)
+    Else If isFlatpak Then 
+      InstallProcess = TerminalView.Shell("pkexec flatpak install flathub " & appName & " -y")
     Else 
       InstallProcess = TerminalView.Shell("pkexec apt install " & appName & " -y")
     Endif
@@ -128,13 +144,15 @@ Sub install_app(appName As String, installProgressBar As ProgressBar, launchButt
   
 End
 
-Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
+Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
 
   Dim UninstallProcess As Process
   
   If Message.Question("Are you sure?") = 1 Then 
     If isSnapd Then 
       UninstallProcess = TerminalView.Shell("pkexec snap remove " & appName)
+     Else If isFlatpak Then 
+      UninstallProcess = TerminalView.Shell("pkexec flatpak remove " & appName)
     Else 
       UninstallProcess = TerminalView.Shell("pkexec apt autoremove " & appName & " -y")
     Endif
@@ -161,10 +179,12 @@ Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchBu
 End
 
 
-Sub launch_app(appName As String, Optional isTerminal As Boolean, Optional isSudo As Boolean)
+Sub launch_app(appName As String, Optional isTerminal As Boolean = False, Optional isFlatpak As Boolean = False, Optional isSudo As Boolean = False)
   
   If isTerminal Then 
     Exec ["gnome-terminal", "--", "bash", "-c", appName]
+  Else If isFlatpak Then 
+    Exec ["flatpak", "run", appName]
   Else 
     If isSudo Then 
       Shell (appName)
@@ -232,7 +252,7 @@ End
 
 Public Sub LaunchTimekprButton_Click()
 
-  launch_app("pkexec /usr/bin/timekpra", False, True)
+  launch_app("pkexec /usr/bin/timekpra", False, False, True)
 
 End
 
@@ -409,6 +429,43 @@ Public Sub UninstallPresenterButton_Click()
   uninstall_app("presenter-by-worship-tools", PresenterProgressBar, LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
 
 End
+
+Public Sub LaunchFreeShowButton_Click()
+
+  launch_app("freeshow")
+
+End
+
+Public Sub InstallFreeShowButton_Click()
+
+  install_app("freeshow", FreeShowProgressBar, LaunchFreeShowButton, InstallFreeShowButton, UninstallFreeShowButton)
+
+End
+
+Public Sub UninstallFreeShowButton_Click()
+
+  uninstall_app("freeshow", FreeShowProgressBar, LaunchFreeShowButton, InstallFreeShowButton, UninstallFreeShowButton)
+
+End
+
+Public Sub LaunchFloodlightButton_Click()
+
+  launch_app("io.gitlab.floodlight.Presenter", False, True)
+
+End
+
+Public Sub InstallFloodlightButton_Click()
+
+  install_app("io.gitlab.floodlight.Presenter", FloodightProgressBar, LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
+
+End
+
+Public Sub UninstallFloodlightButton_Click()
+
+  uninstall_app("io.gitlab.floodlight.Presenter", FloodightProgressBar, LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
+
+End
+
 
 Public Sub ShowDetailsButton_Click()
 

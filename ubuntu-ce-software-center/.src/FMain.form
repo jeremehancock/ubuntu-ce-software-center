@@ -540,7 +540,7 @@
       MoveScaled(2,3,32,14)
       { PresenterTextArea TextArea
         MoveScaled(9,4,22,3)
-        Text = ("by WorshipTools")
+        Text = ("Church Presentaton app")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -576,7 +576,93 @@
       { PresenterLabel Label
         MoveScaled(9,1,22,3)
         Font = Font["Bold,+1"]
-        Text = ("Presenter")
+        Text = ("Presenter by WT")
+      }
+    }
+    { FreeShowFrame Frame
+      MoveScaled(36,3,32,14)
+      { FreeShowTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Church Presentation app")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallFreeShowButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchFreeShowButton Button
+        MoveScaled(19,9,12,4)
+        Text = ("Launch")
+      }
+      { UninstallFreeShowButton Button
+        MoveScaled(1,9,5,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Picture = Picture["trashcan.png"]
+      }
+      { FreeShowPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["freeshow.png"]
+        Stretch = True
+      }
+      { FreeShowProgressBar ProgressBar
+        MoveScaled(3,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { FreeShowLabel Label
+        MoveScaled(9,1,22,3)
+        Font = Font["Bold,+1"]
+        Text = ("FreeShow")
+      }
+    }
+    { FloodlightFrame Frame
+      MoveScaled(70,3,32,14)
+      { FloodlightTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Church Presentation app")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallFloodlightButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchFloodlightButton Button
+        MoveScaled(19,9,12,4)
+        Text = ("Launch")
+      }
+      { UninstallFloodlightButton Button
+        MoveScaled(1,9,5,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Picture = Picture["trashcan.png"]
+      }
+      { FloodlightPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["floodlight.png"]
+        Stretch = True
+      }
+      { FloodightProgressBar ProgressBar
+        MoveScaled(3,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { FloodlightLabel Label
+        MoveScaled(9,1,22,3)
+        Font = Font["Bold,+1"]
+        Text = ("Floodlight Presenter")
       }
     }
     Index = 0
