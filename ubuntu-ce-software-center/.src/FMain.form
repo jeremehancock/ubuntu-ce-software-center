@@ -405,8 +405,8 @@
         Text = ("Bolls Bible")
       }
     }
-    { BollsFrame2 Frame
-      MoveScaled(35.75,19,32,14)
+    { DabPlayerFrame Frame
+      MoveScaled(36,19,32,14)
       { DabPlayerTextArea TextArea
         MoveScaled(9,4,21,3)
         Text = ("Audio Bible Player")
@@ -446,6 +446,49 @@
         MoveScaled(9,1,18,3)
         Font = Font["Bold,+1"]
         Text = ("Daily Audio Bible")
+      }
+    }
+    { BibleMTFFrame Frame
+      MoveScaled(69.75,19,32,14)
+      { BibleMTFTextArea TextArea
+        MoveScaled(9,4,21,3)
+        Text = ("Multi-Translation Bible")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallBibleMTFButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchBibleMTFButton Button
+        MoveScaled(19,9,12,4)
+        Text = ("Launch")
+      }
+      { UninstallBibleMTFButton Button
+        MoveScaled(1,9,5,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Picture = Picture["trashcan.png"]
+      }
+      { BibleMTFPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["bible-mtl.png"]
+        Stretch = True
+      }
+      { BibleMTFProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { BibleMTFLabel Label
+        MoveScaled(9,1,20,3)
+        Font = Font["Bold,+1"]
+        Text = ("Bible Multi The Life")
       }
     }
     Index = 2

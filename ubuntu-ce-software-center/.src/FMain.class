@@ -15,6 +15,7 @@ Public Sub Form_Open()
   app_check("bible-kjv", LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton) 
   app_check("bolls", LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
   app_check("dab-player", LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, True)  
+  app_check("bible-multi-the-life", LaunchBibleMTFButton, InstallBibleMTFButton, UninstallBibleMTFButton, True)  
 
 End
 
@@ -352,6 +353,25 @@ Public Sub UninstallDabPlayerButton_Click()
   uninstall_app("dab-player", DabPlayerProgressBar, LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, True)
 
 End
+
+Public Sub LaunchBibleMTFButton_Click()
+
+  launch_app("bible-multi-the-life")
+
+End
+
+Public Sub InstallBibleMTFButton_Click()
+
+  install_app("bible-multi-the-life", BibleMTFProgressBar, LaunchBibleMTFButton, InstallBibleMTFButton, UninstallBibleMTFButton, True)
+
+End
+
+Public Sub UninstallBibleMTFButton_Click()
+
+  uninstall_app("bible-multi-the-life", BibleMTFProgressBar, LaunchBibleMTFButton, InstallBibleMTFButton, UninstallBibleMTFButton, True)
+
+End
+
 
 Public Sub ShowDetailsButton_Click()
 
