@@ -32,12 +32,29 @@ End
 Sub snap_check()
   
   Dim Result As String
+  Dim InstallProcess As Process
   
-    Shell ("apt-cache policy snapd | grep 'none' | awk '{print $2}'") To Result
+  Shell ("apt-cache policy snapd | grep 'none' | awk '{print $2}'") To Result
+  
+  If InStr(Result, "(none)") = 1 Then 
+    If Message.Warning("The Snapd package is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
+      InstallProcess = TerminalView.Shell("pkexec apt install snapd -y")
+      
+      BlockPanel.Show
+      TerminalView.Clear
+
+      Do
+        Try Wait 0.5    
+      Loop Until InstallProcess.State = 0
     
-    If InStr(Result, "(none)\n") = 1 Then 
-      Message.Error("Snapd is not installed!")
+      BlockPanel.Hide
+      
+      InstallProcess = Null
+      
+    Else 
+      Quit
     Endif
+  Endif
     
 End
 
@@ -61,7 +78,7 @@ Sub app_check(appName As String, launchButton As Button, installButton As Button
   Else 
     Shell ("apt-cache policy " & appName & " | grep 'none' | awk '{print $2}'") To Result
     
-    If InStr(Result, "(none)\n") = 1 Then 
+    If InStr(Result, "(none)") = 1 Then 
       launchButton.Hide
       installButton.Show
       uninstallButton.Hide
@@ -76,7 +93,7 @@ Sub app_check(appName As String, launchButton As Button, installButton As Button
   
 End
 
-Sub install_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
+Sub install_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button, isSnapd As Boolean)
 
   Dim InstallProcess As Process
   

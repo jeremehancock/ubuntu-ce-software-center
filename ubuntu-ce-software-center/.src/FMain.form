@@ -350,7 +350,7 @@
     Index = 0
   }
   { BlockPanel Panel
-    MoveScaled(54,2,59,4)
+    MoveScaled(1,2,130,61)
     Visible = False
   }
 }
