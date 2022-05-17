@@ -216,7 +216,7 @@
         Picture = Picture["trashcan.png"]
       }
       { XiphosPictureBox PictureBox
-        MoveScaled(1,1,6.25,6.25)
+        MoveScaled(1,0,6.25,6.25)
         Picture = Picture["xiphos.png"]
         Stretch = True
       }
@@ -322,7 +322,7 @@
     { BibleKJVFrame Frame
       MoveScaled(69.75,3,32,14)
       { BibleKJVTextArea TextArea
-        MoveScaled(9,5,13,3)
+        MoveScaled(9,4,13,3)
         Text = ("The KJV Bible")
         ReadOnly = True
         Wrap = True
@@ -357,7 +357,7 @@
         Pulse = True
       }
       { BibleKJVLabel Label
-        MoveScaled(9,2,21,3)
+        MoveScaled(9,1,21,3)
         Font = Font["Bold,+1"]
         Text = ("Bible KJV (Terminal)")
       }
@@ -388,7 +388,7 @@
         Picture = Picture["trashcan.png"]
       }
       { BollsPictureBox PictureBox
-        MoveScaled(2,1,6.25,6.25)
+        MoveScaled(1,1,6.25,6.25)
         Picture = Picture["bolls.png"]
         Stretch = True
       }
@@ -405,12 +405,55 @@
         Text = ("Bolls Bible")
       }
     }
+    { BollsFrame2 Frame
+      MoveScaled(35.75,19,32,14)
+      { DabPlayerTextArea TextArea
+        MoveScaled(9,4,21,3)
+        Text = ("Audio Bible Player")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallDabPlayerButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchDabPlayerButton Button
+        MoveScaled(19,9,12,4)
+        Text = ("Launch")
+      }
+      { UninstallDabPlayerButton Button
+        MoveScaled(1,9,5,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Picture = Picture["trashcan.png"]
+      }
+      { DabPlayerPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["dab-player.png"]
+        Stretch = True
+      }
+      { DabPlayerProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { DabPlayerLabel Label
+        MoveScaled(9,1,18,3)
+        Font = Font["Bold,+1"]
+        Text = ("Daily Audio Bible")
+      }
+    }
     Index = 2
     Text = ("For Churches")
     Index = 0
   }
   { BlockPanel Panel
-    MoveScaled(-6,-59,138,61)
+    MoveScaled(-4,-59,138,61)
     Visible = False
     Background = &H69E0E0E0&
   }

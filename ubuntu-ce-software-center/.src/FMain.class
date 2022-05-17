@@ -13,7 +13,8 @@ Public Sub Form_Open()
   app_check("bibletime", LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
   app_check("bibledit", LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
   app_check("bible-kjv", LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton) 
-  app_check("bolls", LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True) 
+  app_check("bolls", LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
+  app_check("dab-player", LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, True)  
 
 End
 
@@ -331,6 +332,24 @@ End
 Public Sub UninstallBollsButton_Click()
 
   uninstall_app("bolls", BollsProgressBar, LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
+
+End
+
+Public Sub LaunchDabPlayerButton_Click()
+
+  launch_app("dab-player")
+
+End
+
+Public Sub InstallDabPlayerButton_Click()
+
+  install_app("dab-player", DabPlayerProgressBar, LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, True)
+
+End
+
+Public Sub UninstallDabPlayerButton_Click()
+
+  uninstall_app("dab-player", DabPlayerProgressBar, LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, True)
 
 End
 
