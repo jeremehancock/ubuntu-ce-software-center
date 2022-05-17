@@ -12,6 +12,7 @@ Public Sub Form_Open()
   app_check("bibletime", LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
   app_check("bibledit", LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
   app_check("bible-kjv", LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton) 
+  app_check("bolls", LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True) 
 
 End
 
@@ -27,31 +28,50 @@ Sub repo_check()
   
 End
 
-Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button)
+Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
   
   Dim Result As String
   
-  Shell ("apt-cache policy " & appName & " | grep 'none' | awk '{print $2}'") To Result
-   
-  If InStr(Result, "(none)\n") = 1 Then 
-    launchButton.Hide
-    installButton.Show
-    uninstallButton.Hide
+  If isSnapd Then 
+    Shell ("snap list | grep " & appName & " | awk '{print $1}'") To Result
+    
+    If InStr(Result, appName) = 0 Then 
+      launchButton.Hide
+      installButton.Show
+      uninstallButton.Hide
+    Else 
+      launchButton.Show
+      installButton.Hide
+      uninstallButton.Show
+    Endif
   Else 
-    launchButton.Show
-    installButton.Hide
-    uninstallButton.Show
+    Shell ("apt-cache policy " & appName & " | grep 'none' | awk '{print $2}'") To Result
+    
+    If InStr(Result, "(none)\n") = 1 Then 
+      launchButton.Hide
+      installButton.Show
+      uninstallButton.Hide
+    Else 
+      launchButton.Show
+      installButton.Hide
+      uninstallButton.Show
+    Endif
   Endif
+
   
   
 End
 
-Sub install_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button)
+Sub install_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
 
   Dim InstallProcess As Process
   
   If Message.Question("Are you sure?") = 1 Then 
-    InstallProcess = TerminalView.Shell("pkexec apt install " & appName & " -y")
+    If isSnapd Then 
+      InstallProcess = TerminalView.Shell("pkexec snap install " & appName)
+    Else 
+      InstallProcess = TerminalView.Shell("pkexec apt install " & appName & " -y")
+    Endif
     
     BlockPanel.Show
     TerminalView.Clear
@@ -75,12 +95,16 @@ Sub install_app(appName As String, installSpinner As Spinner, launchButton As Bu
   
 End
 
-Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button)
+Sub uninstall_app(appName As String, installSpinner As Spinner, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean)
 
   Dim UninstallProcess As Process
   
   If Message.Question("Are you sure?") = 1 Then 
-    UninstallProcess = TerminalView.Shell("pkexec apt autoremove " & appName & " -y")
+    If isSnapd Then 
+      UninstallProcess = TerminalView.Shell("pkexec snap remove " & appName)
+    Else 
+      UninstallProcess = TerminalView.Shell("pkexec apt autoremove " & appName & " -y")
+    Endif
     
     BlockPanel.Show
     TerminalView.Clear
@@ -261,6 +285,24 @@ End
 Public Sub UninstallBibleKJVButton_Click()
 
   uninstall_app("bible-kjv", BibleKJVSpinner, LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton)
+
+End
+
+Public Sub LaunchBollsButton_Click()
+
+  launch_app("bolls")
+
+End
+
+Public Sub InstallBollsBibleButton_Click()
+
+  install_app("bolls", BollsSpinner, LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
+
+End
+
+Public Sub UninstallBollsButton_Click()
+
+  uninstall_app("bolls", BollsSpinner, LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
 
 End
 

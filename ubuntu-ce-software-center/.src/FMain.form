@@ -1,21 +1,21 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,131,43)
+  MoveScaled(0,0,131,89)
   Resizable = False
   { HideDetailsButton Button
-    MoveScaled(1,38,16,4)
+    MoveScaled(1,65,16,4)
     Text = ("Hide Details")
   }
   { ShowDetailsButton Button
-    MoveScaled(1,38,16,4)
+    MoveScaled(1,65,16,4)
     Text = ("Show Details")
   }
   { TerminalView TerminalView
-    MoveScaled(1,44,129,24)
+    MoveScaled(1,70,129,17)
   }
   { Tabs TabStrip
-    MoveScaled(1,2,129,34)
+    MoveScaled(1,2,129,61)
     Count = 3
     Index = 0
     Text = ("Family Settings")
@@ -309,12 +309,48 @@
         Stretch = True
       }
     }
+    { BollsFrame Frame
+      MoveScaled(2,30,29,24)
+      Text = ("Bolls Bible")
+      { BollsTextArea TextArea
+        MoveScaled(1,13,27,3)
+        Text = ("Bible app")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallBollsBibleButton Button
+        MoveScaled(16,19,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchBollsButton Button
+        MoveScaled(16,19,12,4)
+        Text = ("Launch")
+      }
+      { UninstallBollsButton Button
+        MoveScaled(1,19,11,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Text = ("Uninstall")
+      }
+      { BollsSpinner Spinner
+        MoveScaled(21,3,6.25,6.25)
+        Type = Spinner.Dot
+      }
+      { BollsPictureBox PictureBox
+        MoveScaled(2,3,6.25,6.25)
+        Picture = Picture["bolls.png"]
+        Stretch = True
+      }
+    }
     Index = 2
     Text = ("For Churches")
     Index = 0
   }
   { BlockPanel Panel
-    MoveScaled(1,2,129,34)
+    MoveScaled(54,2,59,4)
     Visible = False
   }
 }
