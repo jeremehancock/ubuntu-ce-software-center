@@ -1,3 +1,6 @@
+* Wed May 18 2022 UbuntuCE <support@ubuntuce.com> 0.0.23
+- Fixed repo check
+
 * Wed May 18 2022 UbuntuCE <support@ubuntuce.com> 0.0.21
 - Updated to allow use without snapd or flatpak. It will now just hide those apps
 - Updated gambas3-gb-gtk3-x11 dependency
