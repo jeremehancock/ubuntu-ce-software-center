@@ -1,3 +1,7 @@
+* Wed May 18 2022 UbuntuCE <support@ubuntuce.com> 0.0.16
+- Added missing gambas3-gb-gui, gambas-gb-gtk3-wayland, gnome-terminal, curl, wget dependencies
+- Added Flathub repo check
+
 * Wed May 18 2022 UbuntuCE <support@ubuntuce.com> 0.0.12
 - Adding missing gambas3-gb-jit dependency
 

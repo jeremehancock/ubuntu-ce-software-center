@@ -4,6 +4,7 @@
 Public Sub Form_Open()
 
   repo_check()
+  flathub_check()
   initialize()
 
 End
@@ -35,8 +36,8 @@ End
 Sub repo_check()
     
   If Not Exist("/etc/apt/sources.list.d/ubuntuce-jammy.list") Then
-    If Message.Warning("The UbuntuCE Repo is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
-      Exec ["gnome-terminal", "--", "bash", "-c", "wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output ubuntuce.gpg --dearmor KEY.gpg && sudo mv ubuntuce.gpg /usr/share/keyrings/ && rm KEY.gpg && sudo apt install curl -y && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
+    If Message.Warning("The UbuntuCE Repository is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
+      Exec ["gnome-terminal", "--", "bash", "-c", "wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output ubuntuce.gpg --dearmor KEY.gpg && sudo mv ubuntuce.gpg /usr/share/keyrings/ && rm KEY.gpg && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
       initialize()
     Else 
       Quit
@@ -44,6 +45,22 @@ Sub repo_check()
   Endif
   
 End
+
+Sub flathub_check()
+  
+  Dim Result As String
+  
+  Shell ("flatpak remotes | grep 'flathub' | awk '{print $1}'") To Result
+  
+  If InStr(Result, "flathub") = 0 Then
+    If Message.Warning("The Flathub Repository is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
+      Exec ["gnome-terminal", "--", "bash", "-c", "flatpak remote-add --if-not-exists flathub"]
+      initialize()
+    Endif
+  Endif
+  
+End
+
 
 Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
   
