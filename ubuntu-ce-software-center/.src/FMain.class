@@ -118,6 +118,8 @@ Sub install_app(appName As String, installProgressBar As ProgressBar, launchButt
     ExitButton.Enabled = True
     
     InstallProcess = Null
+    
+    app_check(appName, launchButton, installButton, uninstallButton)
       
   Endif
   
@@ -155,6 +157,8 @@ Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchBu
     ExitButton.Enabled = True
     
     UninstallProcess = Null
+    
+    app_check(appName, launchButton, installButton, uninstallButton)
       
   Endif
   
