@@ -35,6 +35,7 @@ Sub repo_check()
   If Not Exist("/etc/apt/sources.list.d/ubuntuce-jammy.list") Then
     If Message.Warning("The UbuntuCE Repo is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
       Exec ["gnome-terminal", "--", "bash", "-c", "wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output ubuntuce.gpg --dearmor KEY.gpg && sudo mv ubuntuce.gpg /usr/share/keyrings/ && rm KEY.gpg && sudo apt install curl -y && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
+      initialize()
     Else 
       Quit
     Endif
