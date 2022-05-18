@@ -495,7 +495,7 @@ End
 Public Sub ShowDetailsButton_Click()
 
   TerminalView.Show
-  TerminalView.H = 488
+  TerminalView.H = 448
   ShowDetailsButton.Hide
   HideDetailsButton.Show
 
