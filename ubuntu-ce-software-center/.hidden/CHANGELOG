@@ -1,4 +1,7 @@
 * Wed May 18 2022 UbuntuCE <support@ubuntuce.com> 0.0.12
+- Adding missing gambas3-gb-jit dependency
+
+* Wed May 18 2022 UbuntuCE <support@ubuntuce.com> 0.0.12
 - Added placeholder for Quelea (will enable once bug is fixed upstream)
 - Added Accounable2You
 - Added Info buttons

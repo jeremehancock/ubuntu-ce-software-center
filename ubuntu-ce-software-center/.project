@@ -22,4 +22,4 @@ Systems=ubuntu
 Menus=ubuntu:"Applications/System/Package Management"
 Categories=ubuntu:"System"
 Groups=ubuntu:"utils"
-ExtraDependencies=ubuntu:"snapd\t\t\nflatpak\t\t"
+ExtraDependencies=ubuntu:"snapd\t\t\nflatpak\t\t\ngambas3-gb-jit\t\t"
