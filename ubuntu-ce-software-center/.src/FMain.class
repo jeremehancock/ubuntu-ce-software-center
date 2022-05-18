@@ -54,13 +54,12 @@ Sub flathub_check()
   
   If InStr(Result, "flathub") = 0 Then
     If Message.Warning("The Flathub Repository is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
-      Exec ["gnome-terminal", "--", "bash", "-c", "flatpak remote-add --if-not-exists flathub"]
+      Shell ("flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo")
       initialize()
     Endif
   Endif
   
 End
-
 
 Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
   
