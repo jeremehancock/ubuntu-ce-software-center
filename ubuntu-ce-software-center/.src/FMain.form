@@ -701,7 +701,7 @@
     Index = 2
     Text = ("For Churches")
     { PresenterFrame Frame
-      MoveScaled(69.75,3,32,14)
+      MoveScaled(35.75,3,32,14)
       { PresenterTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Church Presentaton app")
@@ -799,7 +799,7 @@
       }
     }
     { FloodlightFrame Frame
-      MoveScaled(35.75,3,32,14)
+      MoveScaled(70,3,32,14)
       { FloodlightTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Church Presentation app")

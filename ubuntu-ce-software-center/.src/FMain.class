@@ -36,11 +36,17 @@ End
 Sub repo_check()
     
   If Not Exist("/etc/apt/sources.list.d/ubuntuce-jammy.list") Then
-    If Message.Warning("The UbuntuCE Repository is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
+    If Message.Warning("The UbuntuCE Repository is not installed. \n\n It is required to have access to all available apps! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
       Exec ["gnome-terminal", "--", "bash", "-c", "wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output ubuntuce.gpg --dearmor KEY.gpg && sudo mv ubuntuce.gpg /usr/share/keyrings/ && rm KEY.gpg && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
       initialize()
     Else 
-      Quit
+      Accountable2youFrame.Hide
+      BollsFrame.Hide
+      BibleMTFFrame.Hide
+      BibleSOMFrame.Hide
+      DabPlayerFrame.Hide
+      BibrefFrame.Hide
+      QueleaFrame.Hide
     Endif
   Endif
   
@@ -53,9 +59,11 @@ Sub flathub_check()
   Shell ("flatpak remotes | grep 'flathub' | awk '{print $1}'") To Result
   
   If InStr(Result, "flathub") = 0 Then
-    If Message.Warning("The Flathub Repository is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
+    If Message.Warning("The Flathub Repository is not installed. \n\n It is required to have access to all available apps! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
       Shell ("flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo")
       initialize()
+    Else 
+      FloodlightFrame.Hide
     Endif
   Endif
   
