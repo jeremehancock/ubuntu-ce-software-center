@@ -1,14 +1,15 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,140,70)
+  MoveScaled(0,0,140,69)
+  Text = ("UbuntuCE Software Center")
   Resizable = False
   { HideDetailsButton Button
-    MoveScaled(1,65,16,4)
+    MoveScaled(1,64,16,4)
     Text = ("Hide Details")
   }
   { ShowDetailsButton Button
-    MoveScaled(1,65,16,4)
+    MoveScaled(1,64,16,4)
     Text = ("Show Details")
   }
   { Tabs TabStrip
@@ -667,13 +668,17 @@
     }
     Index = 0
   }
+  { ExitButton Button
+    MoveScaled(123,64,16,4)
+    Text = ("Exit")
+  }
   { BlockPanel Panel
-    MoveScaled(-4,-59,138,61)
+    MoveScaled(1,-60,138,61)
     Visible = False
     Background = &H69E0E0E0&
   }
   { TerminalView TerminalView
-    MoveScaled(67,64,138,61)
+    MoveScaled(1,2,138,0)
     Visible = False
   }
 }

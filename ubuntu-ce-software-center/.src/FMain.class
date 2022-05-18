@@ -4,7 +4,12 @@
 Public Sub Form_Open()
 
   repo_check()
-  snap_check()
+  initialize()
+
+End
+
+Sub initialize()
+  
   app_check("dnsminder", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
   app_check("hostminder", LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
   app_check("ubuntu-ce-parental-controls", LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
@@ -20,8 +25,9 @@ Public Sub Form_Open()
   app_check("presenter-by-worship-tools", LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
   app_check("freeshow", LaunchFreeShowButton, InstallFreeShowButton, UninstallFreeShowButton)
   app_check("io.gitlab.floodlight.Presenter", LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
-
+  
 End
+
 
 Sub repo_check()
     
@@ -34,36 +40,6 @@ Sub repo_check()
   Endif
   
 End
-
-Sub snap_check()
-  
-  Dim Result As String
-  Dim InstallProcess As Process
-  
-  Shell ("apt-cache policy snapd | grep 'none' | awk '{print $2}'") To Result
-  
-  If InStr(Result, "(none)") = 1 Then 
-    If Message.Warning("The Snapd package is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
-      InstallProcess = TerminalView.Shell("pkexec apt install snapd -y")
-      
-      BlockPanel.Show
-      TerminalView.Clear
-
-      Do
-        Try Wait 0.5    
-      Loop Until InstallProcess.State = 0
-    
-      BlockPanel.Hide
-      
-      InstallProcess = Null
-      
-    Else 
-      Quit
-    Endif
-  Endif
-    
-End
-
 
 Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
   
@@ -125,6 +101,7 @@ Sub install_app(appName As String, installProgressBar As ProgressBar, launchButt
     Endif
     
     BlockPanel.Show
+    BlockPanel.Top = 14
     TerminalView.Clear
     installProgressBar.Show
     installButton.Hide
@@ -158,6 +135,7 @@ Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchBu
     Endif
     
     BlockPanel.Show
+    BlockPanel.Top = 14
     TerminalView.Clear
     installProgressBar.Show
     uninstallButton.Hide
@@ -470,6 +448,7 @@ End
 Public Sub ShowDetailsButton_Click()
 
   TerminalView.Show
+  TerminalView.H = 488
   ShowDetailsButton.Hide
   HideDetailsButton.Show
 
@@ -478,7 +457,14 @@ End
 Public Sub HideDetailsButton_Click()
 
   TerminalView.Hide
+  TerminalView.H = 0
   HideDetailsButton.Hide
   ShowDetailsButton.Show
+
+End
+
+Public Sub ExitButton_Click()
+
+  Quit
 
 End
