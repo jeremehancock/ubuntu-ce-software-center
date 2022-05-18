@@ -4,14 +4,7 @@
   MoveScaled(0,0,140,64)
   Text = ("UbuntuCE Software Center")
   Resizable = False
-  { HideDetailsButton Button
-    MoveScaled(1,59,16,4)
-    Text = ("Hide Details")
-  }
-  { ShowDetailsButton Button
-    MoveScaled(1,59,16,4)
-    Text = ("Show Details")
-  }
+  Utility = True
   { Tabs TabStrip
     MoveScaled(1,2,138,56)
     Count = 3
@@ -37,7 +30,7 @@
         Text = ("Launch")
       }
       { UninstallDNSMinderButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -123,7 +116,7 @@
         Text = ("Launch")
       }
       { UninstallParentalControlsButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -189,6 +182,49 @@
         Text = ("Timekpr-nExT")
       }
     }
+    { Accountable2youFrame Frame
+      MoveScaled(2,19,32,14)
+      { Accountable2youTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Accountability Software")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallAccountable2youButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchAccountable2youButton Button
+        MoveScaled(19,9,12,4)
+        Text = ("Launch")
+      }
+      { UninstallAccountable2youButton Button
+        MoveScaled(1,9,4,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Picture = Picture["trashcan.png"]
+      }
+      { Accountable2youPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["accountable2you.png"]
+        Stretch = True
+      }
+      { Accountable2youProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { Accountable2youLabel Label
+        MoveScaled(9,1,20,3)
+        Font = Font["Bold,+1"]
+        Text = ("Accountable2You")
+      }
+    }
     Index = 1
     Text = ("Bible Study")
     { XiphosFrame Frame
@@ -211,7 +247,7 @@
         Text = ("Launch")
       }
       { UninstallXiphosButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -254,7 +290,7 @@
         Text = ("Launch")
       }
       { UninstallBibleTimeButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -297,7 +333,7 @@
         Text = ("Launch")
       }
       { UninstallBibleditButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -340,7 +376,7 @@
         Text = ("Launch")
       }
       { UninstallBibleKJVButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -383,7 +419,7 @@
         Text = ("Launch")
       }
       { UninstallBollsButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -426,7 +462,7 @@
         Text = ("Launch")
       }
       { UninstallDabPlayerButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -469,7 +505,7 @@
         Text = ("Launch")
       }
       { UninstallBibleMTFButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -512,7 +548,7 @@
         Text = ("Launch")
       }
       { UninstallBibleSOMButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -555,7 +591,7 @@
         Text = ("Launch")
       }
       { UninstallBibrefButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -600,7 +636,7 @@
         Text = ("Launch")
       }
       { UninstallPresenterButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -643,7 +679,7 @@
         Text = ("Launch")
       }
       { UninstallFreeShowButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -686,7 +722,7 @@
         Text = ("Launch")
       }
       { UninstallFloodlightButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -730,7 +766,7 @@
         Text = ("Launch")
       }
       { UninstallQueleaButton Button
-        MoveScaled(1,9,5,4)
+        MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
         Picture = Picture["trashcan.png"]
@@ -767,5 +803,11 @@
   { TerminalView TerminalView
     MoveScaled(1,2,138,0)
     Visible = False
+  }
+  { TerminalToggle ToggleButton
+    MoveScaled(1,59,17,4)
+    AutoResize = True
+    Text = ("Show Details")
+    Picture = Picture["terminal.png"]
   }
 }

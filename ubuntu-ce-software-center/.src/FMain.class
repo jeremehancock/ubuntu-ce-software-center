@@ -27,6 +27,7 @@ Sub initialize()
   app_check("io.gitlab.floodlight.Presenter", LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
   ' app_check("quelea", LaunchQueleaButton, InstallQueleaButton, UninstallQueleaButton, True) 
   app_check("bibref", LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
+  app_check("accountable2you", LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, True)
   
 End
 
@@ -473,45 +474,40 @@ Public Sub UninstallQueleaButton_Click()
 
 End
 
-Public Sub LaunchBibrefButton_Click()
+Public Sub LaunchAccountable2youButton_Click()
 
-  launch_app("bibref", True)
-
-End
-
-Public Sub InstallBibrefButton_Click()
-
-  install_app("bibref", BibrefProgressBar, LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
+  launch_app("accountable2you")
 
 End
 
-Public Sub UninstallBibrefButton_Click()
+Public Sub InstallAccountable2youButton_Click()
 
-  uninstall_app("bibref", BibrefProgressBar, LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
-
-End
-
-
-Public Sub ShowDetailsButton_Click()
-
-  TerminalView.Show
-  TerminalView.H = 448
-  ShowDetailsButton.Hide
-  HideDetailsButton.Show
+  install_app("accountable2you", Accountable2youProgressBar, LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, True)
 
 End
 
-Public Sub HideDetailsButton_Click()
+Public Sub UninstallAccountable2youButton_Click()
 
-  TerminalView.Hide
-  TerminalView.H = 0
-  HideDetailsButton.Hide
-  ShowDetailsButton.Show
+  uninstall_app("accountable2you", Accountable2youProgressBar, LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, True)
 
 End
 
 Public Sub ExitButton_Click()
 
   Quit
+
+End
+
+Public Sub TerminalToggle_Click()
+
+  If TerminalToggle.Value = 0 Then
+    TerminalView.Hide
+    TerminalView.H = 0
+    TerminalToggle.Text = "Show Details"
+  Else 
+    TerminalView.Show
+    TerminalView.H = 448
+    TerminalToggle.Text = "Hide Details"
+  Endif
 
 End

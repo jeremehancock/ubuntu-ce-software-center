@@ -1,3 +1,9 @@
+* Tue May 17 2022 UbuntuCE <support@ubuntuce.com> 0.0.10
+- Added flatpak support
+- Added several apps
+- Updated terminal toggle
+- clean up
+
 * Tue May 17 2022 UbuntuCE <support@ubuntuce.com> 0.0.9
 - Updated design layout for testing
 
