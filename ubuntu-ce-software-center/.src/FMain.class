@@ -105,6 +105,7 @@ Sub install_app(appName As String, installProgressBar As ProgressBar, launchButt
     TerminalView.Clear
     installProgressBar.Show
     installButton.Hide
+    ExitButton.Enabled = False
     Do
       Try Wait 0.5    
     Loop Until InstallProcess.State = 0
@@ -114,6 +115,7 @@ Sub install_app(appName As String, installProgressBar As ProgressBar, launchButt
     installButton.Hide
     installProgressBar.Hide
     BlockPanel.Hide
+    ExitButton.Enabled = True
     
     InstallProcess = Null
       
@@ -140,6 +142,7 @@ Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchBu
     installProgressBar.Show
     uninstallButton.Hide
     launchButton.Hide
+    ExitButton.Enabled = False
     Do
       Try Wait 0.5    
     Loop Until UninstallProcess.State = 0
@@ -149,6 +152,7 @@ Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchBu
     uninstallButton.Hide
     installProgressBar.Hide
     BlockPanel.Hide
+    ExitButton.Enabled = True
     
     UninstallProcess = Null
       
