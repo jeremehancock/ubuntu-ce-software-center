@@ -49,7 +49,7 @@
       }
       { DNSMinderLabel Label
         MoveScaled(9,1,14,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("DNS Minder")
       }
       { DNSMinderInfoButton PictureBox
@@ -98,8 +98,14 @@
       }
       { HostMinderLabel Label
         MoveScaled(9,1,14,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Host Minder")
+      }
+      { HostMinderInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { ParentalControlsFrame Frame
@@ -141,8 +147,14 @@
       }
       { ParentalControlsLabel Label
         MoveScaled(8,1,18,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Parental Controls")
+      }
+      { ParentalControlsInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { TimekprFrame Frame
@@ -184,8 +196,14 @@
       }
       { TimekprLabel Label
         MoveScaled(9,1,18,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Timekpr-nExT")
+      }
+      { TimekprInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { Accountable2youFrame Frame
@@ -227,8 +245,14 @@
       }
       { Accountable2youLabel Label
         MoveScaled(9,1,20,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Accountable2You")
+      }
+      { Accountable2youInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     Index = 1
@@ -272,8 +296,14 @@
       }
       { XiphosLabel Label
         MoveScaled(9,1,14,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Xiphos")
+      }
+      { XiphosInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { BibleTimeFrame Frame
@@ -315,8 +345,14 @@
       }
       { BibleTimeLabel Label
         MoveScaled(9,1,14,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("BibleTime")
+      }
+      { BibleTimeInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { BibleditFrame Frame
@@ -358,8 +394,14 @@
       }
       { BibleditLabel Label
         MoveScaled(9,1,14,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Bibledit")
+      }
+      { BibleditInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { BibleKJVFrame Frame
@@ -401,8 +443,14 @@
       }
       { BibleKJVLabel Label
         MoveScaled(9,1,21,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Bible KJV")
+      }
+      { BibleKJVInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { BollsFrame Frame
@@ -444,8 +492,14 @@
       }
       { BollsLabel Label
         MoveScaled(9,1,14,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Bolls Bible")
+      }
+      { BollsInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { DabPlayerFrame Frame
@@ -487,12 +541,18 @@
       }
       { DabPlayerLabel Label
         MoveScaled(9,1,18,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Daily Audio Bible")
+      }
+      { DabPlayerInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { BibleMTFFrame Frame
-      MoveScaled(35.75,19,32,14)
+      MoveScaled(36,19,32,14)
       { BibleMTFTextArea TextArea
         MoveScaled(9,4,21,3)
         Text = ("Multi-Translation Bible")
@@ -530,8 +590,14 @@
       }
       { BibleMTFLabel Label
         MoveScaled(9,1,20,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Bible Multi The Life")
+      }
+      { BibleMTFInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { BibleSOMFrame Frame
@@ -572,9 +638,15 @@
         Pulse = True
       }
       { BibleSOMLabel Label
-        MoveScaled(9,1,22,3)
-        Font = Font["Bold,+1"]
-        Text = ("Bible Multi Son of Man")
+        MoveScaled(9,1,14,3)
+        Font = Font["Bold"]
+        Text = ("Son of Man")
+      }
+      { BibleSOMInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { BibrefFrame Frame
@@ -616,8 +688,14 @@
       }
       { BibrefLabel Label
         MoveScaled(9,1,18,3)
-        Font = Font["Bold,+1"]
+        Font = Font["Bold"]
         Text = ("Bibref")
+      }
+      { BibrefInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     Index = 2
@@ -660,9 +738,15 @@
         Pulse = True
       }
       { PresenterLabel Label
-        MoveScaled(9,1,22,3)
-        Font = Font["Bold,+1"]
+        MoveScaled(9,1,17,3)
+        Font = Font["Bold"]
         Text = ("Presenter by WT")
+      }
+      { PresenterInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { FreeShowFrame Frame
@@ -703,9 +787,15 @@
         Pulse = True
       }
       { FreeShowLabel Label
-        MoveScaled(9,1,22,3)
-        Font = Font["Bold,+1"]
+        MoveScaled(9,1,14,3)
+        Font = Font["Bold"]
         Text = ("FreeShow")
+      }
+      { FreeShowInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { FloodlightFrame Frame
@@ -746,9 +836,15 @@
         Pulse = True
       }
       { FloodlightLabel Label
-        MoveScaled(9,1,22,3)
-        Font = Font["Bold,+1"]
+        MoveScaled(9,1,21,3)
+        Font = Font["Bold"]
         Text = ("Floodlight Presenter")
+      }
+      { FloodlightPresenterInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     { QueleaFrame Frame
@@ -790,9 +886,15 @@
         Pulse = True
       }
       { QueleaLabel Label
-        MoveScaled(9,1,22,3)
-        Font = Font["Bold,+1"]
+        MoveScaled(9,1,9,3)
+        Font = Font["Bold"]
         Text = ("Quelea")
+      }
+      { QueleaInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
       }
     }
     Index = 0
@@ -818,6 +920,8 @@
   }
   { UbuntuSoftwareButton Button
     MoveScaled(98,59,24,4)
+    Background = Color.SelectedBackground
+    Foreground = Color.White
     ToolTip = ("Get more from the Ubuntu Software Store")
     AutoResize = True
     Text = ("Get more software") & "..."

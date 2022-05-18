@@ -518,8 +518,110 @@ Public Sub DNSMinderInfoButton_MouseDown()
 
 End
 
+Public Sub ParentalControlsInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-parental-controls'"
+
+End
+
 Public Sub UbuntuSoftwareButton_Click()
 
   Exec ["snap-store"]
+
+End
+
+Public Sub TimekprInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://mjasnik.gitlab.io/timekpr-next/'"
+
+End
+
+Public Sub HostMinderInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://github.com/jeremehancock/hostminder'"
+
+End
+
+Public Sub Accountable2youInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://snapcraft.io/accountable2you'"
+
+End
+
+Public Sub BibleTimeInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://launchpad.net/ubuntu/+source/bibletime'"
+
+End
+
+Public Sub BibleditInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://bibledit.org/'"
+
+End
+
+Public Sub BibleKJVInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://launchpad.net/ubuntu/+source/bible-kjv'"
+
+End
+
+Public Sub XiphosInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://launchpad.net/ubuntu/+source/xiphos'"
+
+End
+
+Public Sub BollsInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://snapcraft.io/bolls'"
+
+End
+
+Public Sub BibleMTFInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://snapcraft.io/bible-multi-the-life'"
+
+End
+
+Public Sub BibleSOMInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://snapcraft.io/bible-multi-the-son-of-man'"
+
+End
+
+Public Sub DabPlayerInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://snapcraft.io/dab-player'"
+
+End
+
+Public Sub BibrefInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://snapcraft.io/bibref'"
+
+End
+
+Public Sub FreeShowInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://freeshow.app'"
+
+End
+
+Public Sub FloodlightPresenterInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://flathub.org/apps/details/io.gitlab.floodlight.Presenter'"
+
+End
+
+Public Sub PresenterInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://github.com/jeremehancock/presenter-by-worship-tools'"
+
+End
+
+Public Sub QueleaInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://snapcraft.io/quelea'"
 
 End
