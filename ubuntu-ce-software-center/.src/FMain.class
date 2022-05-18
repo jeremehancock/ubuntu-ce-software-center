@@ -511,3 +511,15 @@ Public Sub TerminalToggle_Click()
   Endif
 
 End
+
+Public Sub DNSMinderInfoButton_MouseDown()
+
+  Shell "xdg-open 'https://github.com/jeremehancock/dnsminder'"
+
+End
+
+Public Sub UbuntuSoftwareButton_Click()
+
+  Exec ["snap-store"]
+
+End

@@ -52,6 +52,12 @@
         Font = Font["Bold,+1"]
         Text = ("DNS Minder")
       }
+      { DNSMinderInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
+      }
     }
     { HostMinderFrame Frame
       MoveScaled(103.75,3,32,14)
@@ -809,5 +815,12 @@
     AutoResize = True
     Text = ("Show Details")
     Picture = Picture["terminal.png"]
+  }
+  { UbuntuSoftwareButton Button
+    MoveScaled(98,59,24,4)
+    ToolTip = ("Get more from the Ubuntu Software Store")
+    AutoResize = True
+    Text = ("Get more software") & "..."
+    Picture = Picture["ubuntu-software-store.png"]
   }
 }
