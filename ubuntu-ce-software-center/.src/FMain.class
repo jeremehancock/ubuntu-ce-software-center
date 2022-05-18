@@ -25,6 +25,7 @@ Sub initialize()
   app_check("presenter-by-worship-tools", LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
   app_check("freeshow", LaunchFreeShowButton, InstallFreeShowButton, UninstallFreeShowButton)
   app_check("io.gitlab.floodlight.Presenter", LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
+  app_check("quelea", LaunchQueleaButton, InstallQueleaButton, UninstallQueleaButton, True) 
   
 End
 
@@ -451,6 +452,25 @@ Public Sub UninstallFloodlightButton_Click()
   uninstall_app("io.gitlab.floodlight.Presenter", FloodightProgressBar, LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
 
 End
+
+Public Sub LaunchQueleaButton_Click()
+
+  launch_app("quelea")
+
+End
+
+Public Sub InstallQueleaButton_Click()
+
+  install_app("quelea", QueleaProgressBar, LaunchQueleaButton, InstallQueleaButton, UninstallQueleaButton, True)
+
+End
+
+Public Sub UninstallQueleaButton_Click()
+
+  uninstall_app("quelea", QueleaProgressBar, LaunchQueleaButton, InstallQueleaButton, UninstallQueleaButton, True)
+
+End
+
 
 
 Public Sub ShowDetailsButton_Click()

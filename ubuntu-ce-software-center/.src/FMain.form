@@ -538,7 +538,7 @@
     Index = 2
     Text = ("For Churches")
     { PresenterFrame Frame
-      MoveScaled(2,3,32,14)
+      MoveScaled(103.75,3,32,14)
       { PresenterTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Church Presentaton app")
@@ -581,7 +581,7 @@
       }
     }
     { FreeShowFrame Frame
-      MoveScaled(36,3,32,14)
+      MoveScaled(1.875,3,32,14)
       { FreeShowTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Church Presentation app")
@@ -624,7 +624,7 @@
       }
     }
     { FloodlightFrame Frame
-      MoveScaled(70,3,32,14)
+      MoveScaled(35.75,3,32,14)
       { FloodlightTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Church Presentation app")
@@ -664,6 +664,49 @@
         MoveScaled(9,1,22,3)
         Font = Font["Bold,+1"]
         Text = ("Floodlight Presenter")
+      }
+    }
+    { QueleaFrame Frame
+      MoveScaled(69.75,3,32,14)
+      { QueleaTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Church Presentation app")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallQueleaButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchQueleaButton Button
+        MoveScaled(19,9,12,4)
+        Text = ("Launch")
+      }
+      { UninstallQueleaButton Button
+        MoveScaled(1,9,5,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Picture = Picture["trashcan.png"]
+      }
+      { QueleaPictureBox2 PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["quelea.png"]
+        Stretch = True
+      }
+      { QueleaProgressBar ProgressBar
+        MoveScaled(3,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { QueleaLabel Label
+        MoveScaled(9,1,22,3)
+        Font = Font["Bold,+1"]
+        Text = ("Quelea")
       }
     }
     Index = 0
