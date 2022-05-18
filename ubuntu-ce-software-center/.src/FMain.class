@@ -25,7 +25,8 @@ Sub initialize()
   app_check("presenter-by-worship-tools", LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
   app_check("freeshow", LaunchFreeShowButton, InstallFreeShowButton, UninstallFreeShowButton)
   app_check("io.gitlab.floodlight.Presenter", LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
-  app_check("quelea", LaunchQueleaButton, InstallQueleaButton, UninstallQueleaButton, True) 
+  ' app_check("quelea", LaunchQueleaButton, InstallQueleaButton, UninstallQueleaButton, True) 
+  app_check("bibref", LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
   
 End
 
@@ -121,7 +122,7 @@ Sub install_app(appName As String, installProgressBar As ProgressBar, launchButt
     
     InstallProcess = Null
     
-    app_check(appName, launchButton, installButton, uninstallButton)
+    app_check(appName, launchButton, installButton, uninstallButton, isSnapd, isFlatpak)
       
   Endif
   
@@ -160,7 +161,7 @@ Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchBu
     
     UninstallProcess = Null
     
-    app_check(appName, launchButton, installButton, uninstallButton)
+    app_check(appName, launchButton, installButton, uninstallButton, isSnapd, isFlatpak)
       
   Endif
   
@@ -472,6 +473,23 @@ Public Sub UninstallQueleaButton_Click()
 
 End
 
+Public Sub LaunchBibrefButton_Click()
+
+  launch_app("bibref", True)
+
+End
+
+Public Sub InstallBibrefButton_Click()
+
+  install_app("bibref", BibrefProgressBar, LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
+
+End
+
+Public Sub UninstallBibrefButton_Click()
+
+  uninstall_app("bibref", BibrefProgressBar, LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
+
+End
 
 
 Public Sub ShowDetailsButton_Click()

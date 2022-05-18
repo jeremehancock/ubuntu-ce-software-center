@@ -535,6 +535,49 @@
         Text = ("Bible Multi Son of Man")
       }
     }
+    { BibrefFrame Frame
+      MoveScaled(2,35,32,14)
+      { BibrefTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Septuagint Reference app")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallBibrefButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Text = ("Install")
+      }
+      { LaunchBibrefButton Button
+        MoveScaled(19,9,12,4)
+        Text = ("Launch")
+      }
+      { UninstallBibrefButton Button
+        MoveScaled(1,9,5,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Picture = Picture["trashcan.png"]
+      }
+      { BibrefPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["bibref.png"]
+        Stretch = True
+      }
+      { BibrefProgressBar ProgressBar
+        MoveScaled(2.5,10,27,1.625)
+        Visible = False
+        Background = Color.Background
+        Label = False
+        Pulse = True
+      }
+      { BibrefLabel Label
+        MoveScaled(9,1,18,3)
+        Font = Font["Bold,+1"]
+        Text = ("Bibref")
+      }
+    }
     Index = 2
     Text = ("For Churches")
     { PresenterFrame Frame
