@@ -42,7 +42,7 @@
   }
   { Tabs TabStrip
     MoveScaled(1,1,138,55)
-    Count = 3
+    Count = 4
     Index = 0
     Text = ("Family Settings")
     { DNSMinderFrame Frame
@@ -872,6 +872,100 @@
         Text = ("Quelea")
       }
       { QueleaInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        Mouse = Mouse.Pointing
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
+      }
+    }
+    Index = 3
+    Text = ("Appearance")
+    { UbuntuCEWallpapersFrame Frame
+      MoveScaled(2,2,32,14)
+      { UbuntuCEWallpapersTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Christian Backgrounds")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallUbuntuCEWallpapersButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Text = ("Install")
+      }
+      { LaunchUbuntuCEWallpapersButton Button
+        MoveScaled(13,9,18,4)
+        Mouse = Mouse.Pointing
+        Text = ("Change Wallpaper")
+      }
+      { UninstallUbuntuCEWallpapersButton Button
+        MoveScaled(1,9,4,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Picture = Picture["trashcan.png"]
+      }
+      { UbuntuCEWallpapersPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["ubuntu-logo.png"]
+        Stretch = True
+      }
+      { UbuntuCEWallpapersLabel Label
+        MoveScaled(9,1,21,3)
+        Font = Font["Bold"]
+        Text = ("UbuntuCE Wallpapers")
+      }
+      { UbuntuCEWallpapersInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        Mouse = Mouse.Pointing
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
+      }
+    }
+    { UbuntuCEWallpapersFrame2 Frame
+      MoveScaled(36,2,32,14)
+      { UbuntuCEBootTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Boot Theme")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallUbuntuCEBootButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Text = ("Install")
+      }
+      { LaunchUbuntuCEBootButton Button
+        MoveScaled(13,9,18,4)
+        Mouse = Mouse.Pointing
+        Text = ("Configure Theme")
+      }
+      { UninstallUbuntuCEBootButton Button
+        MoveScaled(1,9,4,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Picture = Picture["trashcan.png"]
+      }
+      { UbuntuCEBootPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["ubuntu-logo.png"]
+        Stretch = True
+      }
+      { UbuntuCEBootLabel Label
+        MoveScaled(9,1,21,3)
+        Font = Font["Bold"]
+        Text = ("UbuntuCE Plymouth")
+      }
+      { UbuntuCEBootInfoButton PictureBox
         MoveScaled(29,1,2.25,2.25)
         Mouse = Mouse.Pointing
         ToolTip = ("More info") & "..."

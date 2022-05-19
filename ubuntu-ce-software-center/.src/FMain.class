@@ -28,6 +28,8 @@ Sub initialize()
   ' app_check("quelea", LaunchQueleaButton, InstallQueleaButton, UninstallQueleaButton, True) 
   app_check("bibref", LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
   app_check("accountable2you", LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, True)
+  app_check("ubuntu-ce-wallpapers", LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
+  app_check("ubuntu-ce-plymouth-theme", LaunchUbuntuCEBootButton, InstallUbuntuCEBootButton, UninstallUbuntuCEBootButton)
   
 End
 
@@ -35,7 +37,7 @@ Sub repo_check()
   
   If Not Exist("/etc/apt/sources.list.d/ubuntuce-jammy.list") Then
     If Message.Warning("The UbuntuCE Repository is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
-      Exec ["gnome-terminal", "--", "bash", "-c", "wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output ubuntuce.gpg --dearmor KEY.gpg && sudo mv ubuntuce.gpg /usr/share/keyrings/ && rm KEY.gpg && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
+      Exec ["gnome-terminal", "--", "bash", "-c", "Enter Password to add the UbuntuCE Repository:' &&  wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output ubuntuce.gpg --dearmor KEY.gpg && sudo mv ubuntuce.gpg /usr/share/keyrings/ && rm KEY.gpg && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
       initialize()
     Else 
       Quit
@@ -503,6 +505,44 @@ Public Sub UninstallAccountable2youButton_Click()
   
 End
 
+Public Sub LaunchUbuntuCEWallpapersButton_Click()
+  
+  Exec ["gnome-control-center", "background"]
+  
+End
+
+Public Sub InstallUbuntuCEWallpapersButton_Click()
+  
+  install_app("ubuntu-ce-wallpapers", UbuntuCEWallpapersLabel.Text, LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
+  
+End
+
+Public Sub UninstallUbuntuCEWallpapersButton_Click()
+  
+  uninstall_app("ubuntu-ce-wallpapers", UbuntuCEWallpapersLabel.Text, LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
+  
+End
+
+Public Sub LaunchUbuntuCEBootButton_Click()
+  
+  Exec ["gnome-terminal", "--", "bash", "-c", "echo 'Enter Password to configure default Plymouth Theme:' && sudo update-alternatives --install '/usr/share/plymouth/themes/default.plymouth' 'default.plymouth' '/usr/share/plymouth/themes/ubuntuce/ubuntuce.plymouth' 160 && sudo update-alternatives --auto default.plymouth && sudo update-alternatives --config default.plymouth && sudo update-initramfs -uk all"]
+  initialize()
+  
+End
+
+Public Sub InstallUbuntuCEBootButton_Click()
+  
+  install_app("ubuntu-ce-plymouth-theme", UbuntuCEBootLabel.Text, LaunchUbuntuCEBootButton, InstallUbuntuCEBootButton, UninstallUbuntuCEBootButton)
+  
+End
+
+Public Sub UninstallUbuntuCEBootButton_Click()
+  
+  uninstall_app("ubuntu-ce-plymouth-theme", UbuntuCEBootLabel.Text, LaunchUbuntuCEBootButton, InstallUbuntuCEBootButton, UninstallUbuntuCEBootButton)
+  Exec ["gnome-terminal", "--", "bash", "-c", "Enter Password to configure default Plymouth Theme:' && sudo update-alternatives --install '/usr/share/plymouth/themes/default.plymouth' 'default.plymouth' '/usr/share/plymouth/themes/ubuntuce/ubuntuce.plymouth' 160 && sudo update-alternatives --auto default.plymouth && sudo update-alternatives --config default.plymouth && sudo update-initramfs -uk all"]
+  
+End
+
 Public Sub ExitButton_Click()
   
   Quit
@@ -657,5 +697,17 @@ End
 Public Sub QueleaInfoButton_MouseDown()
   
   Shell "xdg-open 'https://snapcraft.io/quelea'"
+  
+End
+
+Public Sub UbuntuCEWallpapersInfoButton_MouseDown()
+  
+  Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-wallpapers'"
+  
+End
+
+Public Sub UbuntuCEBootInfoButton_MouseDown()
+  
+  Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-plymouth-theme'"
   
 End
