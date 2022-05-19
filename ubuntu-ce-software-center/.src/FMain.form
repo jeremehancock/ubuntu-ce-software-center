@@ -1,17 +1,49 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,140,64)
+  MoveScaled(0,0,140,62)
   Text = ("UbuntuCE Software Center")
   Resizable = False
   Utility = True
+  { TerminalToggle ToggleButton
+    MoveScaled(1,57,17,4)
+    AutoResize = True
+    Text = ("Show Details")
+    Picture = Picture["terminal.png"]
+  }
+  { UbuntuSoftwareButton Button
+    MoveScaled(98,57,24,4)
+    Background = Color.SelectedBackground
+    Foreground = Color.White
+    ToolTip = ("Get more from the Ubuntu Software Store")
+    AutoResize = True
+    Text = ("Get more software") & "..."
+    Picture = Picture["ubuntu-software-store.png"]
+  }
+  { ExitButton Button
+    MoveScaled(123,57,16,4)
+    Text = ("Exit")
+  }
+  { ProgressLabel Label
+    MoveScaled(42,24,56,5)
+    Visible = False
+    Font = Font["+4"]
+    Alignment = Align.Center
+    Text = ("Processing") & "..."
+  }
+  { ProcessProgressBar ProgressBar
+    MoveScaled(42,31,56,2)
+    Visible = False
+    Label = False
+    Pulse = True
+  }
   { Tabs TabStrip
-    MoveScaled(1,2,138,56)
+    MoveScaled(1,1,138,55)
     Count = 3
     Index = 0
     Text = ("Family Settings")
     { DNSMinderFrame Frame
-      MoveScaled(2,3,32,14)
+      MoveScaled(2,2,32,14)
       { DNSMinderTextArea TextArea
         MoveScaled(9,4,19,3)
         Text = ("Web Content Filtering")
@@ -40,13 +72,6 @@
         Picture = Picture["dnsminder.png"]
         Stretch = True
       }
-      { DNSMinderProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { DNSMinderLabel Label
         MoveScaled(9,1,14,3)
         Font = Font["Bold"]
@@ -60,7 +85,7 @@
       }
     }
     { HostMinderFrame Frame
-      MoveScaled(103.75,3,32,14)
+      MoveScaled(36,2,32,14)
       { HostMinderTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Block unwanted websites")
@@ -89,13 +114,6 @@
         Picture = Picture["hostminder.png"]
         Stretch = True
       }
-      { HostMinderProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { HostMinderLabel Label
         MoveScaled(9,1,14,3)
         Font = Font["Bold"]
@@ -109,7 +127,7 @@
       }
     }
     { ParentalControlsFrame Frame
-      MoveScaled(35.75,3,32,14)
+      MoveScaled(70,2,32,14)
       { ParentalControlsTextArea TextArea
         MoveScaled(8,4,14,3)
         Text = ("Protect the kids")
@@ -138,13 +156,6 @@
         Picture = Picture["parental-controls.png"]
         Stretch = True
       }
-      { ParentalControlsProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { ParentalControlsLabel Label
         MoveScaled(8,1,18,3)
         Font = Font["Bold"]
@@ -158,7 +169,7 @@
       }
     }
     { TimekprFrame Frame
-      MoveScaled(69.75,3,32,14)
+      MoveScaled(104,2,32,14)
       { TimekprTextArea TextArea
         MoveScaled(9,4,16,3)
         Text = ("Track screen time")
@@ -187,13 +198,6 @@
         Picture = Picture["timekpr.png"]
         Stretch = True
       }
-      { TimekprProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { TimekprLabel Label
         MoveScaled(9,1,18,3)
         Font = Font["Bold"]
@@ -207,7 +211,7 @@
       }
     }
     { Accountable2youFrame Frame
-      MoveScaled(2,19,32,14)
+      MoveScaled(2,18,32,14)
       { Accountable2youTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Accountability Software")
@@ -236,13 +240,6 @@
         Picture = Picture["accountable2you.png"]
         Stretch = True
       }
-      { Accountable2youProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { Accountable2youLabel Label
         MoveScaled(9,1,20,3)
         Font = Font["Bold"]
@@ -258,7 +255,7 @@
     Index = 1
     Text = ("Bible Study")
     { XiphosFrame Frame
-      MoveScaled(103.75,3,32,14)
+      MoveScaled(36,2,32,14)
       { XiphosTextArea TextArea
         MoveScaled(9,4,15,3)
         Text = ("Bible Study Suite")
@@ -287,13 +284,6 @@
         Picture = Picture["xiphos.png"]
         Stretch = True
       }
-      { XiphosProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { XiphosLabel Label
         MoveScaled(9,1,14,3)
         Font = Font["Bold"]
@@ -307,7 +297,7 @@
       }
     }
     { BibleTimeFrame Frame
-      MoveScaled(2,3,32,14)
+      MoveScaled(2,2,32,14)
       { BibleTimeTextArea TextArea
         MoveScaled(9,4,15,3)
         Text = ("Bible Study Suite")
@@ -336,13 +326,6 @@
         Picture = Picture["bibletime.png"]
         Stretch = True
       }
-      { BibleTimeProgressBar ProgressBar
-        MoveScaled(3,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { BibleTimeLabel Label
         MoveScaled(9,1,14,3)
         Font = Font["Bold"]
@@ -356,7 +339,7 @@
       }
     }
     { BibleditFrame Frame
-      MoveScaled(35.75,3,32,14)
+      MoveScaled(104,2,32,14)
       { BibleditTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Bible translation software")
@@ -385,13 +368,6 @@
         Picture = Picture["bibledit.png"]
         Stretch = True
       }
-      { BibleditProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { BibleditLabel Label
         MoveScaled(9,1,14,3)
         Font = Font["Bold"]
@@ -405,7 +381,7 @@
       }
     }
     { BibleKJVFrame Frame
-      MoveScaled(69.75,3,32,14)
+      MoveScaled(70,2,32,14)
       { BibleKJVTextArea TextArea
         MoveScaled(9,4,20,3)
         Text = ("KJV Bible in Terminal")
@@ -434,13 +410,6 @@
         Picture = Picture["bible-kjv.png"]
         Stretch = True
       }
-      { BibleKJVProgressBar ProgressBar
-        MoveScaled(3,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { BibleKJVLabel Label
         MoveScaled(9,1,21,3)
         Font = Font["Bold"]
@@ -454,7 +423,7 @@
       }
     }
     { BollsFrame Frame
-      MoveScaled(1.875,19,32,14)
+      MoveScaled(2,18,32,14)
       { BollsTextArea TextArea
         MoveScaled(9,4,21,3)
         Text = ("Multi-Translation Bible")
@@ -483,13 +452,6 @@
         Picture = Picture["bolls.png"]
         Stretch = True
       }
-      { BollsProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { BollsLabel Label
         MoveScaled(9,1,14,3)
         Font = Font["Bold"]
@@ -503,7 +465,7 @@
       }
     }
     { DabPlayerFrame Frame
-      MoveScaled(103.75,19,32,14)
+      MoveScaled(104,18,32,14)
       { DabPlayerTextArea TextArea
         MoveScaled(9,4,21,3)
         Text = ("Audio Bible Player")
@@ -532,13 +494,6 @@
         Picture = Picture["dab-player.png"]
         Stretch = True
       }
-      { DabPlayerProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { DabPlayerLabel Label
         MoveScaled(9,1,18,3)
         Font = Font["Bold"]
@@ -552,7 +507,7 @@
       }
     }
     { BibleMTFFrame Frame
-      MoveScaled(36,19,32,14)
+      MoveScaled(36,18,32,14)
       { BibleMTFTextArea TextArea
         MoveScaled(9,4,21,3)
         Text = ("Multi-Translation Bible")
@@ -581,13 +536,6 @@
         Picture = Picture["bible-mtl.png"]
         Stretch = True
       }
-      { BibleMTFProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { BibleMTFLabel Label
         MoveScaled(9,1,20,3)
         Font = Font["Bold"]
@@ -601,7 +549,7 @@
       }
     }
     { BibleSOMFrame Frame
-      MoveScaled(69.75,19,32,14)
+      MoveScaled(70,18,32,14)
       { BibleSOMTextArea TextArea
         MoveScaled(9,4,21,3)
         Text = ("Bible in Terminal")
@@ -630,13 +578,6 @@
         Picture = Picture["bible-som.png"]
         Stretch = True
       }
-      { BibleSOMProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { BibleSOMLabel Label
         MoveScaled(9,1,14,3)
         Font = Font["Bold"]
@@ -650,7 +591,7 @@
       }
     }
     { BibrefFrame Frame
-      MoveScaled(1.875,35,32,14)
+      MoveScaled(2,34,32,14)
       { BibrefTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Septuagint Reference app")
@@ -679,13 +620,6 @@
         Picture = Picture["bibref.png"]
         Stretch = True
       }
-      { BibrefProgressBar ProgressBar
-        MoveScaled(2.5,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { BibrefLabel Label
         MoveScaled(9,1,18,3)
         Font = Font["Bold"]
@@ -701,7 +635,7 @@
     Index = 2
     Text = ("For Churches")
     { PresenterFrame Frame
-      MoveScaled(35.75,3,32,14)
+      MoveScaled(2,2,32,14)
       { PresenterTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Church Presentaton app")
@@ -730,13 +664,6 @@
         Picture = Picture["presenter.png"]
         Stretch = True
       }
-      { PresenterProgressBar ProgressBar
-        MoveScaled(3,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { PresenterLabel Label
         MoveScaled(9,1,17,3)
         Font = Font["Bold"]
@@ -750,7 +677,7 @@
       }
     }
     { FreeShowFrame Frame
-      MoveScaled(1.875,3,32,14)
+      MoveScaled(36,2,32,14)
       { FreeShowTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Church Presentation app")
@@ -779,13 +706,6 @@
         Picture = Picture["freeshow.png"]
         Stretch = True
       }
-      { FreeShowProgressBar ProgressBar
-        MoveScaled(3,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { FreeShowLabel Label
         MoveScaled(9,1,14,3)
         Font = Font["Bold"]
@@ -799,7 +719,7 @@
       }
     }
     { FloodlightFrame Frame
-      MoveScaled(70,3,32,14)
+      MoveScaled(70,2,32,14)
       { FloodlightTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Church Presentation app")
@@ -828,13 +748,6 @@
         Picture = Picture["floodlight.png"]
         Stretch = True
       }
-      { FloodightProgressBar ProgressBar
-        MoveScaled(3,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { FloodlightLabel Label
         MoveScaled(9,1,21,3)
         Font = Font["Bold"]
@@ -848,7 +761,7 @@
       }
     }
     { QueleaFrame Frame
-      MoveScaled(103.75,3,32,14)
+      MoveScaled(104,2,32,14)
       Visible = False
       { QueleaTextArea TextArea
         MoveScaled(9,4,22,3)
@@ -878,13 +791,6 @@
         Picture = Picture["quelea.png"]
         Stretch = True
       }
-      { QueleaProgressBar ProgressBar
-        MoveScaled(3,10,27,1.625)
-        Visible = False
-        Background = Color.Background
-        Label = False
-        Pulse = True
-      }
       { QueleaLabel Label
         MoveScaled(9,1,9,3)
         Font = Font["Bold"]
@@ -899,32 +805,8 @@
     }
     Index = 0
   }
-  { ExitButton Button
-    MoveScaled(123,59,16,4)
-    Text = ("Exit")
-  }
-  { BlockPanel Panel
-    MoveScaled(1,-55,138,56)
-    Visible = False
-    Background = &H69E0E0E0&
-  }
   { TerminalView TerminalView
-    MoveScaled(1,2,138,0)
+    MoveScaled(1,1,138,0)
     Visible = False
-  }
-  { TerminalToggle ToggleButton
-    MoveScaled(1,59,17,4)
-    AutoResize = True
-    Text = ("Show Details")
-    Picture = Picture["terminal.png"]
-  }
-  { UbuntuSoftwareButton Button
-    MoveScaled(98,59,24,4)
-    Background = Color.SelectedBackground
-    Foreground = Color.White
-    ToolTip = ("Get more from the Ubuntu Software Store")
-    AutoResize = True
-    Text = ("Get more software") & "..."
-    Picture = Picture["ubuntu-software-store.png"]
   }
 }
