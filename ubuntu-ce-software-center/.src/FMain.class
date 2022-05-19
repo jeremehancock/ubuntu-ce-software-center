@@ -123,7 +123,7 @@ Sub install_app(appName As String, installProgressBar As ProgressBar, launchButt
     Endif
     
     BlockPanel.Show
-    BlockPanel.Top = 14
+    BlockPanel.Top = 16
     TerminalView.Clear
     installProgressBar.Show
     installButton.Hide
@@ -163,7 +163,7 @@ Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchBu
     Endif
     
     BlockPanel.Show
-    BlockPanel.Top = 14
+    BlockPanel.Top = 16
     TerminalView.Clear
     installProgressBar.Show
     uninstallButton.Hide
