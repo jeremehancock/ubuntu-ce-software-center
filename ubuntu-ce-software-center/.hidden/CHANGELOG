@@ -1,3 +1,7 @@
+* Thu May 19 2022 UbuntuCE <support@ubuntuce.com> 0.0.27
+- Fixed button assignments
+- Fixed Flatpak install bug
+
 * Thu May 19 2022 UbuntuCE <support@ubuntuce.com> 0.0.25
 - Fixed block panel position
 

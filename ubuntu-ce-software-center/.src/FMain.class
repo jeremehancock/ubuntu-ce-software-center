@@ -157,7 +157,7 @@ Sub uninstall_app(appName As String, installProgressBar As ProgressBar, launchBu
     If isSnapd Then 
       UninstallProcess = TerminalView.Shell("pkexec snap remove " & appName)
      Else If isFlatpak Then 
-      UninstallProcess = TerminalView.Shell("pkexec flatpak remove " & appName)
+      UninstallProcess = TerminalView.Shell("pkexec flatpak remove " & appName & " -y")
     Else 
       UninstallProcess = TerminalView.Shell("pkexec apt autoremove " & appName & " -y")
     Endif
@@ -306,13 +306,13 @@ End
 
 Public Sub InstallBibleTimeButton_Click()
 
-  install_app("bibletime sword-text-web sword-text-kjv", BibleditProgressBar, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
+  install_app("bibletime sword-text-web sword-text-kjv", BibleTimeProgressBar, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
 
 End
 
 Public Sub UninstallBibleTimeButton_Click()
 
-  uninstall_app("bibletime", BibleditProgressBar, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
+  uninstall_app("bibletime", BibleTimeProgressBar, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
 
 End
 
@@ -385,6 +385,24 @@ End
 Public Sub UninstallDabPlayerButton_Click()
 
   uninstall_app("dab-player", DabPlayerProgressBar, LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, True)
+
+End
+
+Public Sub LaunchBibrefButton_Click()
+
+  launch_app("bibref", True)
+
+End
+
+Public Sub InstallBibrefButton_Click()
+
+  install_app("bibref", BibrefProgressBar, LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
+
+End
+
+Public Sub UninstallBibrefButton_Click()
+
+  uninstall_app("bibref", BibrefProgressBar, LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
 
 End
 
@@ -647,3 +665,4 @@ Public Sub QueleaInfoButton_MouseDown()
   Shell "xdg-open 'https://snapcraft.io/quelea'"
 
 End
+
