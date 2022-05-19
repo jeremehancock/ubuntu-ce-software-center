@@ -255,7 +255,7 @@
     Index = 1
     Text = ("Bible Study")
     { XiphosFrame Frame
-      MoveScaled(36,2,32,14)
+      MoveScaled(2,2,32,14)
       { XiphosTextArea TextArea
         MoveScaled(9,4,15,3)
         Text = ("Bible Study Suite")
@@ -297,7 +297,7 @@
       }
     }
     { BibleTimeFrame Frame
-      MoveScaled(2,2,32,14)
+      MoveScaled(36,2,32,14)
       { BibleTimeTextArea TextArea
         MoveScaled(9,4,15,3)
         Text = ("Bible Study Suite")
