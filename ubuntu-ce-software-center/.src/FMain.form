@@ -1001,7 +1001,7 @@
         Mouse = Mouse.Pointing
         Picture = Picture["trashcan.png"]
       }
-      { UbuntuCEBootPictureBox2 PictureBox
+      { UbuntuCEGreeterPIctureBox PictureBox
         MoveScaled(1,1,6.25,6.25)
         Picture = Picture["ubuntu-logo.png"]
         Stretch = True

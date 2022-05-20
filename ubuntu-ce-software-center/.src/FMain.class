@@ -30,7 +30,7 @@ Sub initialize()
   app_check("accountable2you", LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, True)
   app_check("ubuntu-ce-wallpapers", LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
   app_check("ubuntu-ce-branding", LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
-  app_check("ubuntu-ce-greeter", LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
+  app_check("ubuntu-ce-welcome", LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
   
 End
 
@@ -546,19 +546,19 @@ End
 
 Public Sub LaunchUbuntuCEGreeterButton_Click()
   
-  launch_app("ubuntu-ce-greeter")
+  launch_app("ubuntu-ce-welcome")
   
 End
 
 Public Sub InstallUbuntuCEGreeterButton_Click()
   
-  install_app("ubuntu-ce-greeter", UbuntuCEGreeterLabel.Text, LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
+  install_app("ubuntu-ce-welcome", UbuntuCEGreeterLabel.Text, LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
   
 End
 
 Public Sub UninstallUbuntuCEGreeterButton_Click()
   
-  uninstall_app("ubuntu-ce-greeter", UbuntuCEGreeterLabel.Text, LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
+  uninstall_app("ubuntu-ce-welcome", UbuntuCEGreeterLabel.Text, LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
   
 End
 
@@ -733,6 +733,6 @@ End
 
 Public Sub UbuntuCEGreeterInfoButton_MouseDown()
   
-  Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-greeter'"
+  Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-welcome'"
   
 End
