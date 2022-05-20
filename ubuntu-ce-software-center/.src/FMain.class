@@ -543,7 +543,7 @@ End
 Public Sub UninstallUbuntuCEBrandingButton_Click()
   
   uninstall_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text, LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
-  Exec ["gnome-terminal", "--", "bash", "-c", "Enter Password to configure default Plymouth Theme:' && sudo update-alternatives --install '/usr/share/plymouth/themes/default.plymouth' 'default.plymouth' '/usr/share/plymouth/themes/ubuntuce/ubuntuce.plymouth' 160 && sudo update-alternatives --auto default.plymouth && sudo update-alternatives --config default.plymouth && sudo update-initramfs -uk all"]
+  Exec ["gnome-terminal", "--", "bash", "-c", "echo 'Enter Password to configure default Plymouth Theme:' && sudo update-alternatives --install '/usr/share/plymouth/themes/default.plymouth' 'default.plymouth' '/usr/share/plymouth/themes/ubuntuce/ubuntuce.plymouth' 160 && sudo update-alternatives --auto default.plymouth && sudo update-alternatives --config default.plymouth && sudo update-initramfs -uk all"]
   
 End
 
