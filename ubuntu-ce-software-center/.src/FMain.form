@@ -929,26 +929,26 @@
     }
     { UbuntuCEWallpapersFrame2 Frame
       MoveScaled(36,2,32,14)
-      { UbuntuCEBootTextArea TextArea
+      { UbuntuCEBrandingTextArea TextArea
         MoveScaled(9,4,22,3)
-        Text = ("Boot Theme")
+        Text = ("Boot/Login & Settings")
         ReadOnly = True
         Wrap = True
         Border = False
       }
-      { InstallUbuntuCEBootButton Button
+      { InstallUbuntuCEBrandingButton Button
         MoveScaled(19,9,12,4)
         Background = &H41C017&
         Foreground = Color.White
         Mouse = Mouse.Pointing
         Text = ("Install")
       }
-      { LaunchUbuntuCEBootButton Button
-        MoveScaled(13,9,18,4)
+      { LaunchUbuntuCEBrandingButton Button
+        MoveScaled(10,9,21,4)
         Mouse = Mouse.Pointing
-        Text = ("Configure Theme")
+        Text = ("Configure Boot Theme")
       }
-      { UninstallUbuntuCEBootButton Button
+      { UninstallUbuntuCEBrandingButton Button
         MoveScaled(1,9,4,4)
         Background = Color.Red
         Foreground = Color.White
@@ -960,12 +960,58 @@
         Picture = Picture["ubuntu-logo.png"]
         Stretch = True
       }
-      { UbuntuCEBootLabel Label
+      { UbuntuCEBrandingLabel Label
         MoveScaled(9,1,21,3)
         Font = Font["Bold"]
-        Text = ("UbuntuCE Plymouth")
+        Text = ("UbuntuCE Branding")
       }
-      { UbuntuCEBootInfoButton PictureBox
+      { UbuntuCEBrandingInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        Mouse = Mouse.Pointing
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
+      }
+    }
+    { UbuntuCEGreeterFrame Frame
+      MoveScaled(70,2,32,14)
+      { UbuntuCEGreeterTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Welcome to UbuntuCE")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallUbuntuCEGreeterButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Text = ("Install")
+      }
+      { LaunchUbuntuCEGreeterButton Button
+        MoveScaled(19,9,12,4)
+        Mouse = Mouse.Pointing
+        Text = ("Launch")
+      }
+      { UninstallUbuntuCEGreeterButton Button
+        MoveScaled(1,9,4,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Picture = Picture["trashcan.png"]
+      }
+      { UbuntuCEBootPictureBox2 PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["ubuntu-logo.png"]
+        Stretch = True
+      }
+      { UbuntuCEGreeterLabel Label
+        MoveScaled(9,1,21,3)
+        Font = Font["Bold"]
+        Text = ("UbuntuCE Greeter")
+      }
+      { UbuntuCEGreeterInfoButton PictureBox
         MoveScaled(29,1,2.25,2.25)
         Mouse = Mouse.Pointing
         ToolTip = ("More info") & "..."

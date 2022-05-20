@@ -29,7 +29,8 @@ Sub initialize()
   app_check("bibref", LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
   app_check("accountable2you", LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, True)
   app_check("ubuntu-ce-wallpapers", LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
-  app_check("ubuntu-ce-plymouth-theme", LaunchUbuntuCEBootButton, InstallUbuntuCEBootButton, UninstallUbuntuCEBootButton)
+  app_check("ubuntu-ce-branding", LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
+  app_check("ubuntu-ce-greeter", LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
   
 End
 
@@ -37,7 +38,7 @@ Sub repo_check()
   
   If Not Exist("/etc/apt/sources.list.d/ubuntuce-jammy.list") Then
     If Message.Warning("The UbuntuCE Repository is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
-      Exec ["gnome-terminal", "--", "bash", "-c", "Enter Password to add the UbuntuCE Repository:' &&  wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output ubuntuce.gpg --dearmor KEY.gpg && sudo mv ubuntuce.gpg /usr/share/keyrings/ && rm KEY.gpg && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
+      Exec ["gnome-terminal", "--", "bash", "-c", "echo 'Enter Password to add the UbuntuCE Repository:' &&  wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output ubuntuce.gpg --dearmor KEY.gpg && sudo mv ubuntuce.gpg /usr/share/keyrings/ && rm KEY.gpg && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
       initialize()
     Else 
       Quit
@@ -523,23 +524,41 @@ Public Sub UninstallUbuntuCEWallpapersButton_Click()
   
 End
 
-Public Sub LaunchUbuntuCEBootButton_Click()
+Public Sub LaunchUbuntuCEBrandingButton_Click()
   
   Exec ["gnome-terminal", "--", "bash", "-c", "echo 'Enter Password to configure default Plymouth Theme:' && sudo update-alternatives --install '/usr/share/plymouth/themes/default.plymouth' 'default.plymouth' '/usr/share/plymouth/themes/ubuntuce/ubuntuce.plymouth' 160 && sudo update-alternatives --auto default.plymouth && sudo update-alternatives --config default.plymouth && sudo update-initramfs -uk all"]
   initialize()
   
 End
 
-Public Sub InstallUbuntuCEBootButton_Click()
+Public Sub InstallUbuntuCEBrandingButton_Click()
   
-  install_app("ubuntu-ce-plymouth-theme", UbuntuCEBootLabel.Text, LaunchUbuntuCEBootButton, InstallUbuntuCEBootButton, UninstallUbuntuCEBootButton)
+  install_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text, LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
   
 End
 
-Public Sub UninstallUbuntuCEBootButton_Click()
+Public Sub UninstallUbuntuCEBrandingButton_Click()
   
-  uninstall_app("ubuntu-ce-plymouth-theme", UbuntuCEBootLabel.Text, LaunchUbuntuCEBootButton, InstallUbuntuCEBootButton, UninstallUbuntuCEBootButton)
+  uninstall_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text, LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
   Exec ["gnome-terminal", "--", "bash", "-c", "Enter Password to configure default Plymouth Theme:' && sudo update-alternatives --install '/usr/share/plymouth/themes/default.plymouth' 'default.plymouth' '/usr/share/plymouth/themes/ubuntuce/ubuntuce.plymouth' 160 && sudo update-alternatives --auto default.plymouth && sudo update-alternatives --config default.plymouth && sudo update-initramfs -uk all"]
+  
+End
+
+Public Sub LaunchUbuntuCEGreeterButton_Click()
+  
+  launch_app("ubuntu-ce-greeter")
+  
+End
+
+Public Sub InstallUbuntuCEGreeterButton_Click()
+  
+  install_app("ubuntu-ce-greeter", UbuntuCEGreeterLabel.Text, LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
+  
+End
+
+Public Sub UninstallUbuntuCEGreeterButton_Click()
+  
+  uninstall_app("ubuntu-ce-greeter", UbuntuCEGreeterLabel.Text, LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
   
 End
 
@@ -706,8 +725,14 @@ Public Sub UbuntuCEWallpapersInfoButton_MouseDown()
   
 End
 
-Public Sub UbuntuCEBootInfoButton_MouseDown()
+Public Sub UbuntuCEBrandingInfoButton_MouseDown()
   
-  Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-plymouth-theme'"
+  Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-branding'"
+  
+End
+
+Public Sub UbuntuCEGreeterInfoButton_MouseDown()
+  
+  Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-greeter'"
   
 End
