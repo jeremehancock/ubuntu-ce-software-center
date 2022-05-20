@@ -131,7 +131,7 @@ Sub install_app(appName As String, appTitle As String, launchButton As Button, i
     
     InstallProcess = Null
     
-    app_check(appName, launchButton, installButton, uninstallButton, isSnapd, isFlatpak)
+    initialize()
     
   Endif
   
@@ -160,7 +160,7 @@ Sub uninstall_app(appName As String, appTitle As String, launchButton As Button,
     
     UninstallProcess = Null
     
-    app_check(appName, launchButton, installButton, uninstallButton, isSnapd, isFlatpak)
+    initialize()
     
   Endif
   
