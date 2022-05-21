@@ -37,15 +37,29 @@ End
 Sub repo_check()
   
   Dim Key As String
+  Dim RepoProcess As Process
   
   Key = Rand(99999) & "-ubuntuce.gpg"
   
   If Not Exist("/etc/apt/sources.list.d/ubuntuce-jammy.list") Then
     If Message.Warning("The UbuntuCE Repository is not installed. \n\n It is required! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
-      Exec ["gnome-terminal", "--", "bash", "-c", "echo 'Enter Password to add the UbuntuCE Repository:' &&  sudo wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && sudo gpg --output " & Key & " --dearmor KEY.gpg && sudo mv " & Key & " /usr/share/keyrings/ubuntuce.gpg && sudo rm KEY.gpg && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list 'https://job.ubuntuce.com/ubuntuce-jammy.list' && sudo apt update"]
+      
+      RepoProcess = TerminalView.Shell("pkexec sh -c 'wget https://job.ubuntuce.com/KEY.gpg -O KEY.gpg && gpg --output " & Key & " --dearmor KEY.gpg && mv " & Key & " /usr/share/keyrings/ubuntuce.gpg && rm KEY.gpg && sudo curl -s --compressed -o /etc/apt/sources.list.d/ubuntuce-jammy.list https://job.ubuntuce.com/ubuntuce-jammy.list && apt update'")
+      
+      Show_Progress("Adding", "UbuntuCE Repository)")
+      
+      Do
+        Try Wait 0.5    
+      Loop Until RepoProcess.State = 0
+      
+      Hide_Progress()
+      
+      RepoProcess = Null
+      
       initialize()
     Else 
       Quit
+      
     Endif
   Endif
   
@@ -54,12 +68,27 @@ End
 Sub flathub_check()
   
   Dim Result As String
+  Dim FlatpakProcess As Process
   
   Shell ("flatpak remotes | grep 'flathub' | awk '{print $1}'") To Result
   
   If InStr(Result, "flathub") = 0 Then
     If Message.Warning("The Flathub Repository is not installed. \n\n It is required to have access to all available apps! \n\n Would you like to install it now?", "Install Now", "Cancel") = 1 Then 
-      Shell ("flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo")
+      
+      FlatpakProcess = TerminalView.Shell("flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo")
+      
+      Show_Progress("Adding", "Flathub Repository)")
+      
+      Do
+        Try Wait 0.5    
+      Loop Until FlatpakProcess.State = 0
+      
+      Hide_Progress()
+      
+      FlatpakProcess = Null
+      
+      initialize()
+      
     Else 
       FloodlightFrame.Hide
     Endif
@@ -121,7 +150,7 @@ Sub install_app(appName As String, appTitle As String, launchButton As Button, i
     Else If isFlatpak Then 
       InstallProcess = TerminalView.Shell("pkexec flatpak install flathub " & appName & " -y")
     Else 
-      InstallProcess = TerminalView.Shell("pkexec apt install " & appName & " -y")
+      InstallProcess = TerminalView.Shell("pkexec sh -c 'apt update && apt install " & appName & " -y'")
     Endif
     
     Show_Progress("Installing", appTitle)
@@ -529,7 +558,7 @@ End
 
 Public Sub LaunchUbuntuCEBrandingButton_Click()
   
-  Exec ["gnome-terminal", "--", "bash", "-c", "echo 'Enter Password to configure default Plymouth Theme:' && sudo update-alternatives --install '/usr/share/plymouth/themes/default.plymouth' 'default.plymouth' '/usr/share/plymouth/themes/ubuntuce/ubuntuce.plymouth' 160 && sudo update-alternatives --auto default.plymouth && sudo update-alternatives --config default.plymouth && sudo update-initramfs -uk all"]
+  Exec ["gnome-terminal", "--", "bash", "-c", "echo 'Enter Password to configure default Plymouth Theme:' && sudo update-alternatives --auto default.plymouth && sudo update-alternatives --config default.plymouth && sudo update-initramfs -uk all"]
   initialize()
   
 End
@@ -543,7 +572,6 @@ End
 Public Sub UninstallUbuntuCEBrandingButton_Click()
   
   uninstall_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text, LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
-  Exec ["gnome-terminal", "--", "bash", "-c", "echo 'Enter Password to configure default Plymouth Theme:' && sudo update-alternatives --auto default.plymouth && sudo update-alternatives --config default.plymouth && sudo update-initramfs -uk all"]
   
 End
 
