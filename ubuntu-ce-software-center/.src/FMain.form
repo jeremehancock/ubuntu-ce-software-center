@@ -90,6 +90,21 @@
         Picture = Picture["info.png"]
         Stretch = True
       }
+      { DNSMinderFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
+      { DNSMinderFavIcon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Expand = True
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
     }
     { HostMinderFrame Frame
       MoveScaled(36,2,32,14)
@@ -135,6 +150,20 @@
         ToolTip = ("More info") & "..."
         Picture = Picture["info.png"]
         Stretch = True
+      }
+      { HostMinderFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { HostMinderFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
       }
     }
     { ParentalControlsFrame Frame
@@ -182,6 +211,20 @@
         Picture = Picture["info.png"]
         Stretch = True
       }
+      { ParentalControlsFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { ParentalControlsFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
     }
     { TimekprFrame Frame
       MoveScaled(104,2,32,14)
@@ -228,6 +271,20 @@
         Picture = Picture["info.png"]
         Stretch = True
       }
+      { TimekprFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { TimekprFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
     }
     { Accountable2youFrame Frame
       MoveScaled(2,18,32,14)
@@ -273,6 +330,20 @@
         ToolTip = ("More info") & "..."
         Picture = Picture["info.png"]
         Stretch = True
+      }
+      { Accountable2youFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { Accountable2youFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
       }
     }
     Index = 1
@@ -322,9 +393,23 @@
         Picture = Picture["info.png"]
         Stretch = True
       }
+      { XiphosFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { XiphosFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
     }
     { BibleTimeFrame Frame
-      MoveScaled(36,2,32,14)
+      MoveScaled(70,2,32,14)
       { BibleTimeTextArea TextArea
         MoveScaled(9,4,15,3)
         Text = ("Bible Study Suite")
@@ -367,6 +452,20 @@
         ToolTip = ("More info") & "..."
         Picture = Picture["info.png"]
         Stretch = True
+      }
+      { BibleTimeFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { BibleTimeFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
       }
     }
     { BibleditFrame Frame
@@ -415,9 +514,23 @@
         Picture = Picture["info.png"]
         Stretch = True
       }
+      { BibleditFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { BibleditFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
     }
     { BibleKJVFrame Frame
-      MoveScaled(70,2,32,14)
+      MoveScaled(36,2,32,14)
       { BibleKJVTextArea TextArea
         MoveScaled(9,4,20,3)
         Text = ("KJV Bible in Terminal")
@@ -507,6 +620,20 @@
         Picture = Picture["info.png"]
         Stretch = True
       }
+      { BollsFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { BollsFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
     }
     { DabPlayerFrame Frame
       MoveScaled(104,18,32,14)
@@ -553,6 +680,20 @@
         Picture = Picture["info.png"]
         Stretch = True
       }
+      { DabPlayerFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { DabPlayerFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
     }
     { BibleMTFFrame Frame
       MoveScaled(36,18,32,14)
@@ -590,7 +731,7 @@
       { BibleMTFLabel Label
         MoveScaled(9,1,20,3)
         Font = Font["Bold"]
-        Text = ("Bible Multi The Life")
+        Text = ("The Life")
       }
       { BibleMTFInfoButton PictureBox
         MoveScaled(29,1,2.25,2.25)
@@ -598,6 +739,20 @@
         ToolTip = ("More info") & "..."
         Picture = Picture["info.png"]
         Stretch = True
+      }
+      { BibleMTFFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { BibleMTFFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
       }
     }
     { BibleSOMFrame Frame
@@ -739,6 +894,20 @@
         Picture = Picture["info.png"]
         Stretch = True
       }
+      { PresenterFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { PresenterFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
     }
     { FreeShowFrame Frame
       MoveScaled(36,2,32,14)
@@ -784,6 +953,20 @@
         ToolTip = ("More info") & "..."
         Picture = Picture["info.png"]
         Stretch = True
+      }
+      { FreeShowFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { FreeShowFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
       }
     }
     { FloodlightFrame Frame
@@ -831,52 +1014,19 @@
         Picture = Picture["info.png"]
         Stretch = True
       }
-    }
-    { QueleaFrame Frame
-      MoveScaled(104,2,32,14)
-      Visible = False
-      { QueleaTextArea TextArea
-        MoveScaled(9,4,22,3)
-        Text = ("Church Presentation app")
-        ReadOnly = True
-        Wrap = True
+      { FloodlightFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
         Border = False
       }
-      { InstallQueleaButton Button
-        MoveScaled(19,9,12,4)
-        Background = &H41C017&
-        Foreground = Color.White
-        Mouse = Mouse.Pointing
-        Text = ("Install")
-      }
-      { LaunchQueleaButton Button
-        MoveScaled(19,9,12,4)
-        Mouse = Mouse.Pointing
-        Text = ("Launch")
-      }
-      { UninstallQueleaButton Button
-        MoveScaled(1,9,4,4)
-        Background = Color.Red
-        Foreground = Color.White
-        Mouse = Mouse.Pointing
-        Picture = Picture["trashcan.png"]
-      }
-      { QueleaPictureBox2 PictureBox
-        MoveScaled(1,1,6.25,6.25)
-        Picture = Picture["quelea.png"]
-        Stretch = True
-      }
-      { QueleaLabel Label
-        MoveScaled(9,1,9,3)
-        Font = Font["Bold"]
-        Text = ("Quelea")
-      }
-      { QueleaInfoButton PictureBox
-        MoveScaled(29,1,2.25,2.25)
-        Mouse = Mouse.Pointing
-        ToolTip = ("More info") & "..."
-        Picture = Picture["info.png"]
-        Stretch = True
+      { FloodlightFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
       }
     }
     Index = 3
@@ -1017,6 +1167,20 @@
         ToolTip = ("More info") & "..."
         Picture = Picture["info.png"]
         Stretch = True
+      }
+      { UbuntuCEGreeterFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { UbuntuCEGreeterFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
       }
     }
     Index = 0

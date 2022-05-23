@@ -10,27 +10,27 @@ End
 
 Sub initialize()
   
-  app_check("dnsminder", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
-  app_check("hostminder", LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
-  app_check("ubuntu-ce-parental-controls", LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
-  app_check("timekpr-next", LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
-  app_check("xiphos", LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton)
-  app_check("bibletime", LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
-  app_check("bibledit", LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
-  app_check("bible-kjv", LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton) 
-  app_check("bolls", LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
-  app_check("dab-player", LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, True)  
-  app_check("bible-multi-the-life", LaunchBibleMTFButton, InstallBibleMTFButton, UninstallBibleMTFButton, True) 
-  app_check("bible-multi-the-son-of-man", LaunchBibleSOMButton, InstallBibleSOMButton, UninstallBibleSOMButton, True) 
-  app_check("presenter-by-worship-tools", LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
-  app_check("freeshow", LaunchFreeShowButton, InstallFreeShowButton, UninstallFreeShowButton)
-  app_check("io.gitlab.floodlight.Presenter", LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
-  ' app_check("quelea", LaunchQueleaButton, InstallQueleaButton, UninstallQueleaButton, True) 
-  app_check("bibref", LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
-  app_check("accountable2you", LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, True)
-  app_check("ubuntu-ce-wallpapers", LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
-  app_check("ubuntu-ce-branding", LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
-  app_check("ubuntu-ce-welcome", LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
+  app_check("dnsminder", "dnsminder.desktop", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton, DNSMinderFavIcon, DNSMinderFavCheckBox)
+  app_check("hostminder", "hostminder.desktop", LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton, HostMinderFavicon, HostMinderFavCheckBox)
+  app_check("ubuntu-ce-parental-controls", "ubuntu-ce-parental-controls", LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton, ParentalControlsFavicon, ParentalControlsFavCheckBox)
+  app_check("timekpr-next", "timekpr-admin-su.desktop", LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton, TimekprFavicon, TimekprFavCheckBox)
+  app_check("xiphos", "xiphos.desktop", LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton, XiphosFavicon, XiphosFavCheckBox)
+  app_check("bibletime", "info.bibletime.BibleTime", LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton, BibleTimeFavicon, BibleTimeFavCheckBox)
+  app_check("bibledit", "bibledit.desktop", LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton, BibleditFavicon, BibleditFavCheckBox)
+  app_check("bible-kjv", Null, LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton) 
+  app_check("bolls", "bolls_bolls.desktop", LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, BollsFavicon, BollsFavCheckBox, True)
+  app_check("dab-player", "dab-player_dab-player.desktop", LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, DabPlayerFavicon, DabPlayerFavCheckBox, True)  
+  app_check("bible-multi-the-life", "bible-multi-the-life_bible-multi-the-life.desktop", LaunchBibleMTFButton, InstallBibleMTFButton, UninstallBibleMTFButton, BibleMTFFavicon, BibleMTFFavCheckBox, True) 
+  app_check("bible-multi-the-son-of-man", Null, LaunchBibleSOMButton, InstallBibleSOMButton, UninstallBibleSOMButton, Null, Null, True) 
+  app_check("presenter-by-worship-tools", "presenter-by-worship-tools.desktop", LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton, PresenterFavicon, PresenterFavCheckBox)
+  app_check("freeshow", "freeshow.desktop", LaunchFreeShowButton, InstallFreeShowButton, UninstallFreeShowButton, FreeShowFavicon, FreeShowFavCheckBox)
+  app_check("io.gitlab.floodlight.Presenter", "io.gitlab.floodlight.Presenter.desktop", LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, FloodlightFavicon, FloodlightFavCheckBox, False, True)
+  app_check("bibref", Null, LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, Null, Null, True)
+  app_check("accountable2you", "accountable2you.desktop", LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, Accountable2youFavicon, Accountable2youFavCheckBox, True)
+  app_check("ubuntu-ce-wallpapers", Null, LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
+  app_check("ubuntu-ce-branding", Null, LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
+  app_check("ubuntu-ce-welcome", "ubuntu-ce-welcome.desktop", LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton, UbuntuCEGreeterFavicon, UbuntuCEGreeterFavCheckBox)
+  ' 
   
 End
 
@@ -96,9 +96,19 @@ Sub flathub_check()
   
 End
 
-Sub app_check(appName As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
+Sub app_check(appName As String, desktopFile As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional favIcon As Button, Optional favCheck As CheckBox, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
   
   Dim Result As String
+  
+  Dim FavStatus As String
+  
+  If desktopFile Then 
+    Shell "gsettings get org.gnome.shell favorite-apps | grep " & desktopFile To FavStatus
+    
+    If FavStatus.Len > 0 Then 
+      favCheck.Value = True
+    Endif
+  Endif
   
   If isSnapd Then 
     Shell ("snap list | grep " & appName & " | awk '{print $1}'") To Result
@@ -107,10 +117,23 @@ Sub app_check(appName As String, launchButton As Button, installButton As Button
       launchButton.Hide
       installButton.Show
       uninstallButton.Hide
+      If favIcon Then 
+        favIcon.Hide
+      Endif
+      If favCheck Then 
+        favCheck.Hide
+      Endif
+      
     Else 
       launchButton.Show
       installButton.Hide
       uninstallButton.Show
+      If favIcon Then 
+        favIcon.Show
+      Endif
+      If favCheck Then 
+        favCheck.Show
+      Endif
     Endif
   Else If isFlatpak Then 
     Shell ("flatpak list | grep " & appName & " | awk '{print $3}'") To Result
@@ -119,10 +142,22 @@ Sub app_check(appName As String, launchButton As Button, installButton As Button
       launchButton.Hide
       installButton.Show
       uninstallButton.Hide
+      If favIcon Then 
+        favIcon.Hide
+      Endif
+      If favCheck Then 
+        favCheck.Hide
+      Endif
     Else 
       launchButton.Show
       installButton.Hide
       uninstallButton.Show
+      If favIcon Then 
+        favIcon.Show
+      Endif
+      If favCheck Then 
+        favCheck.Show
+      Endif
     Endif
   Else 
     Shell ("apt-cache policy " & appName & " | grep 'none' | awk '{print $2}'") To Result
@@ -131,10 +166,24 @@ Sub app_check(appName As String, launchButton As Button, installButton As Button
       launchButton.Hide
       installButton.Show
       uninstallButton.Hide
+      If favIcon Then 
+        favIcon.Hide
+      Endif
+      If favCheck Then 
+        favCheck.Hide
+      Endif
+      
     Else 
       launchButton.Show
       installButton.Hide
       uninstallButton.Show
+      If favIcon Then 
+        favIcon.Show
+      Endif
+      If favCheck Then 
+        favCheck.Show
+      Endif
+      
     Endif
   Endif
   
@@ -502,24 +551,6 @@ Public Sub UninstallFloodlightButton_Click()
   
 End
 
-Public Sub LaunchQueleaButton_Click()
-  
-  launch_app("quelea")
-  
-End
-
-Public Sub InstallQueleaButton_Click()
-  
-  install_app("quelea", QueleaLabel.text, LaunchQueleaButton, InstallQueleaButton, UninstallQueleaButton, True)
-  
-End
-
-Public Sub UninstallQueleaButton_Click()
-  
-  uninstall_app("quelea", QueleaLabel.Text, LaunchQueleaButton, InstallQueleaButton, UninstallQueleaButton, True)
-  
-End
-
 Public Sub LaunchAccountable2youButton_Click()
   
   launch_app("accountable2you")
@@ -744,12 +775,6 @@ Public Sub PresenterInfoButton_MouseDown()
   
 End
 
-Public Sub QueleaInfoButton_MouseDown()
-  
-  Shell "xdg-open 'https://snapcraft.io/quelea'"
-  
-End
-
 Public Sub UbuntuCEWallpapersInfoButton_MouseDown()
   
   Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-wallpapers'"
@@ -765,5 +790,215 @@ End
 Public Sub UbuntuCEGreeterInfoButton_MouseDown()
   
   Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-welcome'"
+  
+End
+
+Public Sub DNSMinderFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep dnsminder.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/dnsminder.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'dnsminder.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub HostMinderFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep hostminder.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/hostminder.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'hostminder.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub ParentalControlsFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep ubuntu-ce-parental-controls.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/ubuntu-ce-parental-controls.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'ubuntu-ce-parental-controls.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub TimekprFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep timekpr-admin-su.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/timekpr-admin-su.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'timekpr-admin-su.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub Accountable2youFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep accountable2you_accountable2you.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/accountable2you_accountable2you.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'accountable2you_accountable2you.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub XiphosFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep xiphos.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/xiphos.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'xiphos.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub BibleTimeFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep info.bibletime.BibleTime.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/info.bibletime.BibleTime.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'info.bibletime.BibleTime.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub BibleditFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep bibledit.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/bibledit.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'bibledit.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub BollsFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep bolls_bolls.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/bolls_bolls.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'bolls_bolls.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub BibleMTFFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep bible-multi-the-life_bible-multi-the-life.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/bible-multi-the-life_bible-multi-the-life.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'bible-multi-the-life_bible-multi-the-life.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub DabPlayerFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep dab-player_dab-player.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/dab-player_dab-player.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'dab-player_dab-player.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub PresenterFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep presenter-by-worship-tools.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/presenter-by-worship-tools.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'presenter-by-worship-tools.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub FreeShowFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep freeshow.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/freeshow.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'freeshow.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub FloodlightFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep io.gitlab.floodlight.Presenter.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/io.gitlab.floodlight.Presenter.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'io.gitlab.floodlight.Presenter.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub UbuntuCEGreeterFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep ubuntu-ce-welcome.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/ubuntu-ce-welcome.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'ubuntu-ce-welcome.desktop']\"" Wait 
+  Endif
   
 End
