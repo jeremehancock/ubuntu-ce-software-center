@@ -28,7 +28,7 @@ Sub initialize()
   app_check("bibref", Null, LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, Null, Null, True)
   app_check("accountable2you", "accountable2you.desktop", LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, Accountable2youFavicon, Accountable2youFavCheckBox, True)
   app_check("ubuntu-ce-wallpapers", Null, LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
-  app_check("ubuntu-ce-branding", Null, LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
+  app_check("ubuntu-ce-branding", Null, Null, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
   app_check("ubuntu-ce-welcome", "ubuntu-ce-welcome.desktop", LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton, UbuntuCEGreeterFavicon, UbuntuCEGreeterFavCheckBox)
   ' 
   
@@ -114,7 +114,9 @@ Sub app_check(appName As String, desktopFile As String, launchButton As Button, 
     Shell ("snap list | grep " & appName & " | awk '{print $1}'") To Result
     
     If InStr(Result, appName) = 0 Then 
-      launchButton.Hide
+      If launchButton Then 
+        launchButton.Hide
+      Endif
       installButton.Show
       uninstallButton.Hide
       If favIcon Then 
@@ -125,7 +127,9 @@ Sub app_check(appName As String, desktopFile As String, launchButton As Button, 
       Endif
       
     Else 
-      launchButton.Show
+      If launchButton Then 
+        launchButton.Show
+      Endif
       installButton.Hide
       uninstallButton.Show
       If favIcon Then 
@@ -139,7 +143,9 @@ Sub app_check(appName As String, desktopFile As String, launchButton As Button, 
     Shell ("flatpak list | grep " & appName & " | awk '{print $3}'") To Result
     
     If InStr(Result, appName) = 0 Then 
-      launchButton.Hide
+      If launchButton Then 
+        launchButton.Hide
+      Endif
       installButton.Show
       uninstallButton.Hide
       If favIcon Then 
@@ -149,7 +155,9 @@ Sub app_check(appName As String, desktopFile As String, launchButton As Button, 
         favCheck.Hide
       Endif
     Else 
-      launchButton.Show
+      If launchButton Then 
+        launchButton.Show
+      Endif
       installButton.Hide
       uninstallButton.Show
       If favIcon Then 
@@ -163,7 +171,9 @@ Sub app_check(appName As String, desktopFile As String, launchButton As Button, 
     Shell ("apt-cache policy " & appName & " | grep 'none' | awk '{print $2}'") To Result
     
     If InStr(Result, "(none)") = 1 Then 
-      launchButton.Hide
+      If launchButton Then 
+        launchButton.Hide
+      Endif
       installButton.Show
       uninstallButton.Hide
       If favIcon Then 
@@ -174,7 +184,9 @@ Sub app_check(appName As String, desktopFile As String, launchButton As Button, 
       Endif
       
     Else 
-      launchButton.Show
+      If launchButton Then 
+        launchButton.Show
+      Endif
       installButton.Hide
       uninstallButton.Show
       If favIcon Then 
@@ -587,22 +599,15 @@ Public Sub UninstallUbuntuCEWallpapersButton_Click()
   
 End
 
-Public Sub LaunchUbuntuCEBrandingButton_Click()
-  
-  Exec ["gnome-terminal", "--", "bash", "-c", "echo 'Enter Password to configure default Plymouth Theme:' && sudo update-alternatives --auto default.plymouth && sudo update-alternatives --config default.plymouth && sudo update-initramfs -uk all"]
-  initialize()
-  
-End
-
 Public Sub InstallUbuntuCEBrandingButton_Click()
   
-  install_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text, LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
+  install_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text, Null, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
   
 End
 
 Public Sub UninstallUbuntuCEBrandingButton_Click()
   
-  uninstall_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text, LaunchUbuntuCEBrandingButton, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
+  uninstall_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text, Null, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
   
 End
 
