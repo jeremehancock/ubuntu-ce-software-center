@@ -30,6 +30,7 @@ Sub initialize()
   app_check("ubuntu-ce-wallpapers", Null, LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
   app_check("ubuntu-ce-branding", Null, Null, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
   app_check("ubuntu-ce-welcome", "ubuntu-ce-welcome.desktop", LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton, UbuntuCEGreeterFavicon, UbuntuCEGreeterFavCheckBox)
+  app_check("netbible", "netbible.desktop", LaunchNetBibleButton, InstallNetBibleButton, UninstallNetBibleButton, NetBibleFavicon, NetBibleFavCheckBox)
   ' 
   
 End
@@ -629,6 +630,24 @@ Public Sub UninstallUbuntuCEGreeterButton_Click()
   
 End
 
+Public Sub LaunchNetBibleButton_Click()
+  
+  launch_app("netbible")
+  
+End
+
+Public Sub InstallNetBibleButton_Click()
+  
+  install_app("netbible", NetBibleLabel.Text, LaunchNetBibleButton, InstallNetBibleButton, UninstallNetBibleButton)
+  
+End
+
+Public Sub UninstallNetBibleButton_Click()
+  
+  uninstall_app("netbible", NetBibleLabel.Text, LaunchNetBibleButton, InstallNetBibleButton, UninstallNetBibleButton)
+  
+End
+
 Public Sub ExitButton_Click()
   
   Quit
@@ -795,6 +814,12 @@ End
 Public Sub UbuntuCEGreeterInfoButton_MouseDown()
   
   Shell "xdg-open 'https://github.com/jeremehancock/ubuntu-ce-welcome'"
+  
+End
+
+Public Sub NetBibleInfoButton_MouseDown()
+  
+  Shell "xdg-open 'https://github.com/jeremehancock/netbible'"
   
 End
 
@@ -1004,6 +1029,20 @@ Public Sub UbuntuCEGreeterFavCheckBox_MouseDown()
     Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/ubuntu-ce-welcome.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
   Else 
     Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'ubuntu-ce-welcome.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub NetBibleFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep netbible.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/netbible.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'netbible.desktop']\"" Wait 
   Endif
   
 End
