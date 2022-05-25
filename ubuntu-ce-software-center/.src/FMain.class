@@ -202,7 +202,7 @@ Sub app_check(appName As String, desktopFile As String, launchButton As Button, 
   
 End
 
-Sub install_app(appName As String, appTitle As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
+Sub install_app(appName As String, appTitle As String, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
   
   Dim InstallProcess As Process
   
@@ -231,7 +231,7 @@ Sub install_app(appName As String, appTitle As String, launchButton As Button, i
   
 End
 
-Sub uninstall_app(appName As String, appTitle As String, launchButton As Button, installButton As Button, uninstallButton As Button, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
+Sub uninstall_app(appName As String, appTitle As String, Optional isSnapd As Boolean = False, Optional isFlatpak As Boolean = False)
   
   Dim UninstallProcess As Process
   
@@ -284,13 +284,13 @@ End
 
 Public Sub InstallDNSMinderButton_Click()
   
-  install_app("dnsminder", DNSMinderLabel.Text, LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
+  install_app("dnsminder", DNSMinderLabel.Text)
   
 End
 
 Public Sub UninstallDNSMinderButton_Click()
   
-  uninstall_app("dnsminder", DNSMinderLabel.Text, LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton)
+  uninstall_app("dnsminder", DNSMinderLabel.Text)
   
 End
 
@@ -302,13 +302,13 @@ End
 
 Public Sub InstallHostMinderButton_Click()
   
-  install_app("hostminder", HostMinderLabel.Text, LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
+  install_app("hostminder", HostMinderLabel.Text)
   
 End
 
 Public Sub UninstallHostMinderButton_Click()
   
-  uninstall_app("hostminder", HostMinderLabel.Text, LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton)
+  uninstall_app("hostminder", HostMinderLabel.Text)
   
 End
 
@@ -320,13 +320,13 @@ End
 
 Public Sub InstallParentalControlsButton_Click()
   
-  install_app("ubuntu-ce-parental-controls", ParentalControlsLabel.Text, LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
+  install_app("ubuntu-ce-parental-controls", ParentalControlsLabel.Text)
   
 End
 
 Public Sub UninstallParentalControlsButton_Click()
   
-  uninstall_app("ubuntu-ce-parental-controls", ParentalControlsLabel.Text, LaunchParentalControlsButton, InstallParentalControlsButton, UninstallParentalControlsButton)
+  uninstall_app("ubuntu-ce-parental-controls", ParentalControlsLabel.Text)
   
 End
 
@@ -338,13 +338,13 @@ End
 
 Public Sub InstallTimekprButton_Click()
   
-  install_app("timekpr-next", TimekprLabel.Text, LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
+  install_app("timekpr-next", TimekprLabel.Text)
   
 End
 
 Public Sub UninstallTimekprButton_Click()
   
-  uninstall_app("timekpr-next", TimekprLabel.Text, LaunchTimekprButton, InstallTimekprButton, UninstallTimekprButton)
+  uninstall_app("timekpr-next", TimekprLabel.Text)
   
 End
 
@@ -356,13 +356,13 @@ End
 
 Public Sub InstallXiphosButton_Click()
   
-  install_app("xiphos sword-text-web sword-text-kjv", XiphosLabel.Text, LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton)
+  install_app("xiphos sword-text-web sword-text-kjv", XiphosLabel.Text)
   
 End
 
 Public Sub UninstallXiphosButton_Click()
   
-  uninstall_app("xiphos", XiphosLabel.Text, LaunchXiphosButton, InstallXiphosButton, UninstallXiphosButton)
+  uninstall_app("xiphos", XiphosLabel.Text)
   
 End
 
@@ -374,13 +374,13 @@ End
 
 Public Sub InstallBibleTimeButton_Click()
   
-  install_app("bibletime sword-text-web sword-text-kjv", BibleTimeLabel.Text, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
+  install_app("bibletime sword-text-web sword-text-kjv", BibleTimeLabel.Text)
   
 End
 
 Public Sub UninstallBibleTimeButton_Click()
   
-  uninstall_app("bibletime", BibleTimeLabel.Text, LaunchBibleTimeButton, InstallBibleTimeButton, UninstallBibleTimeButton)
+  uninstall_app("bibletime", BibleTimeLabel.Text)
   
 End
 
@@ -392,13 +392,13 @@ End
 
 Public Sub InstallBibleditButton_Click()
   
-  install_app("bibledit", BibleditLabel.Text, LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
+  install_app("bibledit", BibleditLabel.Text)
   
 End
 
 Public Sub UninstallBibleditButton_Click()
   
-  uninstall_app("bibledit", BibleditLabel.Text, LaunchBibleditButton, InstallBibleditButton, UninstallBibleditButton)
+  uninstall_app("bibledit", BibleditLabel.Text)
   
 End
 
@@ -410,13 +410,13 @@ End
 
 Public Sub InstallBibleKJVButton_Click()
   
-  install_app("bible-kjv", BibleKJVLabel.Text, LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton)
+  install_app("bible-kjv", BibleKJVLabel.Text)
   
 End
 
 Public Sub UninstallBibleKJVButton_Click()
   
-  uninstall_app("bible-kjv", BibleKJVLabel.Text, LaunchBibleKJVButton, InstallBibleKJVButton, UninstallBibleKJVButton)
+  uninstall_app("bible-kjv", BibleKJVLabel.Text)
   
 End
 
@@ -428,13 +428,13 @@ End
 
 Public Sub InstallBollsBibleButton_Click()
   
-  install_app("bolls", BollsLabel.Text, LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
+  install_app("bolls", BollsLabel.Text, True)
   
 End
 
 Public Sub UninstallBollsButton_Click()
   
-  uninstall_app("bolls", BollsLabel.Text, LaunchBollsButton, InstallBollsBibleButton, UninstallBollsButton, True)
+  uninstall_app("bolls", BollsLabel.Text, True)
   
 End
 
@@ -446,13 +446,13 @@ End
 
 Public Sub InstallDabPlayerButton_Click()
   
-  install_app("dab-player", DabPlayerLabel.Text, LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, True)
+  install_app("dab-player", DabPlayerLabel.Text, True)
   
 End
 
 Public Sub UninstallDabPlayerButton_Click()
   
-  uninstall_app("dab-player", DabPlayerLabel.Text, LaunchDabPlayerButton, InstallDabPlayerButton, UninstallDabPlayerButton, True)
+  uninstall_app("dab-player", DabPlayerLabel.Text, True)
   
 End
 
@@ -464,13 +464,13 @@ End
 
 Public Sub InstallBibrefButton_Click()
   
-  install_app("bibref", BibrefLabel.text, LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
+  install_app("bibref", BibrefLabel.text, True)
   
 End
 
 Public Sub UninstallBibrefButton_Click()
   
-  uninstall_app("bibref", BibrefLabel.Text, LaunchBibrefButton, InstallBibrefButton, UninstallBibrefButton, True)
+  uninstall_app("bibref", BibrefLabel.Text, True)
   
 End
 
@@ -482,13 +482,13 @@ End
 
 Public Sub InstallBibleMTFButton_Click()
   
-  install_app("bible-multi-the-life", BibleMTFLabel.text, LaunchBibleMTFButton, InstallBibleMTFButton, UninstallBibleMTFButton, True)
+  install_app("bible-multi-the-life", BibleMTFLabel.text, True)
   
 End
 
 Public Sub UninstallBibleMTFButton_Click()
   
-  uninstall_app("bible-multi-the-life", BibleMTFLabel.Text, LaunchBibleMTFButton, InstallBibleMTFButton, UninstallBibleMTFButton, True)
+  uninstall_app("bible-multi-the-life", BibleMTFLabel.Text, True)
   
 End
 
@@ -500,13 +500,13 @@ End
 
 Public Sub InstallBibleSOMButton_Click()
   
-  install_app("bible-multi-the-son-of-man", BibleSOMLabel.Text, LaunchBibleSOMButton, InstallBibleSOMButton, UninstallBibleSOMButton, True)
+  install_app("bible-multi-the-son-of-man", BibleSOMLabel.Text, True)
   
 End
 
 Public Sub UninstallBibleSOMButton_Click()
   
-  uninstall_app("bible-multi-the-son-of-man", BibleSOMLabel.text, LaunchBibleSOMButton, InstallBibleSOMButton, UninstallBibleSOMButton, True)
+  uninstall_app("bible-multi-the-son-of-man", BibleSOMLabel.text, True)
   
 End
 
@@ -518,13 +518,13 @@ End
 
 Public Sub InstallPresenterButton_Click()
   
-  install_app("presenter-by-worship-tools", PresenterLabel.Text, LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
+  install_app("presenter-by-worship-tools", PresenterLabel.Text)
   
 End
 
 Public Sub UninstallPresenterButton_Click()
   
-  uninstall_app("presenter-by-worship-tools", PresenterLabel.Text, LaunchPresenterButton, InstallPresenterButton, UninstallPresenterButton)
+  uninstall_app("presenter-by-worship-tools", PresenterLabel.Text)
   
 End
 
@@ -536,13 +536,13 @@ End
 
 Public Sub InstallFreeShowButton_Click()
   
-  install_app("freeshow", FreeShowLabel.text, LaunchFreeShowButton, InstallFreeShowButton, UninstallFreeShowButton)
+  install_app("freeshow", FreeShowLabel.text)
   
 End
 
 Public Sub UninstallFreeShowButton_Click()
   
-  uninstall_app("freeshow", FreeShowLabel.Text, LaunchFreeShowButton, InstallFreeShowButton, UninstallFreeShowButton)
+  uninstall_app("freeshow", FreeShowLabel.Text)
   
 End
 
@@ -554,13 +554,13 @@ End
 
 Public Sub InstallFloodlightButton_Click()
   
-  install_app("io.gitlab.floodlight.Presenter", FloodlightLabel.text, LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
+  install_app("io.gitlab.floodlight.Presenter", FloodlightLabel.text, False, True)
   
 End
 
 Public Sub UninstallFloodlightButton_Click()
   
-  uninstall_app("io.gitlab.floodlight.Presenter", FloodlightLabel.Text, LaunchFloodlightButton, InstallFloodlightButton, UninstallFloodlightButton, False, True)
+  uninstall_app("io.gitlab.floodlight.Presenter", FloodlightLabel.Text, False, True)
   
 End
 
@@ -572,13 +572,13 @@ End
 
 Public Sub InstallAccountable2youButton_Click()
   
-  install_app("accountable2you", Accountable2youLabel.Text, LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, True)
+  install_app("accountable2you", Accountable2youLabel.Text, True)
   
 End
 
 Public Sub UninstallAccountable2youButton_Click()
   
-  uninstall_app("accountable2you", Accountable2youLabel.Text, LaunchAccountable2youButton, InstallAccountable2youButton, UninstallAccountable2youButton, True)
+  uninstall_app("accountable2you", Accountable2youLabel.Text, True)
   
 End
 
@@ -590,25 +590,25 @@ End
 
 Public Sub InstallUbuntuCEWallpapersButton_Click()
   
-  install_app("ubuntu-ce-wallpapers", UbuntuCEWallpapersLabel.Text, LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
+  install_app("ubuntu-ce-wallpapers", UbuntuCEWallpapersLabel.Text)
   
 End
 
 Public Sub UninstallUbuntuCEWallpapersButton_Click()
   
-  uninstall_app("ubuntu-ce-wallpapers", UbuntuCEWallpapersLabel.Text, LaunchUbuntuCEWallpapersButton, InstallUbuntuCEWallpapersButton, UninstallUbuntuCEWallpapersButton)
+  uninstall_app("ubuntu-ce-wallpapers", UbuntuCEWallpapersLabel.Text)
   
 End
 
 Public Sub InstallUbuntuCEBrandingButton_Click()
   
-  install_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text, Null, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
+  install_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text)
   
 End
 
 Public Sub UninstallUbuntuCEBrandingButton_Click()
   
-  uninstall_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text, Null, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
+  uninstall_app("ubuntu-ce-branding", UbuntuCEBrandingLabel.Text)
   
 End
 
@@ -620,13 +620,13 @@ End
 
 Public Sub InstallUbuntuCEGreeterButton_Click()
   
-  install_app("ubuntu-ce-welcome", UbuntuCEGreeterLabel.Text, LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
+  install_app("ubuntu-ce-welcome", UbuntuCEGreeterLabel.Text)
   
 End
 
 Public Sub UninstallUbuntuCEGreeterButton_Click()
   
-  uninstall_app("ubuntu-ce-welcome", UbuntuCEGreeterLabel.Text, LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton)
+  uninstall_app("ubuntu-ce-welcome", UbuntuCEGreeterLabel.Text)
   
 End
 
@@ -638,13 +638,13 @@ End
 
 Public Sub InstallNetBibleButton_Click()
   
-  install_app("netbible", NetBibleLabel.Text, LaunchNetBibleButton, InstallNetBibleButton, UninstallNetBibleButton)
+  install_app("netbible", NetBibleLabel.Text)
   
 End
 
 Public Sub UninstallNetBibleButton_Click()
   
-  uninstall_app("netbible", NetBibleLabel.Text, LaunchNetBibleButton, InstallNetBibleButton, UninstallNetBibleButton)
+  uninstall_app("netbible", NetBibleLabel.Text)
   
 End
 

@@ -1,3 +1,8 @@
+* Wed May 25 2022 Jereme Hancock <support@ubuntuce.com> 0.0.56
+- Removed uneeded params
+- Fixed console warnings
+- Added NET Bible
+
 * Tue May 24 2022 Jereme Hancock <support@ubuntuce.com> 0.0.53
 - Removed Configure Boot Theme button
 
