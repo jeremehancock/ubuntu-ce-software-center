@@ -110,7 +110,7 @@
       MoveScaled(36,2,32,14)
       { HostMinderTextArea TextArea
         MoveScaled(9,4,22,3)
-        Text = ("Block unwanted websites")
+        Text = ("Block Unwanted Websites")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -170,7 +170,7 @@
       MoveScaled(70,2,32,14)
       { ParentalControlsTextArea TextArea
         MoveScaled(8,4,14,3)
-        Text = ("Protect the kids")
+        Text = ("Protect the Kids")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -230,7 +230,7 @@
       MoveScaled(104,2,32,14)
       { TimekprTextArea TextArea
         MoveScaled(9,4,16,3)
-        Text = ("Track screen time")
+        Text = ("Track Screen Time")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -473,7 +473,7 @@
       Mouse = Mouse.Pointing
       { BibleditTextArea TextArea
         MoveScaled(9,4,22,3)
-        Text = ("Bible translation software")
+        Text = ("Bible Translation Software")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -805,7 +805,7 @@
       MoveScaled(2,34,32,14)
       { BibrefTextArea TextArea
         MoveScaled(9,4,22,3)
-        Text = ("Septuagint Reference app")
+        Text = ("Septuagint Reference App")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -851,7 +851,7 @@
       MoveScaled(36,34,32,14)
       { NetBibleTextArea TextArea
         MoveScaled(9,4,18,3)
-        Text = ("NET Bible Web App")
+        Text = ("Bible Web App")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -907,13 +907,133 @@
         Text = (" ")
       }
     }
+    { BibleWebAppFrame Frame
+      MoveScaled(70,34,32,14)
+      { BibleWebAppTextArea TextArea
+        MoveScaled(9,4,18,3)
+        Text = ("Bible Web App")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallBibleWebAppButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Text = ("Install")
+      }
+      { LaunchBibleWebAppButton Button
+        MoveScaled(19,9,12,4)
+        Mouse = Mouse.Pointing
+        Text = ("Launch")
+      }
+      { UninstallBibleWebAppButton Button
+        MoveScaled(1,9,4,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Picture = Picture["trashcan.png"]
+      }
+      { BibleWebAppPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["bible-web-app.png"]
+        Stretch = True
+      }
+      { BibleWebAppLabel Label
+        MoveScaled(9,1,14,3)
+        Font = Font["Bold"]
+        Text = ("BibleWebApp")
+      }
+      { BibleWebAppInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        Mouse = Mouse.Pointing
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
+      }
+      { BibleWebAppFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { BibleWebAppFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
+    }
+    { BlueLetterBibleFrame Frame
+      MoveScaled(104,34,32,14)
+      { BlueLetterBibleTextArea TextArea
+        MoveScaled(9,4,18,3)
+        Text = ("Bible Web App")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallBlueLetterBibleButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Text = ("Install")
+      }
+      { LaunchBlueLetterBibleButton Button
+        MoveScaled(19,9,12,4)
+        Mouse = Mouse.Pointing
+        Text = ("Launch")
+      }
+      { UninstallBlueLetterBibleButton Button
+        MoveScaled(1,9,4,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Picture = Picture["trashcan.png"]
+      }
+      { BlueLetterBiblePictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["blue-letter-bible.png"]
+        Stretch = True
+      }
+      { BlueLetterBibleLabel Label
+        MoveScaled(9,1,18,3)
+        Font = Font["Bold"]
+        Text = ("Blue Letter Bible")
+      }
+      { BlueLetterBibleInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        Mouse = Mouse.Pointing
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
+      }
+      { BlueLetterBibleFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { BlueLetterBibleFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
+    }
     Index = 2
     Text = ("For Churches")
     { PresenterFrame Frame
       MoveScaled(2,2,32,14)
       { PresenterTextArea TextArea
         MoveScaled(9,4,22,3)
-        Text = ("Church Presentaton app")
+        Text = ("Church Presentaton App")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -973,7 +1093,7 @@
       MoveScaled(36,2,32,14)
       { FreeShowTextArea TextArea
         MoveScaled(9,4,22,3)
-        Text = ("Church Presentation app")
+        Text = ("Church Presentation App")
         ReadOnly = True
         Wrap = True
         Border = False
@@ -1033,7 +1153,7 @@
       MoveScaled(70,2,32,14)
       { FloodlightTextArea TextArea
         MoveScaled(9,4,22,3)
-        Text = ("Church Presentation app")
+        Text = ("Church Presentation App")
         ReadOnly = True
         Wrap = True
         Border = False

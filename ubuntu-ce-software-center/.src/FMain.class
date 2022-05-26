@@ -31,6 +31,8 @@ Sub initialize()
   app_check("ubuntu-ce-branding", Null, Null, InstallUbuntuCEBrandingButton, UninstallUbuntuCEBrandingButton)
   app_check("ubuntu-ce-welcome", "ubuntu-ce-welcome.desktop", LaunchUbuntuCEGreeterButton, InstallUbuntuCEGreeterButton, UninstallUbuntuCEGreeterButton, UbuntuCEGreeterFavicon, UbuntuCEGreeterFavCheckBox)
   app_check("netbible", "netbible.desktop", LaunchNetBibleButton, InstallNetBibleButton, UninstallNetBibleButton, NetBibleFavicon, NetBibleFavCheckBox)
+  app_check("bible-web-app", "bible-web-app.desktop", LaunchBibleWebAppButton, InstallBibleWebAppButton, UninstallBibleWebAppButton, BibleWebAppFavicon, BibleWebAppFavCheckBox)
+  app_check("blue-letter-bible", "blue-letter-bible.desktop", LaunchBlueLetterBibleButton, InstallBlueLetterBibleButton, UninstallBlueLetterBibleButton, BlueLetterBibleFavicon, BlueLetterBibleFavCheckBox)
   ' 
   
 End
@@ -273,6 +275,49 @@ Sub launch_app(appName As String, Optional isTerminal As Boolean = False, Option
       Exec [appName]
     Endif
   Endif
+  
+End
+
+Public Sub ExitButton_Click()
+  
+  Quit
+  
+End
+
+Public Sub TerminalToggle_Click()
+  
+  If TerminalToggle.Value = 0 Then
+    TerminalView.Hide
+    TerminalView.H = 0
+    TerminalToggle.Text = "Show Details"
+  Else 
+    TerminalView.Show
+    TerminalView.H = 440
+    TerminalToggle.Text = "Hide Details"
+  Endif
+  
+End
+
+Public Sub Show_Progress(type As String, appTitle As String)
+  
+  ProgressLabel.Text = type & " " & appTitle & "..." ""
+  ProgressLabel.Show
+  ProcessProgressBar.Show
+  TerminalView.Clear
+  Tabs.Hide
+  ExitButton.Enabled = False
+  UbuntuSoftwareButton.Enabled = False
+  
+End
+
+Public Sub Hide_Progress()
+  
+  Tabs.Show
+  ProgressLabel.Text = "Processing..."
+  ProgressLabel.Hide
+  ProcessProgressBar.Hide
+  ExitButton.Enabled = True
+  UbuntuSoftwareButton.Enabled = True
   
 End
 
@@ -648,46 +693,39 @@ Public Sub UninstallNetBibleButton_Click()
   
 End
 
-Public Sub ExitButton_Click()
+Public Sub LaunchBibleWebAppButton_Click()
   
-  Quit
-  
-End
-
-Public Sub TerminalToggle_Click()
-  
-  If TerminalToggle.Value = 0 Then
-    TerminalView.Hide
-    TerminalView.H = 0
-    TerminalToggle.Text = "Show Details"
-  Else 
-    TerminalView.Show
-    TerminalView.H = 440
-    TerminalToggle.Text = "Hide Details"
-  Endif
+  launch_app("bible-web-app")
   
 End
 
-Public Sub Show_Progress(type As String, appTitle As String)
+Public Sub InstallBibleWebAppButton_Click()
   
-  ProgressLabel.Text = type & " " & appTitle & "..." ""
-  ProgressLabel.Show
-  ProcessProgressBar.Show
-  TerminalView.Clear
-  Tabs.Hide
-  ExitButton.Enabled = False
-  UbuntuSoftwareButton.Enabled = False
+  install_app("bible-web-app", BibleWebAppLabel.Text)
   
 End
 
-Public Sub Hide_Progress()
+Public Sub UninstallBibleWebAppButton_Click()
   
-  Tabs.Show
-  ProgressLabel.Text = "Processing..."
-  ProgressLabel.Hide
-  ProcessProgressBar.Hide
-  ExitButton.Enabled = True
-  UbuntuSoftwareButton.Enabled = True
+  uninstall_app("bible-web-app", BibleWebAppLabel.Text)
+  
+End
+
+Public Sub LaunchBlueLetterBibleButton_Click()
+  
+  launch_app("blue-letter-bible")
+  
+End
+
+Public Sub InstallBlueLetterBibleButton_Click()
+  
+  install_app("blue-letter-bible", BlueLetterBibleLabel.text)
+  
+End
+
+Public Sub UninstallBlueLetterBibleButton_Click()
+  
+  uninstall_app("blue-letter-bible", BlueLetterBibleLabel.text)
   
 End
 
@@ -820,6 +858,18 @@ End
 Public Sub NetBibleInfoButton_MouseDown()
   
   Shell "xdg-open 'https://github.com/jeremehancock/netbible'"
+  
+End
+
+Public Sub BibleWebAppInfoButton_MouseDown()
+  
+  Shell "xdg-open 'https://github.com/jeremehancock/bible-web-app'"
+  
+End
+
+Public Sub BlueLetterBibleInfoButton_MouseDown()
+  
+  Shell "xdg-open 'https://github.com/jeremehancock/blue-letter-bible'"
   
 End
 
@@ -1043,6 +1093,34 @@ Public Sub NetBibleFavCheckBox_MouseDown()
     Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/netbible.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
   Else 
     Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'netbible.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub BibleWebAppFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep bible-web-app.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/bible-web-app.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'bible-web-app.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub BlueLetterBibleFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep blue-letter-bible.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/blue-letter-bible.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'blue-letter-bible.desktop']\"" Wait 
   Endif
   
 End

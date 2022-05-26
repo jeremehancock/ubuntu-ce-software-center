@@ -1,3 +1,7 @@
+* Wed May 25 2022 Jereme Hancock <support@ubuntuce.com> 0.0.58
+- Added Blue Letter Bible
+- Added BibleWebApp
+
 * Wed May 25 2022 Jereme Hancock <support@ubuntuce.com> 0.0.56
 - Removed uneeded params
 - Fixed console warnings
