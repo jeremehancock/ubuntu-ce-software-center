@@ -34,6 +34,9 @@ Sub initialize()
   app_check("bible-web-app", "bible-web-app.desktop", LaunchBibleWebAppButton, InstallBibleWebAppButton, UninstallBibleWebAppButton, BibleWebAppFavicon, BibleWebAppFavCheckBox)
   app_check("blue-letter-bible", "blue-letter-bible.desktop", LaunchBlueLetterBibleButton, InstallBlueLetterBibleButton, UninstallBlueLetterBibleButton, BlueLetterBibleFavicon, BlueLetterBibleFavCheckBox)
   app_check("gnucash", "gnucash.desktop", LaunchGNUCashButton, InstallGNUCashButton, UninstallGNUCashButton, GNUCashFavicon, GNUCashFavCheckBox)
+  app_check("obs-studio", "obs-studio_obs-studio.desktop", LaunchOBSButton, InstallOBSButton, UninstallOBSButton, OBSFavicon, OBSFavCheckBox, True)
+  app_check("audacity", "audacity_audacity.desktop", LaunchAudacityButton, InstallAudacityButton, UninstallAudacityButton, AudacityFavicon, AudacityFavCheckBox, True)
+  app_check("gimp", "gimp_gimp.desktop", LaunchGIMPButton, InstallGIMPButton, UninstallGIMPButton, GIMPFavicon, GIMPFavCheckBox, True)
   
 End
 
@@ -747,6 +750,60 @@ Public Sub UninstallGNUCashButton_Click()
   
 End
 
+Public Sub LaunchOBSButton_Click()
+  
+  launch_app("obs-studio")
+  
+End
+
+Public Sub InstallOBSButton_Click()
+  
+  install_app("obs-studio", OBSLabel.text, True)
+  
+End
+
+Public Sub UninstallOBSButton_Click()
+  
+  uninstall_app("obs-studio", OBSLabel.text, True)
+  
+End
+
+Public Sub LaunchAudacityButton_Click()
+  
+  launch_app("audacity")
+  
+End
+
+Public Sub InstallAudacityButton_Click()
+  
+  install_app("audacity", AudacityLabel.text, True)
+  
+End
+
+Public Sub UninstallAudacityButton_Click()
+  
+  uninstall_app("audacity", AudacityLabel.text, True)
+  
+End
+
+Public Sub LaunchGIMPButton_Click()
+  
+  launch_app("gimp")
+  
+End
+
+Public Sub InstallGIMPButton_Click()
+  
+  install_app("gimp", GIMPLabel.text, True)
+  
+End
+
+Public Sub UninstallGIMPButton_Click()
+  
+  uninstall_app("gimp", GIMPLabel.text, True)
+  
+End
+
 Public Sub DNSMinderInfoButton_MouseDown()
   
   Shell "xdg-open 'https://github.com/jeremehancock/dnsminder'"
@@ -779,7 +836,7 @@ End
 
 Public Sub Accountable2youInfoButton_MouseDown()
   
-  Shell "xdg-open 'https://snapcraft.io/accountable2you'"
+  Shell "xdg-open 'https://snapcraft.io/install/accountable2you/ubuntu'"
   
 End
 
@@ -809,31 +866,31 @@ End
 
 Public Sub BollsInfoButton_MouseDown()
   
-  Shell "xdg-open 'https://snapcraft.io/bolls'"
+  Shell "xdg-open 'https://snapcraft.io/install/bolls/ubuntu'"
   
 End
 
 Public Sub BibleMTFInfoButton_MouseDown()
   
-  Shell "xdg-open 'https://snapcraft.io/bible-multi-the-life'"
+  Shell "xdg-open 'https://snapcraft.io/install/bible-multi-the-life/ubuntu'"
   
 End
 
 Public Sub BibleSOMInfoButton_MouseDown()
   
-  Shell "xdg-open 'https://snapcraft.io/bible-multi-the-son-of-man'"
+  Shell "xdg-open 'https://snapcraft.io/install/bible-multi-the-son-of-man/ubuntu'"
   
 End
 
 Public Sub DabPlayerInfoButton_MouseDown()
   
-  Shell "xdg-open 'https://snapcraft.io/dab-player'"
+  Shell "xdg-open 'https://snapcraft.io/install/dab-player/ubuntu'"
   
 End
 
 Public Sub BibrefInfoButton_MouseDown()
   
-  Shell "xdg-open 'https://snapcraft.io/bibref'"
+  Shell "xdg-open 'https://snapcraft.io/install/bibref/ubuntu'"
   
 End
 
@@ -845,7 +902,7 @@ End
 
 Public Sub FloodlightPresenterInfoButton_MouseDown()
   
-  Shell "xdg-open 'https://flathub.org/apps/details/io.gitlab.floodlight.Presenter'"
+  Shell "xdg-open 'https://floodlight.gitlab.io/'"
   
 End
 
@@ -894,6 +951,24 @@ End
 Public Sub GNUCashInfoButton_MouseDown()
   
   Shell "xdg-open 'https://www.gnucash.org/'"
+  
+End
+
+Public Sub OBSInfoButton_MouseDown()
+  
+  Shell "xdg-open 'https://snapcraft.io/install/obs-studio/ubuntu'"
+  
+End
+
+Public Sub AudacityInfoButton_MouseDown()
+  
+  Shell "xdg-open 'https://snapcraft.io/install/audacity/ubuntu'"
+  
+End
+
+Public Sub GIMPInfoButton_MouseDown()
+  
+  Shell "xdg-open 'https://snapcraft.io/install/gimp/ubuntu'"
   
 End
 
@@ -1159,6 +1234,48 @@ Public Sub GNUCashFavCheckBox_MouseDown()
     Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/gnucash.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
   Else 
     Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'gnucash.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub OBSFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep obs-studio_obs-studio.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/obs-studio_obs-studio.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'obs-studio_obs-studio.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub AudacityFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep audacity_audacity.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/audacity_audacity.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'audacity_audacity.desktop']\"" Wait 
+  Endif
+  
+End
+
+Public Sub GIMPFavCheckBox_MouseDown()
+  
+  Dim FavStatus As String
+  
+  Shell "gsettings get org.gnome.shell favorite-apps | grep gimp_gimp.desktop" To FavStatus
+  
+  If FavStatus.Len > 0 Then 
+    Shell "gsettings get org.gnome.shell favorite-apps > /tmp/FAVS.txt && sed -e s/gimp_gimp.desktop//g -i /tmp/FAVS.txt && FAVS=`cat /tmp/FAVS.txt` && gsettings set org.gnome.shell favorite-apps \"$FAVS\" && unset FAVS && rm /tmp/FAVS.txt" Wait
+  Else 
+    Shell "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'gimp_gimp.desktop']\"" Wait 
   Endif
   
 End

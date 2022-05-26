@@ -1269,6 +1269,186 @@
         Text = (" ")
       }
     }
+    { OBSFrame Frame
+      MoveScaled(2,18,32,14)
+      { OBSTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Video Editing/Streaming")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallOBSButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Text = ("Install")
+      }
+      { LaunchOBSButton Button
+        MoveScaled(19,9,12,4)
+        Mouse = Mouse.Pointing
+        Text = ("Launch")
+      }
+      { UninstallOBSButton Button
+        MoveScaled(1,9,4,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Picture = Picture["trashcan.png"]
+      }
+      { OBSPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["obs.png"]
+        Stretch = True
+      }
+      { OBSLabel Label
+        MoveScaled(9,1,21,3)
+        Font = Font["Bold"]
+        Text = ("OBS Studio")
+      }
+      { OBSInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        Mouse = Mouse.Pointing
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
+      }
+      { OBSFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { OBSFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
+    }
+    { AudacityFrame Frame
+      MoveScaled(36,18,32,14)
+      { AudacityTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Audio Recording/Editing")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallAudacityButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Text = ("Install")
+      }
+      { LaunchAudacityButton Button
+        MoveScaled(19,9,12,4)
+        Mouse = Mouse.Pointing
+        Text = ("Launch")
+      }
+      { UninstallAudacityButton Button
+        MoveScaled(1,9,4,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Picture = Picture["trashcan.png"]
+      }
+      { AudacityPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["audacity.png"]
+        Stretch = True
+      }
+      { AudacityLabel Label
+        MoveScaled(9,1,21,3)
+        Font = Font["Bold"]
+        Text = ("Audacity")
+      }
+      { AudacityInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        Mouse = Mouse.Pointing
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
+      }
+      { AudacityFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { AudacityFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
+    }
+    { GIMPFrame Frame
+      MoveScaled(70,18,32,14)
+      { GIMPTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Photoshop Alternative")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallGIMPButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Text = ("Install")
+      }
+      { LaunchGIMPButton Button
+        MoveScaled(19,9,12,4)
+        Mouse = Mouse.Pointing
+        Text = ("Launch")
+      }
+      { UninstallGIMPButton Button
+        MoveScaled(1,9,4,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Picture = Picture["trashcan.png"]
+      }
+      { GIMPPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["gimp.png"]
+        Stretch = True
+      }
+      { GIMPLabel Label
+        MoveScaled(9,1,21,3)
+        Font = Font["Bold"]
+        Text = ("GIMP")
+      }
+      { GIMPInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        Mouse = Mouse.Pointing
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
+      }
+      { GIMPFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { GIMPFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
+    }
     Index = 3
     Text = ("Appearance")
     { UbuntuCEWallpapersFrame Frame

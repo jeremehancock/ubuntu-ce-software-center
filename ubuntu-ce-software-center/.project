@@ -2,7 +2,7 @@
 Title=UbuntuCE Software Center
 Startup=FMain
 Icon=ubuntuce-software-center-logo.png
-Version=0.0.62
+Version=0.0.65
 Component=gb.image
 Component=gb.gui
 Component=gb.form
@@ -16,7 +16,7 @@ Maintainer=Jereme Hancock
 Address=support@ubuntuce.com
 Url=https://ubuntuce.com
 License=General Public License
-PackageName=ubuntu-ce-software-center-0.0.62
+PackageName=ubuntu-ce-software-center-0.0.65
 Packager=1
 Systems=ubuntu
 Menus=ubuntu:"Applications/System/Package Management"
