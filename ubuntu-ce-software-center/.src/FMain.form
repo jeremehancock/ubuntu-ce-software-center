@@ -473,7 +473,7 @@
       Mouse = Mouse.Pointing
       { BibleditTextArea TextArea
         MoveScaled(9,4,22,3)
-        Text = ("Bible Translation Software")
+        Text = ("Bible Translation App")
         ReadOnly = True
         Wrap = True
         Border = False
