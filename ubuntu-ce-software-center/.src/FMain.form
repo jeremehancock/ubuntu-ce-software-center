@@ -1209,6 +1209,66 @@
         Text = (" ")
       }
     }
+    { GNUCashFrame Frame
+      MoveScaled(104,2,32,14)
+      { GNUCashTextArea TextArea
+        MoveScaled(9,4,22,3)
+        Text = ("Quickbooks Alternative")
+        ReadOnly = True
+        Wrap = True
+        Border = False
+      }
+      { InstallGNUCashButton Button
+        MoveScaled(19,9,12,4)
+        Background = &H41C017&
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Text = ("Install")
+      }
+      { LaunchGNUCashButton Button
+        MoveScaled(19,9,12,4)
+        Mouse = Mouse.Pointing
+        Text = ("Launch")
+      }
+      { UninstallGNUCashButton Button
+        MoveScaled(1,9,4,4)
+        Background = Color.Red
+        Foreground = Color.White
+        Mouse = Mouse.Pointing
+        Picture = Picture["trashcan.png"]
+      }
+      { GNUCashPictureBox PictureBox
+        MoveScaled(1,1,6.25,6.25)
+        Picture = Picture["gnucash.png"]
+        Stretch = True
+      }
+      { GNUCashLabel Label
+        MoveScaled(9,1,21,3)
+        Font = Font["Bold"]
+        Text = ("GnuCash")
+      }
+      { GNUCashInfoButton PictureBox
+        MoveScaled(29,1,2.25,2.25)
+        Mouse = Mouse.Pointing
+        ToolTip = ("More info") & "..."
+        Picture = Picture["info.png"]
+        Stretch = True
+      }
+      { GNUCashFavicon Button
+        MoveScaled(6,9,3,4)
+        Enabled = False
+        Background = Color.Transparent
+        Foreground = Color.Transparent
+        ToolTip = ("Add to Favorites?")
+        Picture = Picture["Fav.png"]
+        Border = False
+      }
+      { GNUCashFavCheckBox CheckBox
+        MoveScaled(9,9,4,4)
+        ToolTip = ("Add to Favorites?")
+        Text = (" ")
+      }
+    }
     Index = 3
     Text = ("Appearance")
     { UbuntuCEWallpapersFrame Frame
