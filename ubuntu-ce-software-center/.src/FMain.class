@@ -560,7 +560,7 @@ End
 
 Public Sub LaunchPresenterButton_Click()
   
-  launch_app("launch-presenter.sh")
+  launch_app("presenter-by-worship-tools")
   
 End
 
