@@ -96,7 +96,11 @@ Sub flathub_check()
       initialize()
       
     Else 
-      FloodlightFrame.Hide
+      FloodlightFavCheckBox.Hide
+      InstallFloodlightButton.Hide
+      UninstallFloodlightButton.Hide
+      LaunchFloodlightButton.Hide
+      FloodlightFlatPakLabel.Show
     Endif
   Endif
   

@@ -1151,6 +1151,12 @@
     }
     { FloodlightFrame Frame
       MoveScaled(70,2,32,14)
+      { FloodlightFlatPakLabel Label
+        MoveScaled(1,10,30,3)
+        Visible = False
+        Alignment = Align.Center
+        Text = ("Flathub Repository is not installed.")
+      }
       { FloodlightTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Church Presentation App")

@@ -1,3 +1,6 @@
+* Wed Jun 29 2022 Jereme Hancock <support@ubuntuce.com> 0.0.69
+- Updated how Floodlight Presenter is displayed if Flathub Repo is not installed
+
 * Sun Jun 05 2022 Jereme Hancock <support@ubuntuce.com> 0.0.67
 - Fixed Presenter Launcher
 
