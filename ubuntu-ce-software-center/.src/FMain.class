@@ -2,13 +2,13 @@
 
 Public Sub Form_Open()
   
-  repo_check()
   initialize()
-  flathub_check()
   
 End
 
 Sub initialize()
+  
+  repo_check()
   
   app_check("dnsminder", "dnsminder.desktop", LaunchDNSMinderButton, InstallDNSMinderButton, UninstallDNSMinderButton, DNSMinderFavIcon, DNSMinderFavCheckBox)
   app_check("hostminder", "hostminder.desktop", LaunchHostMinderButton, InstallHostMinderButton, UninstallHostMinderButton, HostMinderFavicon, HostMinderFavCheckBox)
@@ -37,6 +37,8 @@ Sub initialize()
   app_check("obs-studio", "obs-studio_obs-studio.desktop", LaunchOBSButton, InstallOBSButton, UninstallOBSButton, OBSFavicon, OBSFavCheckBox, True)
   app_check("audacity", "audacity_audacity.desktop", LaunchAudacityButton, InstallAudacityButton, UninstallAudacityButton, AudacityFavicon, AudacityFavCheckBox, True)
   app_check("gimp", "gimp_gimp.desktop", LaunchGIMPButton, InstallGIMPButton, UninstallGIMPButton, GIMPFavicon, GIMPFavCheckBox, True)
+  
+  flathub_check()
   
 End
 

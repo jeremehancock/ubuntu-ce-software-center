@@ -1151,12 +1151,6 @@
     }
     { FloodlightFrame Frame
       MoveScaled(70,2,32,14)
-      { FloodlightFlatPakLabel Label
-        MoveScaled(1,10,30,3)
-        Visible = False
-        Alignment = Align.Center
-        Text = ("Flathub Repository is not installed.")
-      }
       { FloodlightTextArea TextArea
         MoveScaled(9,4,22,3)
         Text = ("Church Presentation App")
@@ -1213,6 +1207,12 @@
         MoveScaled(9,9,4,4)
         ToolTip = ("Add to Favorites?")
         Text = (" ")
+      }
+      { FloodlightFlatPakLabel Label
+        MoveScaled(0,8,32,6)
+        Visible = False
+        Alignment = Align.Center
+        Text = ("Flathub Repository is not installed.")
       }
     }
     { GNUCashFrame Frame
