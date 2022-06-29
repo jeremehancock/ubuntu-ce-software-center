@@ -3,8 +3,8 @@
 Public Sub Form_Open()
   
   repo_check()
-  flathub_check()
   initialize()
+  flathub_check()
   
 End
 
