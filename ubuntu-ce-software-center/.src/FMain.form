@@ -1209,8 +1209,9 @@
         Text = (" ")
       }
       { FloodlightFlatPakLabel Label
-        MoveScaled(0,8,32,6)
+        MoveScaled(1,8,30,5)
         Visible = False
+        Background = Color.TextBackground
         Alignment = Align.Center
         Text = ("Flathub Repository is not installed.")
       }
